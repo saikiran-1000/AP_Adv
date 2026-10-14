@@ -1,0 +1,1036 @@
+Company Code	Document Type	Gross Amount	ERP System	UOM	Tax Code	Tax Amount	Profit Center	ground_truth	prediction
+2220-CAH 110, LLC	Regular Invoice	4620	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71214020.0	"Cost Center: 2220001165.0  
+GL Code: 71251000.0"
+6830-Sonexus Health APS, LLC	Regular Invoice	363.51	Pharma Corp		I0	22.5		Cost Center: 6830000002.0, GL Code: 71340020.0	"Cost Center: 6830000001.0  
+GL Code: 71310050.0"
+2220-CAH 110, LLC	Regular Invoice	152	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	503.66	TPM		I0	0		Cost Center: 2141001330.0, GL Code: 71213020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	76.93	TPM		I0	4.35		Cost Center: 2141001134.0, GL Code: 71240020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Credit Memo	549.15	TPM				P000000926	Cost Center: 2141002063.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110090.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	151.73	Pharma Corp	Each	I0		P000000208	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2250-CAH 414, LLC	Exception to CAP	213.6	Pharma Corp		I0			Cost Center: 2250000407.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2100-CAH 108, LLC	Regular Invoice	252.17	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	1367.71	Pharma Corp		I0			Cost Center: 7890000005.0, GL Code: 71211060.0	"Cost Center: 7890000007.0
+
+GL Code: 71241020.0"
+5040-CAH Pharmacy Services LLC	Regular Invoice	18770.2	Pharma Corp		I1	1430.53		Cost Center: 5040000565.0, GL Code: 71362040.0	"Cost Center: 5040000003.0  
+GL Code: 71110080.0"
+2220-CAH 110, LLC	Regular Invoice	495.83	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	669.66	TPM		I1	5.86		Cost Center: 2141000251.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Exception to CAP	4426.62	Pharma Corp		I0		P000003140	Cost Center: 2220000866.0, GL Code: 11310110.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+7900-KPR US, LLC	Stock PO	2663.83	TPM					Cost Center: 7900000165.0, GL Code: 71241010.0	"Cost Center: 7900000290.0  
+GL Code: 63110130.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000135.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	All Other Charges Payback	458890	TPM				P000003723	Cost Center: 2140004656.0, GL Code: 63110090.0	"Cost Center: 2140004656.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Credit Memo	2.1	TPM					Cost Center: 2140003449.0, GL Code: 71362080.0	"Cost Center: 2141001412.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Regular Invoice	1072.1	TPM		I0	60		Cost Center: 2141001134.0, GL Code: 71241020.0	"Cost Center: 2140004522.0  
+GL Code: 71214020.0"
+	Regular Invoice	189.23	Ariba		I1	15.78		Cost Center: 2141000130, GL Code: 71241020	"Cost Center: 2140003856
+
+GL Code: 71240020"
+2280-Beckloff Associates, Inc	Exception to CAP	604.29	Pharma Corp		I0			Cost Center: 2280001129.0, GL Code: 71362080.0	"Cost Center: 2280001170.0  
+GL Code: 71243170.0"
+2250-CAH 414, LLC	Regular Invoice	67594	Pharma Corp	EA	I0			Cost Center: 2250001699.0, GL Code: 71241000.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	1.54	Pharma Corp	USD	I0			Cost Center: 1000000043.0, GL Code: 71511020.0	"Cost Center: 1000000092.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	99	Pharma Corp		I1			Cost Center: 2220000156.0, GL Code: 71240020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	11296.67	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71258150.0	"Cost Center: 2220000338.0  
+GL Code: 71251000.0"
+2390-CAH 112, LLC	Regular Invoice	51950.71	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71258150.0	"Cost Center: 2390000296.0  
+GL Code: 71257000.0"
+2140-CAH 200, LLC	Exception to CAP	754.33	TPM	EA	I1	58.04		Cost Center: 2140003763.0, GL Code: 71241040.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Regular Invoice	26.88	Pharma Corp		I1	1.88		Cost Center: 2250000137.0, GL Code: 71362050.0	"Cost Center: 2250001656.0  
+GL Code: 71240020.0"
+2140-CAH 200, LLC	Regular Invoice	18321	TPM		I0			Cost Center: 2141002203.0, GL Code: 71243270.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+7920-CAH Ireland Unlimited	Credit Memo	543764.52	GSC				P000003679	Cost Center: 11361020, GL Code: 11361020	"Cost Center: 7920000001.0
+
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	442.54	Pharma Corp		I0			Cost Center: 2220001128.0, GL Code: 71243300.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+7540-Cardinal Health 132, LLC	Regular Invoice	936	Pharma Corp		I0			Cost Center: 7540000003.0, GL Code: 71152060.0	"Cost Center: 7540000003.0  
+GL Code: 71152060.0"
+	All Other Charges Payback	141430.5	GSC				P000003679	Cost Center: 7920000192, GL Code: 63110090	"Cost Center: 7920002009.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Regular Invoice	1250.1	TPM		I0			Cost Center: 2140004660.0, GL Code: 63110130.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	11061.26	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71257000.0	"Cost Center: 2220001076.0  
+GL Code: 71243300.0"
+7370-The Harvard Drug Group	Exception to CAP	1682.22	Pharma Corp		I1	103.32		Cost Center: 7370000021.0, GL Code: 71211060.0	"Cost Center: 7370000021.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	4800	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	317.97	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	300	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71152000.0	"Cost Center: 2220001076.0  
+GL Code: 71243300.0"
+2140-CAH 200, LLC	Regular Invoice	1281.84	TPM		I0			Cost Center: 2141000873.0, GL Code: 71214110.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000048.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	2439.18	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	452.63	TPM	Each	I0	0		Cost Center: 2141000214.0, GL Code: 71214020.0	"Cost Center: 2140004522.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	114.09	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001076.0  
+GL Code: 71240020.0"
+2390-CAH 112, LLC	Regular Invoice	176717.01	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71258150.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	95.63	Pharma Corp		I1	5.63		Cost Center: 2220000017.0, GL Code: 71211080.0	"Cost Center: 2220001076.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	1720.23	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Credit Memo	49.75	TPM	RB			P000001017	Cost Center: 2141001980.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110402.0"
+2250-CAH 414, LLC	Exception to CAP	113.99	Pharma Corp		I0			Cost Center: 2250000322.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Regular Invoice	295.94	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	5000	Pharma Corp		I0	0		Cost Center: 1000000067.0, GL Code: 71350000.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	1596.88	Pharma Corp		I0			Cost Center: 2220000184.0, GL Code: 71241020.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2390-CAH 112, LLC	Regular Invoice	1128.48	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71243300.0	"Cost Center: 2390000296.0  
+GL Code: 71240020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	1303.97	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 71110070.0"
+2140-CAH 200, LLC	Regular Invoice	1003.52	TPM		I0			Cost Center: 2142000257.0, GL Code: 71241060.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	5679.67	Pharma Corp		I0			Cost Center: 2220001076.0, GL Code: 71212010.0	"Cost Center: 2220000165.0  
+GL Code: 71251000.0"
+5040-CAH Pharmacy Services LLC	Exception to CAP	64.45	Pharma Corp		I1	4.91		Cost Center: 5040000560.0, GL Code: 71212010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	94.99	Pharma Corp		I0			Cost Center: 7890000007.0, GL Code: 71240020.0	"Cost Center: 7890000007.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Regular Invoice	324.04	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71241020.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	125	TPM		I0			Cost Center: 2141000146.0, GL Code: 71240020.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0		P000000119	Cost Center: 2220000156.0, GL Code: 71241020.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2170-Medicine Shoppe Internat	Regular Invoice	0.6	Pharma Corp		I0	0		Cost Center: 2170000662.0, GL Code: 71310020.0	"Cost Center: 2170000007.0  
+GL Code: 71110070.0"
+2140-CAH 200, LLC	Regular Invoice	753859.55	TPM		I0			Cost Center: 2140004521.0, GL Code: 71511020.0	"Cost Center: 2140004517.0  
+GL Code: 63110090.0"
+7340-Outcomes Incorporated	Exception to CAP	3234.5	Pharma Corp		I0			Cost Center: 7340000001.0, GL Code: 71511020.0	"Cost Center: 7340000001.0  
+GL Code: 71340020.0"
+	Regular Invoice	5249	SAP by Design		I0			Cost Center: 2140003857, GL Code: 71241020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2250-CAH 414, LLC	Exception to CAP	214.16	Pharma Corp		I0			Cost Center: 2250000782.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	99	Pharma Corp		I1			Cost Center: 2220000156.0, GL Code: 71240020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Regular Invoice	55	Pharma Corp		I0			Cost Center: 2250000462.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	167.16	Pharma Corp	EA	I0		P000000216	Cost Center: 5040000003.0, GL Code: 63116010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	217.37	TPM		I1	16.56		Cost Center: 2142000467.0, GL Code: 71241080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	297.49	Pharma Corp	EA	I0		P000000216	Cost Center: 5040000003.0, GL Code: 63116010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	145	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	806.3	Pharma Corp		I0			Cost Center: 2220000028.0, GL Code: 71243250.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2100-CAH 108, LLC	Regular Invoice	11276.06	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+7540-Cardinal Health 132, LLC	Regular Invoice	936	Pharma Corp		I0			Cost Center: 7540000003.0, GL Code: 71152060.0	"Cost Center: 7540000003.0  
+GL Code: 71152060.0"
+2220-CAH 110, LLC	Regular Invoice	105.75	Pharma Corp		I0	0		Cost Center: 2220000058.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71243270.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	95966.19	TPM		I0			Cost Center: 2140004649.0, GL Code: 71214000.0	"Cost Center: 2140004517.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	429.62	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71362080.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2140-CAH 200, LLC	Regular Invoice	300	TPM		I0			Cost Center: 2142000456.0, GL Code: 71150000.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2100-CAH 108, LLC	Regular Invoice	540.78	Pharma Corp		I1	45.78		Cost Center: 2100000384.0, GL Code: 71152090.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	160	Pharma Corp	CS	I0		P000000214	Cost Center: 5040000003.0, GL Code: 51214060.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2390-CAH 112, LLC	Regular Invoice	47366.91	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71258150.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	30950.17	TPM		I0			Cost Center: 2140004517.0, GL Code: 71211110.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	362.81	TPM		I1	32.91		Cost Center: 2142000257.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	150	TPM		I0			Cost Center: 2140004445.0, GL Code: 71362150.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+	Regular Invoice	929.3	SAP by Design		I0			Cost Center: 2141001524, GL Code: 71241020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2140-CAH 200, LLC	Regular Invoice	2284.39	TPM		I1	159.39		Cost Center: 2140004461.0, GL Code: 71320000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	3190	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	86	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	11056.35	TPM		I0	625.85		Cost Center: 2140003680.0, GL Code: 71214020.0	"Cost Center: 2140004522.0  
+GL Code: 71214020.0"
+6090-P4 Healthcare, LLC	Exception to CAP	92.5	Pharma Corp		I0			Cost Center: 6090000007.0, GL Code: 71310000.0	"Cost Center: 6090000007.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	327.65	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71243250.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+	Regular Invoice	3355.64	Ariba		I0			Cost Center: 2141001623, GL Code: 71214020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2140-CAH 200, LLC	Stock PO	88.8	TPM	CT			P000000999	Cost Center: 2141001971.0, GL Code: 63110090.0	"Cost Center: 2141001985.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Credit Memo	1032.71	TPM				P000003481	Cost Center: 2140003692.0, GL Code: 63110090.0	"Cost Center: 2140003763.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Regular Invoice	2454.02	TPM		I0			Cost Center: 2142000258.0, GL Code: 71240000.0	"Cost Center: 2140004517.0  
+GL Code: 71241020.0"
+7980-Ludlow Tech Prod CAD Ltd.	Regular Invoice	3426.75	TPM		I0			Cost Center: 7980000006.0, GL Code: 71310000.0	"Cost Center: 7980000006.0  
+GL Code: 71110080.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000135.0, GL Code: 71243250.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	41.56	Pharma Corp		I0			Cost Center: 2220001078.0, GL Code: 71214000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	5268.2	TPM	EA	I0			Cost Center: 2140003857.0, GL Code: 71241020.0	"Cost Center: 2140004522.0  
+GL Code: 71211000.0"
+2220-CAH 110, LLC	Exception to CAP	9858.25	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71257000.0	"Cost Center: 2220001168.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	376.2	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"{
+  ""Cost Center"": ""C0000002141"",
+  ""GL Code"": ""51113000""
+}"
+2140-CAH 200, LLC	Regular Invoice	649.5	TPM		I1	49.5		Cost Center: 2141001568.0, GL Code: 71214000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+	Regular Invoice	635.5	SAP by Design		I0			Cost Center: 7920000224, GL Code: 7151000	"Cost Center: 2140003857
+
+GL Code: 71241020"
+7980-Ludlow Tech Prod CAD Ltd.	Regular Invoice	3131.24	TPM		I0			Cost Center: 7980000006.0, GL Code: 71214080.0	"Cost Center: 7980000006.0  
+GL Code: 71110080.0"
+2100-CAH 108, LLC	Regular Invoice	1009.2	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71211080.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	2800	Pharma Corp		I0			Cost Center: 1000000751.0, GL Code: 71511020.0	"Cost Center: 1000000734.0  
+GL Code: 71340020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	65.27	Pharma Corp	EA	I0		P000000216	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0
+
+GL Code: 71110070.0"
+2140-CAH 200, LLC	Exception to CAP	1050	TPM		I0			Cost Center: 2140003833.0, GL Code: 71362060.0	"Cost Center: 2142000257.0  
+GL Code: 71240010.0"
+	Regular Invoice	1410	SAP by Design		I0			Cost Center: 2140003857, GL Code: 71241020	"Cost Center: 2140003855
+
+GL Code: 71240010"
+2140-CAH 200, LLC	Credit Memo	1034	TPM				P000001061	Cost Center: 2141001985.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	2085.25	Pharma Corp		I1	2085.25		Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	All Other Charges Payback	82.32	Pharma Corp					Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001168.0  
+GL Code: 71243300.0"
+2250-CAH 414, LLC	Exception to CAP	511	Pharma Corp		I0			Cost Center: 2250001132.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	7888.24	TPM		I1	601.18		Cost Center: 2141001569.0, GL Code: 71362040.0	"Cost Center: 2140004522.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Exception to CAP	115.11	Pharma Corp		I0			Cost Center: 2250000322.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	304.84	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	4798.07	Pharma Corp	USD	I0			Cost Center: 1000000092.0, GL Code: 71511020.0	"Cost Center: 1000000717.0  
+GL Code: 71511020.0"
+2250-CAH 414, LLC	Exception to CAP	1168	Pharma Corp		I0			Cost Center: 2250001197.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	1532.82	TPM		I1	116.82		Cost Center: 2141001412.0, GL Code: 71214020.0	"Cost Center: 2140004527.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Exception to CAP	1460	Pharma Corp		I0			Cost Center: 2250001458.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	971.68	Pharma Corp		I0			Cost Center: 2220000058.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	282.84	Pharma Corp	CSE	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0
+
+GL Code: 63116010.0"
+2100-CAH 108, LLC	Regular Invoice	1406	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	10872.14	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71257000.0	"Cost Center: 2220001076.0  
+GL Code: 71243300.0"
+1000-Cardinal Health, Inc.	Regular Invoice	45000	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000052.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	341.6	TPM		I1	21.6		Cost Center: 2141000476.0, GL Code: 71214130.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+6940-Innovative Therapies, Inc	Exception to CAP	105.93	TPM		I1	6.93	P000003784	Cost Center: 6940000040.0, GL Code: 71310000.0	"Cost Center: 6940000040.0
+GL Code: 71243170.0"
+2140-CAH 200, LLC	Regular Invoice	660.6	TPM		I1			Cost Center: 2141001125.0, GL Code: 71211060.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+	Regular Invoice	602.27	SAP by Design		I0			Cost Center: 2141001524, GL Code: 71241020	"Cost Center: 2140003856
+
+GL Code: 71240010"
+2140-CAH 200, LLC	Credit Memo	630	TPM	RB			P000001006	Cost Center: 2141002001.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110090.0"
+1120-CAH 5, LLC	Regular Invoice	6360.57	Pharma Corp		I1	416.11		Cost Center: 1120000164.0, GL Code: 71362080.0	"Cost Center: 1120000647.0  
+GL Code: 71310010.0"
+7370-The Harvard Drug Group	Exception to CAP	1226.22	Pharma Corp		I1	80.22		Cost Center: 7370000021.0, GL Code: 71211060.0	"Cost Center: 7370000021.0  
+GL Code: 71211060.0"
+2220-CAH 110, LLC	Regular Invoice	1354	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71330010.0	"Cost Center: 2220001076.0  
+GL Code: 71251000.0"
+7370-The Harvard Drug Group	Regular Invoice	220	Pharma Corp		I0			Cost Center: 7370000021.0, GL Code: 71241020.0	"Cost Center: 7370000021.0  
+GL Code: 71211000.0"
+2140-CAH 200, LLC	Regular Invoice	4931.33	TPM		I0			Cost Center: 2141000156.0, GL Code: 71152010.0	"Cost Center: 2140004517.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	1242.88	TPM		I0			Cost Center: 2140004660.0, GL Code: 63110130.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	1029.6	Pharma Corp		I0		P000000208	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2070-Abiliene Nuclear, LLC	Exception to CAP	228.73	Pharma Corp		I0			Cost Center: 2070000002.0, GL Code: 71340010.0	"Cost Center: 2070000002.0  
+GL Code: 71150000.0"
+2140-CAH 200, LLC	Regular Invoice	85	TPM		I0			Cost Center: 2141001582.0, GL Code: 71214130.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	800	Pharma Corp		I0			Cost Center: 2100000396.0, GL Code: 71211060.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Regular Invoice	1208.24	TPM		I0			Cost Center: 2140003694.0, GL Code: 71241020.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	215.91	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	114.42	Pharma Corp		I0	0		Cost Center: 2220000007.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Exception to CAP	172	TPM		I0			Cost Center: 2142000386.0, GL Code: 71243470.0	"Cost Center: 2142000257.0  
+GL Code: 71243270.0"
+2140-CAH 200, LLC	Credit Memo	703.1	TPM				P000001079	Cost Center: 2141001986.0, GL Code: 63110090.0	"Cost Center: 2140004656.0  
+GL Code: 63110402.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+7370-The Harvard Drug Group	Exception to CAP	385.69	Pharma Corp		I1	25.23		Cost Center: 7370000021.0, GL Code: 71214020.0	"Cost Center: 7370000021.0  
+GL Code: 71211000.0"
+2140-CAH 200, LLC	Exception to CAP	135	TPM		I0			Cost Center: 2142000308.0, GL Code: 71243170.0	"Cost Center: 2142000257.0  
+GL Code: 71243170.0"
+7980-Ludlow Tech Prod CAD Ltd.	Regular Invoice	1409.56	TPM		I1	162.16	P000003673	Cost Center: 7980000006.0, GL Code: 71110070.0	"Cost Center: 7980000006.0
+
+GL Code: 71120080.0"
+2140-CAH 200, LLC	Credit Memo	756	TPM	RB	I0			Cost Center: 2141001985.0, GL Code: 63110090.0	"Cost Center: 2141002002.0  
+GL Code: 63110090.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	249.91	Pharma Corp	Case	I0		P000000216	Cost Center: 5040000535.0, GL Code: 63116010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	300	TPM		I0			Cost Center: 2141001358.0, GL Code: 71211060.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	970	Pharma Corp		I0			Cost Center: 2220000223.0, GL Code: 71330010.0	"Cost Center: 2220001076.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	All Other Charges Payback	347.52	TPM				P000003723	Cost Center: 2140004656.0, GL Code: 63110090.0	"Cost Center: 2140004656.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Exception to CAP	98.1	Pharma Corp		I0			Cost Center: 2220000058.0, GL Code: 71243310.0	"Cost Center: 2220001165.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	All Other Charges Payback	106.46	Pharma Corp					Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001168.0  
+GL Code: 71243300.0"
+2140-CAH 200, LLC	Exception to CAP	1750	TPM		I0			Cost Center: 2140003833.0, GL Code: 71362060.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+	Regular Invoice	93.82	Ariba		I0			Cost Center: 2141000370, GL Code: 71213020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2140-CAH 200, LLC	Regular Invoice	200	TPM		I0	0		Cost Center: 2140003731.0, GL Code: 71243000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	6334.18	TPM		I0			Cost Center: 2141000592.0, GL Code: 71211100.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Exception to CAP	177.5	TPM		I0			Cost Center: 2140002325.0, GL Code: 71243470.0	"Cost Center: 2142000257.0  
+GL Code: 71243170.0"
+2060-One Cloverleaf, LLC	Regular Invoice	186.67	Pharma Corp		I0			Cost Center: 2060000938.0, GL Code: 71362080.0	"Cost Center: 2060000934.0  
+GL Code: 71240010.0"
+7520-Cardinal Health 131, LLC	Exception to CAP	4500	Pharma Corp		I0			Cost Center: 7520000002.0, GL Code: 71150000.0	"Cost Center: 7520000001.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	1058.17	TPM		I1			Cost Center: 2141001134.0, GL Code: 71362060.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2250-CAH 414, LLC	Exception to CAP	553.35	Pharma Corp		I0			Cost Center: 2250000362.0, GL Code: 71362050.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+7340-Outcomes Incorporated	Exception to CAP	106.85	Pharma Corp		I0			Cost Center: 7340000001.0, GL Code: 71152080.0	"Cost Center: 7340000001.0  
+GL Code: 71310000.0"
+2140-CAH 200, LLC	Regular Invoice	721.27	TPM		I0	721.27		Cost Center: 2141001412.0, GL Code: 71211060.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	208.22	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	96.71	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+7320-Cordis Corporation	Credit Memo	2468.55	GSC	CS			P000003525	Cost Center: 7320000001, GL Code: 63110090	"Cost Center: 7320000001.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	174	Pharma Corp		I0			Cost Center: 2220000125.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	705	TPM		I0			Cost Center: 2141001568.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	1112.08	Pharma Corp		I0			Cost Center: 2220000114.0, GL Code: 71240010.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	512.05	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113050.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	385	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 71511020.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	72.35	Pharma Corp		I0		P000000210	Cost Center: 5040000003.0, GL Code: 71310010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+1280-CAH 105, Inc.	Regular Invoice	210.44	Pharma Corp		I0			Cost Center: 1280000476.0, GL Code: 71362080.0	"Cost Center: 1280000476.0  
+GL Code: 71240010.0"
+2100-CAH 108, LLC	Regular Invoice	105.75	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000386.0  
+GL Code: 71250000.0"
+7340-Outcomes Incorporated	Exception to CAP	97	Pharma Corp		I0			Cost Center: 7340000001.0, GL Code: 71310010.0	"Cost Center: 7340000001.0  
+GL Code: 71310000.0"
+6940-Innovative Therapies, Inc	Regular Invoice	122.14	TPM		I0			Cost Center: 6940000040.0, GL Code: 71243300.0	"Cost Center: 6940000040.0  
+GL Code: 71243170.0"
+2390-CAH 112, LLC	Regular Invoice	47366.91	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	133.25	TPM		I0			Cost Center: 2142000467.0, GL Code: 71214130.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	227.95	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71251000.0	"Cost Center: 2220001076.0  
+GL Code: 71240020.0"
+2100-CAH 108, LLC	Regular Invoice	1500	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71240010.0	"Cost Center: 2100000384.0  
+GL Code: 71241020.0"
+2280-Beckloff Associates, Inc	Exception to CAP	679.54	Pharma Corp		I0			Cost Center: 2280001172.0, GL Code: 71243030.0	"Cost Center: 2280001170.0  
+GL Code: 71243170.0"
+2140-CAH 200, LLC	Adobe Sign	13025.81	TPM		I0		P000003086	Cost Center: 2140002437.0, GL Code: 21411010.0	"Cost Center: 2140004655.0  
+GL Code: 21411010.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	55.47	Pharma Corp		I0			Cost Center: 7890000010.0, GL Code: 71310010.0	"Cost Center: 7890000001.0
+
+GL Code: 71310050.0"
+2140-CAH 200, LLC	Regular Invoice	88.87	TPM		I0			Cost Center: 2141001330.0, GL Code: 71240000.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2140-CAH 200, LLC	Regular Invoice	378.88	TPM		I1	28.88		Cost Center: 2141001412.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	1178.81	TPM		I1	82.31		Cost Center: 2141001085.0, GL Code: 71211060.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Regular Invoice	121.52	Pharma Corp		I0			Cost Center: 2250000462.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	All Other Charges Payback	50788.88	TPM				P000003726	Cost Center: 2140004657.0, GL Code: 63110090.0	"Cost Center: 2140004655.0  
+GL Code: 63110090.0"
+2390-CAH 112, LLC	Regular Invoice	60458.55	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71257000.0"
+2140-CAH 200, LLC	Regular Invoice	154.28	TPM		I0			Cost Center: 2141001579.0, GL Code: 71256000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	1936.04	Pharma Corp		I0			Cost Center: 1000000097.0, GL Code: 71511020.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Exception to CAP	375	TPM		I0			Cost Center: 2142000308.0, GL Code: 71243170.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	100174.99	Pharma Corp		I0			Cost Center: 1000000751.0, GL Code: 71362080.0	"Cost Center: 1000000752.0  
+GL Code: 71340010.0"
+2140-CAH 200, LLC	Regular Invoice	27	TPM		I0			Cost Center: 2141000214.0, GL Code: 71213020.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+7340-Outcomes Incorporated	Exception to CAP	572.82	Pharma Corp		I1	121.82		Cost Center: 7340000001.0, GL Code: 71330030.0	"Cost Center: 7340000001.0  
+GL Code: 71310000.0"
+2140-CAH 200, LLC	Credit Memo	668.8	TPM				P000003481	Cost Center: 2140003692.0, GL Code: 63110090.0	"Cost Center: 2140003763.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	342.95	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	137.64	TPM		I1	10.2		Cost Center: 2141001412.0, GL Code: 71240020.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	443.52	Pharma Corp		I0		P000000216	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	144.89	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+1000-Cardinal Health, Inc.	All Other Charges Payback	15450	Pharma Corp					Cost Center: 1000000752.0, GL Code: 71330010.0	"Cost Center: 1000000057.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	676.08	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71253000.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2140-CAH 200, LLC	Regular Invoice	40	TPM		I0	0		Cost Center: 2141001235.0, GL Code: 71362080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Exception to CAP	165.87	Pharma Corp		I0			Cost Center: 2220000038.0, GL Code: 71243310.0	"Cost Center: 2220001165.0  
+GL Code: 71243270.0"
+2220-CAH 110, LLC	Regular Invoice	2143.64	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Exception to CAP	307.62	TPM		I0	21.83		Cost Center: 2140000013.0, GL Code: 71240020.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	99.38	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	137.5	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	46620	Pharma Corp		I0			Cost Center: 2220001127.0, GL Code: 71120020.0	"Cost Center: 2220000338.0  
+GL Code: 71251000.0"
+20027-CAH Switzerland 515 GmbH	Credit Memo	1515.5	JDE					Cost Center: MIA, GL Code: USC246.605124.01	"Cost Center: 2000000386.0  
+GL Code: 631144000.0"
+2100-CAH 108, LLC	Regular Invoice	12137.16	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+	Regular Invoice	550	SAP by Design		I0			Cost Center: 2140004626, GL Code: 71320050	"Cost Center: 2140003857
+
+GL Code: 71240010"
+2140-CAH 200, LLC	Regular Invoice	6679.18	TPM		I0			Cost Center: 2141000908.0, GL Code: 71243450.0	"Cost Center: 2140004522.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	105.39	Pharma Corp		I0			Cost Center: 2220000028.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	1025.25	TPM		I1	78.13		Cost Center: 2142000456.0, GL Code: 71362080.0	"Cost Center: 2140004527.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	11873.16	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2100-CAH 108, LLC	Regular Invoice	158.21	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+	All Other Charges Payback	1196.05	Ariba					Cost Center: 1120000647, GL Code: 71362080	"Cost Center: 2140003856
+
+GL Code: 71214020"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	160	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	9899.85	TPM		I1	7.2		Cost Center: 2141001330.0, GL Code: 71240000.0	"Cost Center: 2140004522.0  
+GL Code: 63110090.0"
+2250-CAH 414, LLC	Exception to CAP	330	Pharma Corp		I0			Cost Center: 2250000692.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	438.01	Pharma Corp		I0			Cost Center: 1000000736.0, GL Code: 71243170.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+7340-Outcomes Incorporated	Exception to CAP	949.67	Pharma Corp		I0			Cost Center: 7340000001.0, GL Code: 71310010.0	"Cost Center: 7340000001.0  
+GL Code: 71310000.0"
+2220-CAH 110, LLC	Regular Invoice	112.23	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71241020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	1443.29	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	105.75	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000386.0  
+GL Code: 71250000.0"
+2140-CAH 200, LLC	Regular Invoice	4149.8	TPM		I0			Cost Center: 2140003857.0, GL Code: 71241020.0	"Cost Center: 2140003690.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Credit Memo	230	TPM	EA			P000003481	Cost Center: 2140003692.0, GL Code: 63110090.0	"Cost Center: 2140003697.0  
+GL Code: 63110090.0"
+1120-CAH 5, LLC	Exception to CAP	39105	Pharma Corp		I0			Cost Center: 1120000653.0, GL Code: 71362080.0	"Cost Center: 1120000647.0  
+GL Code: 71340010.0"
+2140-CAH 200, LLC	Exception to CAP	1000	TPM		I0			Cost Center: 2140003833.0, GL Code: 71362060.0	"Cost Center: 2141001560.0  
+GL Code: 71240010.0"
+2250-CAH 414, LLC	Exception to CAP	848	Pharma Corp		I0			Cost Center: 2250000197.0, GL Code: 71362050.0	"Cost Center: 2250001656.0  
+GL Code: 71243170.0"
+2140-CAH 200, LLC	Exception to CAP	150	TPM		I0	0		Cost Center: 2140004445.0, GL Code: 71362150.0	"Cost Center: 2140003763.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Regular Invoice	38.59	Pharma Corp		I0			Cost Center: 2220001164.0, GL Code: 71511020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Regular Invoice	1334	Pharma Corp		I0			Cost Center: 2250000952.0, GL Code: 71362060.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	2410.47	Pharma Corp		I0			Cost Center: 1000000063.0, GL Code: 71362080.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+2250-CAH 414, LLC	Exception to CAP	73	Pharma Corp		I0			Cost Center: 2250001217.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Regular Invoice	3497.03	Pharma Corp		I0			Cost Center: 2220000953.0, GL Code: 71243030.0	"Cost Center: 2220001076.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Regular Invoice	123.83	TPM		I1	10.33		Cost Center: 2141000130.0, GL Code: 71241020.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Regular Invoice	3236.94	Pharma Corp		I1	191.94		Cost Center: 2250001584.0, GL Code: 71212000.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Exception to CAP	1.6	TPM		I0	0.12		Cost Center: 2141001598.0, GL Code: 71310020.0	"Cost Center: 2142000257.0  
+GL Code: 71243170.0"
+2390-CAH 112, LLC	Regular Invoice	52866.91	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	256	Pharma Corp		I0			Cost Center: 2220000028.0, GL Code: 71243250.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+6940-Innovative Therapies, Inc	Exception to CAP	189.74	TPM		I0		P000003784	Cost Center: 6940000040.0, GL Code: 71243300.0	"Cost Center: 6940000040.0
+
+GL Code: 71243170.0"
+2090-CAH 107, LLC	Regular Invoice	7227	Pharma Corp		I0			Cost Center: 2090000324.0, GL Code: 71310000.0	"Cost Center: 2090000325.0  
+GL Code: 71320050.0"
+2220-CAH 110, LLC	Regular Invoice	15035.32	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71258150.0	"Cost Center: 2220000166.0  
+GL Code: 71241020.0"
+7320-Cordis Corporation	Credit Memo	1012	GSC	CS			7320000001	Cost Center: P000003525, GL Code: 63110090	"Cost Center: 7320000001.0
+
+GL Code: 63110090.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	227.64	Pharma Corp	EA	I0		P000000208	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0
+
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	12.5	Pharma Corp		I0			Cost Center: 2220001076.0, GL Code: 71511020.0	"Cost Center: 2220001076.0  
+GL Code: 71243270.0"
+2220-CAH 110, LLC	Regular Invoice	427.05	Pharma Corp		I0			Cost Center: 2220001128.0, GL Code: 71243300.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	270	Pharma Corp		I1	20		Cost Center: 2220000007.0, GL Code: 71240010.0	"Cost Center: 2220001076.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	1018.68	TPM		I0			Cost Center: 2141001582.0, GL Code: 71214130.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Exception to CAP	805.44	Pharma Corp		I0			Cost Center: 2220000058.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	184.28	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Exception to CAP	4000	TPM		I0			Cost Center: 2140004445.0, GL Code: 71362150.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2280-Beckloff Associates, Inc	Exception to CAP	608.09	Pharma Corp		I0			Cost Center: 2280001129.0, GL Code: 71362080.0	"Cost Center: 2280001170.0  
+GL Code: 71211060.0"
+2140-CAH 200, LLC	Regular Invoice	426.99	TPM		I0			Cost Center: 2140004631.0, GL Code: 71320040.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+8290-mscripts, LLC	Exception to CAP	250	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71362080.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+8290-mscripts, LLC	Exception to CAP	1899.07	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71241000.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	1614.92	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001168.0  
+GL Code: 71214020.0"
+7900-KPR US, LLC	Regular Invoice	155.59	TPM		I1	9.5		Cost Center: 7900000014.0, GL Code: 71214080.0	"Cost Center: 7900000296.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Exception to CAP	761.5	TPM		I1	53.15		Cost Center: 2140003661.0, GL Code: 71362080.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+6820-Sonexus Health, LLC	Regular Invoice	13200	Pharma Corp		I1			Cost Center: 6820000012.0, GL Code: 71362080.0	"Cost Center: 6820000001.0  
+GL Code: 71110070.0"
+2220-CAH 110, LLC	Regular Invoice	386.6	Pharma Corp		I0			Cost Center: 2220001128.0, GL Code: 71243300.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	253.24	Pharma Corp		I0			Cost Center: 7890000001.0, GL Code: 71362050.0	"Cost Center: 7890000001.0
+
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Adobe Sign	1288.46	TPM		I0		P000003278	Cost Center: 2140003588.0, GL Code: 21411010.0	"Cost Center: 2140004654.0  
+GL Code: 6311402000.0"
+7340-Outcomes Incorporated	Exception to CAP	4799.28	Pharma Corp		I0	149.96		Cost Center: 7340000003.0, GL Code: 71310020.0	"Cost Center: 7340000001.0  
+GL Code: 71310000.0"
+2140-CAH 200, LLC	Regular Invoice	17832	TPM		I0			Cost Center: 2141002203.0, GL Code: 71243270.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	149.05	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Exception to CAP	100	Pharma Corp		I0			Cost Center: 2250000592.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+	Regular Invoice	2177.28	SAP by Design		I0			Cost Center: 2140003857, GL Code: 71241020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2100-CAH 108, LLC	Regular Invoice	325.66	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2390-CAH 112, LLC	Regular Invoice	247.97	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71241020.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Credit Memo	172	TPM	CA			P000000961	Cost Center: 2141001978.0, GL Code: 71240000.0	"Cost Center: 2141001985.0  
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Exception to CAP	3326.02	TPM		I0		P000003272	Cost Center: 2140002164.0, GL Code: 21411010.0	"Cost Center: 2140004523.0  
+GL Code: 71240020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	9263.13	Pharma Corp		I0			Cost Center: 1000000059.0, GL Code: 71362080.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	945.4	Pharma Corp	EA	I0		P000001094	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2100-CAH 108, LLC	Regular Invoice	74450.63	Pharma Corp		I0			Cost Center: 2100000396.0, GL Code: 71211060.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Credit Memo	2326.5	TPM	RB				Cost Center: 2141002055.0, GL Code: 63110090.0	"Cost Center: 2141001560.0  
+GL Code: 63110130.0"
+2220-CAH 110, LLC	Regular Invoice	105.75	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	124.49	TPM		I1	9.49		Cost Center: 2141001569.0, GL Code: 71362100.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	13085.19	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71241020.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	1413.6	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	52.09	TPM		I0			Cost Center: 2141000593.0, GL Code: 71252000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2390-CAH 112, LLC	Regular Invoice	50749.51	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2250-CAH 414, LLC	Exception to CAP	60	Pharma Corp		I0			Cost Center: 2250001542.0, GL Code: 71310000.0	"Cost Center: 2250001656.0  
+GL Code: 71243170.0"
+1000-Cardinal Health, Inc.	Regular Invoice	2410.47	Pharma Corp		I0			Cost Center: 1000000063.0, GL Code: 71362080.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	234.2	TPM		I1	17.84		Cost Center: 2142000467.0, GL Code: 71241080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	3719.65	TPM		I1	335.07		Cost Center: 2141000523.0, GL Code: 71340010.0	"Cost Center: 2140004527.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	202.36	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71251000.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	177.12	Pharma Corp	A	I0		P000000208	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2420-CAH 418, Inc	Exception to CAP	221.86	Pharma Corp		I0			Cost Center: 2420000002.0, GL Code: 71211070.0	"Cost Center: 2420000002.0  
+GL Code: 71211060.0"
+2220-CAH 110, LLC	Regular Invoice	2500	Pharma Corp		I0			Cost Center: 2220000427.0, GL Code: 71320030.0	"Cost Center: 2220001076.0  
+GL Code: 71251000.0"
+2250-CAH 414, LLC	Exception to CAP	1548	Pharma Corp		I0			Cost Center: 2250000852.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	1075	Pharma Corp		I1	18.75		Cost Center: 1000000057.0, GL Code: 71211060.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	7.62	TPM		I1	0.63		Cost Center: 2140004527.0, GL Code: 71241020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+7320-Cordis Corporation	Credit Memo	1012	GSC	CS			7320000001	Cost Center: P000003525, GL Code: 63110090	"Cost Center: 7320000001.0
+
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Regular Invoice	112.44	TPM		I1	2.56		Cost Center: 2142000257.0, GL Code: 71362080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Utilities	505.86	TPM		I0	0		Cost Center: 2141001235.0, GL Code: 71240010.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	14963	TPM		I0			Cost Center: 2141002203.0, GL Code: 71243270.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	161.66	TPM		I1	5.86		Cost Center: 2141000251.0, GL Code: 71214020.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	574.03	Pharma Corp		I0			Cost Center: 2220001127.0, GL Code: 71310020.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	168000	Pharma Corp		I0			Cost Center: 1000000751.0, GL Code: 71362080.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Regular Invoice	332.8	TPM		I1			Cost Center: 2141000209.0, GL Code: 71241110.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2100-CAH 108, LLC	Regular Invoice	213.2	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71241020.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	23164.46	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71258150.0	"Cost Center: 2220000338.0  
+GL Code: 71251000.0"
+2220-CAH 110, LLC	Regular Invoice	6392.48	Pharma Corp		I1	328.9		Cost Center: 2220000017.0, GL Code: 71240020.0	"Cost Center: 2220001076.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	147.1	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Exception to CAP	127.32	Pharma Corp		I0			Cost Center: 2250001446.0, GL Code: 71310000.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+6820-Sonexus Health, LLC	Regular Invoice	565.21	Pharma Corp		I1			Cost Center: 6820000017.0, GL Code: 71243170.0	"Cost Center: 6820000001.0  
+GL Code: 71511020.0"
+2140-CAH 200, LLC	Regular Invoice	1351311.94	TPM		I0			Cost Center: 2140004517.0, GL Code: 71511020.0	"Cost Center: 2140004517.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	105.75	Pharma Corp		I0			Cost Center: 2220001127.0, GL Code: 71310020.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Exception to CAP	553.35	Pharma Corp		I0			Cost Center: 2250000362.0, GL Code: 71362050.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+7320-Cordis Corporation	Credit Memo	2468.55	GSC	CS			P000003525	Cost Center: 7320000001, GL Code: 63110090	"Cost Center: 7320000001.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	17513.47	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71258150.0	"Cost Center: 2220000166.0  
+GL Code: 71243300.0"
+	Adobe Sign	1215.05	SAP by Design		I0	0	P000000385	Cost Center: 0, GL Code: 21411010	"Cost Center: 7920000226.0  
+GL Code: 71241020.0"
+6830-Sonexus Health APS, LLC	Regular Invoice	1983.4	Pharma Corp		I0	122.8		Cost Center: 6830000002.0, GL Code: 71340020.0	"Cost Center: 6830000001.0  
+GL Code: 71110070.0"
+2140-CAH 200, LLC	Regular Invoice	551.25	TPM		I0	0		Cost Center: 2140003731.0, GL Code: 71243000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Credit Memo	377.81	TPM	EA			P000001061	Cost Center: 2141001985.0, GL Code: 63110090.0	"Cost Center: 2141001985.0  
+GL Code: 63110090.0"
+	All Other Charges Payback	163382.4	GSC				P00003679	Cost Center: 7920000192, GL Code: 63110090	"Cost Center: 7900000183.0  
+GL Code: 63110090.0"
+2100-CAH 108, LLC	Exception to CAP	8166.42	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71211060.0"
+2140-CAH 200, LLC	Regular Invoice	4494	TPM		I0			Cost Center: 2140004519.0, GL Code: 71511020.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+7370-The Harvard Drug Group	Exception to CAP	284.78	Pharma Corp		I1	18.63		Cost Center: 7370000021.0, GL Code: 71211060.0	"Cost Center: 7370000021.0
+
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Exception to CAP	3500	Pharma Corp		I0			Cost Center: 2250001436.0, GL Code: 71362060.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+7340-Outcomes Incorporated	Exception to CAP	3531	Pharma Corp		I0			Cost Center: 7340000001.0, GL Code: 71511020.0	"Cost Center: 7340000001.0  
+GL Code: 71211060.0"
+2100-CAH 108, LLC	Regular Invoice	9087.28	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71211080.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2220-CAH 110, LLC	Exception to CAP	107.69	Pharma Corp		I0			Cost Center: 2220000038.0, GL Code: 71243310.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	269.77	Pharma Corp		I0			Cost Center: 7890000010.0, GL Code: 71310010.0	"Cost Center: 7890000001.0
+
+GL Code: 71241020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	1222.98	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+1000-Cardinal Health, Inc.	Regular Invoice	74224.9	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000714.0  
+GL Code: 71340020.0"
+1280-CAH 105, Inc.	Regular Invoice	2814.89	Pharma Corp		I0			Cost Center: 1280000476.0, GL Code: 71511020.0	"Cost Center: 1280000476.0  
+GL Code: 71240010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	600	Pharma Corp	EA	I0		P000000205	Cost Center: 5040000003.0, GL Code: 71110070.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	137.5	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	121.6	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	1066.2	Pharma Corp	CSE	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Credit Memo	168.09	TPM				P000000940	Cost Center: 2141002060.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110090.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	137.5	Pharma Corp	A	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	7136.55	TPM		I0			Cost Center: 2141000529.0, GL Code: 71243450.0	"Cost Center: 2140004516.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	300.19	Pharma Corp		I0			Cost Center: 2220000506.0, GL Code: 71310000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2220-CAH 110, LLC	Regular Invoice	1544.4	Pharma Corp		I0			Cost Center: 2220001076.0, GL Code: 71214000.0	"Cost Center: 2220001168.0  
+GL Code: 71243270.0"
+2250-CAH 414, LLC	Exception to CAP	238.14	Pharma Corp		I0			Cost Center: 2250000342.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	2135.77	TPM		I1	162.77		Cost Center: 2141001412.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+7900-KPR US, LLC	Regular Invoice	936.19	TPM		I0			Cost Center: 7900000008.0, GL Code: 71214080.0	"Cost Center: 7900000290.0  
+GL Code: 71241020.0"
+8290-mscripts, LLC	Exception to CAP	15840	Pharma Corp		I0			Cost Center: 8290000015.0, GL Code: 71110070.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000135.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	333.12	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2140-CAH 200, LLC	Regular Invoice	1438.15	TPM		I0			Cost Center: 2142000456.0, GL Code: 71240020.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+7900-KPR US, LLC	All Other Charges Payback	525	TPM					Cost Center: 7900000190.0, GL Code: 71362080.0	"Cost Center: 7900000160.0  
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Regular Invoice	55.26	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001076.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000135.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2060-One Cloverleaf, LLC	Regular Invoice	453.99	Pharma Corp		I0			Cost Center: 2060000938.0, GL Code: 71362080.0	"Cost Center: 2060000952.0  
+GL Code: 71241020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	10880	Pharma Corp		I0			Cost Center: 1000000751.0, GL Code: 71362080.0	"Cost Center: 1000000092.0  
+GL Code: 71340010.0"
+2140-CAH 200, LLC	Regular Invoice	1187.41	TPM		I1	7.71		Cost Center: 2141000119.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+1120-CAH 5, LLC	Regular Invoice	18750	Pharma Corp		I0			Cost Center: 1120000647.0, GL Code: 71152030.0	"Cost Center: 1120000647.0  
+GL Code: 71320030.0"
+2140-CAH 200, LLC	Exception to CAP	276.04	TPM		I0			Cost Center: 2142000317.0, GL Code: 71211070.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	103.14	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Credit Memo	1136.62	TPM		I0			Cost Center: 2141001568.0, GL Code: 71214130.0	"Cost Center: 2141001995.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	270	Pharma Corp		I1	20		Cost Center: 2220000007.0, GL Code: 71240010.0	"Cost Center: 2220001076.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	1436.88	Pharma Corp	EA	I0		P000000205	Cost Center: 5040000003.0, GL Code: 63116010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	15283.21	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71257000.0	"Cost Center: 2220000338.0  
+GL Code: 71251000.0"
+1000-Cardinal Health, Inc.	Regular Invoice	20923.68	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+7890-A+ Secure Packaging, LLC	Exception to CAP	152.69	Pharma Corp		I0			Cost Center: 7890000010.0, GL Code: 71310010.0	"Cost Center: 7890000001.0  
+GL Code: 71310000.0"
+2100-CAH 108, LLC	Regular Invoice	122.02	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2390-CAH 112, LLC	Regular Invoice	40228.11	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	200.07	TPM		I1	14.82		Cost Center: 2141001412.0, GL Code: 71240020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	540.78	Pharma Corp		I1	45.78		Cost Center: 2100000384.0, GL Code: 71152090.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+2140-CAH 200, LLC	Credit Memo	1964.6	TPM					Cost Center: 2141001995.0, GL Code: 63110090.0	"Cost Center: 2140003763.0  
+GL Code: 63110130.0"
+6090-P4 Healthcare, LLC	Exception to CAP	129.73	Pharma Corp		I0			Cost Center: 6090000007.0, GL Code: 71310000.0	"Cost Center: 6090000007.0  
+GL Code: 71340020.0"
+2250-CAH 414, LLC	Regular Invoice	4076	Pharma Corp		I0			Cost Center: 2250000952.0, GL Code: 71362060.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+7900-KPR US, LLC	Credit Memo	592.6	TPM					Cost Center: 7900000165.0, GL Code: 71241010.0	"Cost Center: 7900000296.0  
+GL Code: 71214020.0"
+7900-KPR US, LLC	Regular Invoice	24.99	TPM		I0	0		Cost Center: 7900000294.0, GL Code: 71241070.0	"Cost Center: 7900000296.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	186.2	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+	Regular Invoice	5249	SAP by Design		I0			Cost Center: 2140003857, GL Code: 71241020	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2140-CAH 200, LLC	Regular Invoice	169.74	TPM		I0			Cost Center: 2141000251.0, GL Code: 71240020.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2140-CAH 200, LLC	Regular Invoice	99.78	TPM		I0			Cost Center: 2141000370.0, GL Code: 71213020.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Regular Invoice	250.84	Pharma Corp		I0	0		Cost Center: 2220000007.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	165	Pharma Corp	EA	I0		P000000216	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2100-CAH 108, LLC	Regular Invoice	145.35	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71250000.0"
+2140-CAH 200, LLC	Regular Invoice	47.91	TPM		I1	2.91		Cost Center: 2140004527.0, GL Code: 71213000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	332.19	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	8826.97	TPM		I1	672.73		Cost Center: 2141001569.0, GL Code: 71362040.0	"Cost Center: 2140004522.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Exception to CAP	249.94	Pharma Corp		I0			Cost Center: 2250001656.0, GL Code: 71362100.0	"Cost Center: 2250001656.0  
+GL Code: 71240010.0"
+2140-CAH 200, LLC	Exception to CAP	2727.9	TPM		I1	121.86		Cost Center: 2140004523.0, GL Code: 71241110.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+2250-CAH 414, LLC	Regular Invoice	550	Pharma Corp		I0			Cost Center: 2250000952.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+7900-KPR US, LLC	Regular Invoice	99	TPM		I0			Cost Center: 7900000294.0, GL Code: 71214130.0	"Cost Center: 7900000290.0  
+GL Code: 71241020.0"
+7900-KPR US, LLC	Credit Memo	224.46	TPM	EA			P000003668	Cost Center: 7900000241.0, GL Code: 63110480.0	"Cost Center: 7900000296.0  
+GL Code: 63114050.0"
+2140-CAH 200, LLC	Regular Invoice	252	TPM		I0			Cost Center: 2141001356.0, GL Code: 71211060.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	109.6	Pharma Corp	EA	I0		P000000208	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+	Ariba Credit Memo	90	Ariba		I1			Cost Center: 2141000866, GL Code: 71240020	"Cost Center: 2141001546
+
+GL Code: 71214020"
+2220-CAH 110, LLC	Regular Invoice	199.82	Pharma Corp		I1			Cost Center: 2220000135.0, GL Code: 71362080.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	772.5	TPM		I0			Cost Center: 2140003857.0, GL Code: 71241020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	3312.2	TPM		I0			Cost Center: 2141000791.0, GL Code: 71213020.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	4036.05	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71251000.0	"Cost Center: 2220001168.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Regular Invoice	881.6	TPM		I0			Cost Center: 2140004700.0, GL Code: 71362080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	186.06	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+2100-CAH 108, LLC	Regular Invoice	1259.67	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71152100.0	"Cost Center: 2100000384.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	217.37	TPM		I1	16.56		Cost Center: 2142000467.0, GL Code: 71241080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+6940-Innovative Therapies, Inc	Exception to CAP	640.86	TPM		I0			Cost Center: 6940000040.0, GL Code: 71212000.0	"Cost Center: 6940000040.0
+
+GL Code: 71243170.0"
+2220-CAH 110, LLC	Exception to CAP	9858.25	Pharma Corp		I0			Cost Center: 2220000068.0, GL Code: 71257000.0	"Cost Center: 2220001168.0  
+GL Code: 71214020.0"
+7320-Cordis Corporation	Credit Memo	1012	GSC	CS			7320000001	Cost Center: P000003525, GL Code: 63110090	"Cost Center: 7320000001.0
+
+GL Code: 63110090.0"
+2140-CAH 200, LLC	Regular Invoice	462.64	TPM		I1	34.27		Cost Center: 2141001412.0, GL Code: 71214020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	2099.07	TPM	EA	I0	0		Cost Center: 2141000776.0, GL Code: 71213020.0	"Cost Center: 2140004522.0  
+GL Code: 71211060.0"
+2220-CAH 110, LLC	Exception to CAP	8000	Pharma Corp		I0			Cost Center: 2220001152.0, GL Code: 71340020.0	"Cost Center: 2220001076.0  
+GL Code: 71340010.0"
+2140-CAH 200, LLC	Credit Memo	91.2	TPM		I0			Cost Center: 2140003724.0, GL Code: 71241110.0	"Cost Center: 2142000257.0  
+GL Code: 63110090.0"
+2220-CAH 110, LLC	Regular Invoice	5679.88	Pharma Corp		I0			Cost Center: 2220001076.0, GL Code: 71212010.0	"Cost Center: 2220000165.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Utilities	1881.51	TPM		I1	8.25		Cost Center: 2141001235.0, GL Code: 71213020.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	47.91	TPM		I1	2.91		Cost Center: 2140004527.0, GL Code: 71213000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	356.83	Pharma Corp		I0		P000000216	Cost Center: 5040000003.0, GL Code: 71310010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	113.1	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+1280-CAH 105, Inc.	Regular Invoice	2760	Pharma Corp		I0			Cost Center: 1280000476.0, GL Code: 71214030.0	"Cost Center: 1280000652.0  
+GL Code: 71340020.0"
+	Credit Memo	1304.68	BPCS					Cost Center: 7900000245, GL Code: 63110090	"Cost Center: 2140003857
+
+GL Code: 71243170"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	243.62	Pharma Corp		I0		P000000216	Cost Center: 5040000003.0, GL Code: 63116010.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2250-CAH 414, LLC	Exception to CAP	3445	Pharma Corp		I0			Cost Center: 2250000637.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	761.5	TPM		I0			Cost Center: 2140003661.0, GL Code: 71362080.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	258.53	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001076.0  
+GL Code: 71240020.0"
+2100-CAH 108, LLC	Regular Invoice	133	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71241020.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+2140-CAH 200, LLC	Regular Invoice	1965.64	TPM		I0			Cost Center: 2142000245.0, GL Code: 71362080.0	"Cost Center: 2140004522.0  
+GL Code: 71240010.0"
+2100-CAH 108, LLC	Regular Invoice	4996.34	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2220-CAH 110, LLC	Regular Invoice	203.15	Pharma Corp		I0			Cost Center: 2220000146.0, GL Code: 71241020.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	177.72	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+7900-KPR US, LLC	Credit Memo	135574.6	TPM					Cost Center: 7900000237.0, GL Code: 63110090.0	"Cost Center: 7900000296.0  
+GL Code: 71241020.0"
+6860-Sonexus Health Ph Sv, LLC	Regular Invoice	724.19	Pharma Corp		I0	55.19		Cost Center: 6860000001.0, GL Code: 71340010.0	"Cost Center: 6860000001.0  
+GL Code: 71214020.0"
+2390-CAH 112, LLC	Regular Invoice	47366.91	Pharma Corp		I0			Cost Center: 2390000296.0, GL Code: 71257000.0	"Cost Center: 2390000296.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Regular Invoice	456.58	TPM		I1	2.33		Cost Center: 2140004527.0, GL Code: 71240020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	All Other Charges Payback	806.25	Pharma Corp					Cost Center: 1000000752.0, GL Code: 71362060.0	"Cost Center: 1000000752.0  
+GL Code: 71310000.0"
+2140-CAH 200, LLC	Credit Memo	1624	TPM	EA			P000003481	Cost Center: 2140003692.0, GL Code: 63110090.0	"Cost Center: 2140003763.0  
+GL Code: 63110090.0"
+	Regular Invoice	23850	SAP by Design	EA	I0			Cost Center: 7920000019, GL Code: 71243300	"Cost Center: 2140003857
+
+GL Code: 71241020"
+2220-CAH 110, LLC	Regular Invoice	3726.89	Pharma Corp		I0			Cost Center: 2220000953.0, GL Code: 71241020.0	"Cost Center: 2220001168.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	2436.95	TPM		I0			Cost Center: 2140004527.0, GL Code: 71211080.0	"Cost Center: 2140004516.0  
+GL Code: 71240010.0"
+2220-CAH 110, LLC	Regular Invoice	625.59	Pharma Corp		I0			Cost Center: 2220001128.0, GL Code: 71243300.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2250-CAH 414, LLC	Exception to CAP	20	Pharma Corp		I0			Cost Center: 2250001656.0, GL Code: 71362100.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	75	Pharma Corp	Each	I0		P000000205	Cost Center: 5040000003.0, GL Code: 71110070.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+2220-CAH 110, LLC	Regular Invoice	202.36	Pharma Corp		I0			Cost Center: 2220000088.0, GL Code: 71251000.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+7370-The Harvard Drug Group	Exception to CAP	169.34	Pharma Corp		I1	11.07		Cost Center: 7370000021.0, GL Code: 71211060.0	"Cost Center: 7370000021.0
+
+GL Code: 71214020.0"
+6860-Sonexus Health Ph Sv, LLC	Regular Invoice	434.35	Pharma Corp		I0	33.11		Cost Center: 6860000001.0, GL Code: 71211060.0	"Cost Center: 6860000001.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	92.44	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	47.91	TPM		I1	2.91		Cost Center: 2140004527.0, GL Code: 71213000.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	209.46	TPM		I1	17.47		Cost Center: 2141000130.0, GL Code: 71241020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Regular Invoice	2312.29	Pharma Corp		I0			Cost Center: 2100000407.0, GL Code: 71212000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2100-CAH 108, LLC	Regular Invoice	763.37	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71251000.0"
+2140-CAH 200, LLC	Regular Invoice	1663.16	TPM		I1	75.84		Cost Center: 2140004527.0, GL Code: 71241020.0	"Cost Center: 2140004527.0  
+GL Code: 71214020.0"
+2100-CAH 108, LLC	Exception to CAP	126.03	Pharma Corp		I0			Cost Center: 2100000672.0, GL Code: 71211000.0	"Cost Center: 2100000384.0  
+GL Code: 71250000.0"
+2140-CAH 200, LLC	Regular Invoice	332.8	TPM		I1	332.8		Cost Center: 2141000209.0, GL Code: 71241110.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Regular Invoice	119	TPM		I0			Cost Center: 2141000251.0, GL Code: 71240020.0	"Cost Center: 2141001412.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	98.1	Pharma Corp		I0			Cost Center: 2220000166.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2100-CAH 108, LLC	Regular Invoice	445	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71251000.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+2250-CAH 414, LLC	Exception to CAP	1442	Pharma Corp		I0			Cost Center: 2250001192.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	838.5	Pharma Corp		I1	58.5		Cost Center: 1000000736.0, GL Code: 71340020.0	"Cost Center: 1000000736.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	11296.67	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71257000.0	"Cost Center: 2220000338.0  
+GL Code: 71251000.0"
+6940-Innovative Therapies, Inc	Regular Invoice	436.08	TPM		I1	28.53		Cost Center: 6940000040.0, GL Code: 71210000.0	"Cost Center: 6940000040.0  
+GL Code: 71211060.0"
+2140-CAH 200, LLC	Exception to CAP	219	TPM		I0			Cost Center: 2142000386.0, GL Code: 71243470.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2100-CAH 108, LLC	Regular Invoice	438.97	Pharma Corp		I0			Cost Center: 2100000384.0, GL Code: 71211080.0	"Cost Center: 2100000384.0  
+GL Code: 71250000.0"
+2220-CAH 110, LLC	Regular Invoice	341.32	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71253000.0	"Cost Center: 2220001076.0  
+GL Code: 71211060.0"
+2280-Beckloff Associates, Inc	Exception to CAP	29.58	Pharma Corp		I0			Cost Center: 2280001129.0, GL Code: 71212000.0	"Cost Center: 2280001170.0  
+GL Code: 71243170.0"
+2140-CAH 200, LLC	Regular Invoice	16551	TPM		I0	0		Cost Center: 2140003898.0, GL Code: 71152090.0	"Cost Center: 2140004522.0  
+GL Code: 71241020.0"
+2140-CAH 200, LLC	Exception to CAP	2727.9	TPM		I1	86.62		Cost Center: 2142000308.0, GL Code: 71511020.0	"Cost Center: 2142000257.0  
+GL Code: 71214020.0"
+	Credit Memo	75.48	Ariba		I1			Cost Center: 2141000866, GL Code: 71240020	"Cost Center: 2140003857
+
+GL Code: 71240020"
+2140-CAH 200, LLC	Regular Invoice	4.19	TPM		I0			Cost Center: 2140003671.0, GL Code: 71511060.0	"Cost Center: 2142000257.0  
+GL Code: 71240020.0"
+2220-CAH 110, LLC	Exception to CAP	958	Pharma Corp		I0			Cost Center: 2220001155.0, GL Code: 63114050.0	"Cost Center: 2220001165.0  
+GL Code: 71211060.0"
+7900-KPR US, LLC	Regular Invoice	475	TPM		I0			Cost Center: 7900000240.0, GL Code: 71241010.0	"Cost Center: 7900000290.0  
+GL Code: 71241020.0"
+2220-CAH 110, LLC	Regular Invoice	5405.11	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71258030.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2170-Medicine Shoppe Internat	Regular Invoice	404.2	Pharma Corp		I0	0		Cost Center: 2170000662.0, GL Code: 71243010.0	"Cost Center: 2170000656.0  
+GL Code: 71120080.0"
+1120-CAH 5, LLC	Regular Invoice	10.71	Pharma Corp		I0			Cost Center: 1120000647.0, GL Code: 71152030.0	"Cost Center: 1120000647.0  
+GL Code: 71310000.0"
+2220-CAH 110, LLC	Regular Invoice	17656.2	Pharma Corp		I0			Cost Center: 2220000338.0, GL Code: 71258150.0	"Cost Center: 2220001076.0  
+GL Code: 71243300.0"
+2220-CAH 110, LLC	Regular Invoice	684.51	Pharma Corp		I0			Cost Center: 2220001165.0, GL Code: 71214020.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2140-CAH 200, LLC	Regular Invoice	196.83	TPM		I1	14.58		Cost Center: 2141001412.0, GL Code: 71240020.0	"Cost Center: 2141001560.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	370.45	Pharma Corp		I0			Cost Center: 2220000048.0, GL Code: 71243270.0	"Cost Center: 2220001168.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Exception to CAP	438	Pharma Corp		I0			Cost Center: 2250001464.0, GL Code: 71362120.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+6830-Sonexus Health APS, LLC	Regular Invoice	5811.7	Pharma Corp		I1			Cost Center: 6830000001.0, GL Code: 71340010.0	"Cost Center: 6830000001.0  
+GL Code: 71110070.0"
+2250-CAH 414, LLC	Regular Invoice	288.44	Pharma Corp		I1	4.48		Cost Center: 2250000066.0, GL Code: 71362060.0	"Cost Center: 2250001656.0  
+GL Code: 71214020.0"
+2220-CAH 110, LLC	Regular Invoice	568.89	Pharma Corp		I0			Cost Center: 2220000309.0, GL Code: 71320070.0	"Cost Center: 2220001165.0  
+GL Code: 71214020.0"
+1000-Cardinal Health, Inc.	Regular Invoice	2648.6	Pharma Corp		I0			Cost Center: 1000000092.0, GL Code: 71511020.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+2140-CAH 200, LLC	Credit Memo	87.57	TPM				P000001079	Cost Center: 2141001986.0, GL Code: 63110090.0	"Cost Center: 2141001987.0  
+GL Code: 63110090.0"
+8290-mscripts, LLC	Exception to CAP	6000	Pharma Corp		I0			Cost Center: 8290000011.0, GL Code: 71340010.0	"Cost Center: 8290000011.0  
+GL Code: 71340020.0"
+2220-CAH 110, LLC	Regular Invoice	105.71	Pharma Corp		I0			Cost Center: 2220000048.0, GL Code: 71243270.0	"Cost Center: 2220001165.0  
+GL Code: 71253000.0"
+	Regular Invoice	105	SAP by Design		I0			Cost Center: 2140004541, GL Code: 71243090	"Cost Center: 2140003856
+
+GL Code: 71240010"
+2220-CAH 110, LLC	Regular Invoice	820.86	Pharma Corp		I0	0		Cost Center: 2220000007.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71214020.0"
+2140-CAH 200, LLC	Credit Memo	103.4	TPM				P000001085	Cost Center: 2141002091.0, GL Code: 63110090.0	"Cost Center: 2141001985.0  
+GL Code: 63110090.0"
+1000-Cardinal Health, Inc.	Regular Invoice	1413.6	Pharma Corp		I0			Cost Center: 1000000717.0, GL Code: 71120080.0	"Cost Center: 1000000752.0  
+GL Code: 71340020.0"
+2100-CAH 108, LLC	Regular Invoice	224.66	Pharma Corp		I0			Cost Center: 2100000386.0, GL Code: 71250000.0	"Cost Center: 2100000384.0  
+GL Code: 71240010.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	360	Pharma Corp	EA	I0		P000000210	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 63116010.0"
+1280-CAH 105, Inc.	Adobe Sign	5998	Pharma Corp		I0			Cost Center: 1280000463.0, GL Code: 71310010.0	"Cost Center: 1280000652.0  
+GL Code: 71340020.0"
+7370-The Harvard Drug Group	Exception to CAP	2361.65	Pharma Corp		I1	112.19		Cost Center: 7370000021.0, GL Code: 71211060.0	"Cost Center: 7370000021.0  
+GL Code: 71211060.0"
+2220-CAH 110, LLC	Regular Invoice	2887.02	Pharma Corp		I0			Cost Center: 2220001128.0, GL Code: 71243300.0	"Cost Center: 2220001168.0  
+GL Code: 71251000.0"
+2220-CAH 110, LLC	Regular Invoice	150.57	Pharma Corp		I0			Cost Center: 2220000028.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71253000.0"
+2250-CAH 414, LLC	Regular Invoice	330	Pharma Corp		I0			Cost Center: 2250001446.0, GL Code: 71214020.0	"Cost Center: 2250001656.0  
+GL Code: 71241020.0"
+6820-Sonexus Health, LLC	Exception to CAP	1169.1	Pharma Corp		I0	89.1		Cost Center: 6820000017.0, GL Code: 71362040.0	"Cost Center: 6820000001.0  
+GL Code: 71310000.0"
+2220-CAH 110, LLC	Regular Invoice	106.26	Pharma Corp		I0			Cost Center: 2220000028.0, GL Code: 71243270.0	"Cost Center: 2220001076.0  
+GL Code: 71243270.0"
+5040-CAH Pharmacy Services LLC	IDS Manual Pre-Approved	2643.03	Pharma Corp	EA	I0		P000000216	Cost Center: 5040000003.0, GL Code: 51113000.0	"Cost Center: 5040000003.0  
+GL Code: 51113000.0"
