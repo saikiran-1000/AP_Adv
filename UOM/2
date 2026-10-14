@@ -1,0 +1,154 @@
+import os
+from dotenv import load_dotenv
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain.agents import Tool, initialize_agent, AgentType
+from langchain.chat_models import AzureChatOpenAI
+
+# Load environment variables
+load_dotenv()
+api_key = os.environ["OPEN_AI_KEY"]
+azure_endpoint = os.environ['AZURE_OPENAI_ENDPOINT']
+
+# Initialize LLM
+llm = AzureChatOpenAI(
+    api_key=api_key,
+    azure_endpoint=azure_endpoint,
+    model_name="gpt4o",
+    deployment_name="aiml-interns-gpt-4-turbo-with-vision-model",
+    api_version="2023-03-15-preview"
+)
+
+
+# Step 2: Conversion from Description Agent
+desc_analysis_prompt = PromptTemplate(
+    input_variables=["inv", "po", "uominv", "uompo", "invup", "poup"],
+    template="""
+You are an expert in procurement and industrial unit of measurement (UoM) conversion.
+
+You are given:
+- Invoice Description: {inv}
+- PO Description: {po}
+- Invoice UoM: {uominv}
+- PO UoM: {uompo}
+- Invoice Unit Price: {invup}
+- PO Unit Price: {poup}
+
+Your task is to determine if the invoice and PO are for the same item and if their unit prices differ due to different units of measure.
+
+
+
+### Step-by-step reasoning:
+
+You are an intelligent assistant helping validate whether an invoice unit of measure (UoM) and a purchase order (PO) UoM are convertible. Your job is to decide if the UoMs are convertible and, if so, what the conversion rate is.
+
+Use the following step-by-step logic:
+
+---
+
+
+
+**1. MF cases:**
+   - If the PO UoM is **"MF"**, assume it means **conversion rate = 1000** *only if*:
+     - The **descriptions refer to the same or closely matching item**, AND
+     - The PO unit price is approximately 1000× the invoice unit price (within a 5% margin).
+   - In this case:
+     - `conversion_possible = true`
+     - `conversion_rate = 1000`
+     - `reason = "PO UoM is 'MF', and PO price is approx 1000× invoice price, and both descriptions refer to the same item."`
+   - If these conditions are **not both true**, DO NOT assume conversion rate is 1000, and continue with the next step.
+
+---
+
+**2. Check for quantity clues in UoMs or descriptions:**
+   - Look for clues in the PO UoM or description like:
+     - "25PK" → means 25 units
+     - "500PC/BAG" → 500 units per bag
+     - Use these clues to infer a quantity multiplier
+   - Multiply the invoice unit price by the inferred quantity.
+     - If the result is approximately equal to the PO unit price (within a 5% margin), then:
+       - `conversion_possible = true`
+       - `conversion_rate = (poup / invup)`
+       - `reason = "Descriptions align and price multiplication based on quantity clues matches."`
+   - If there's no clear match in description or price alignment, then:
+     - `conversion_possible = false`
+     - `conversion_rate = null`
+     - `reason = "Descriptions do not offer clear quantity mapping and prices don’t align."`
+
+---
+
+**3. Important Notes:**
+   - **Never infer convertibility based on price alone.**
+     - Just because `poup / invup = 2`, do not assume a conversion rate of 2 unless descriptions also support that mapping.
+   - If descriptions refer to different items, they are not convertible—even if prices seem mathematically related.
+
+---
+
+
+
+Return your answer in strict JSON format like:
+{{
+  "conversion_possible": true/false,
+  "conversion_rate": float or null,
+  "reason": "Detailed explanation of reasoning, including any pack size or quantity clues found in description."
+}}
+"""
+)
+
+
+# Agents
+#price_check_chain = LLMChain(llm=llm, prompt=price_check_prompt)
+description_chain = LLMChain(llm=llm, prompt=desc_analysis_prompt)
+
+tools = [
+    Tool(name="Description Conversion Agent", func=description_chain.run, description="Checks UoM convertibility using descriptions and prices")
+]
+
+# Agent Executor
+agent_executor = initialize_agent(
+    tools,
+    llm,
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# Run logic
+# Loop through input data and evaluate with agents
+def is_close(a, b, tol=0.01):
+    return abs(a - b) <= tol
+
+for i, item in enumerate(all_entries):
+    print(f"\n{'='*60}")
+    print(f"Entry {i+1}:")
+    print(" Input:")
+    for key, val in item.items():
+        print(f"  {key}: {val}")
+
+    invup = item["invup"]
+    poup = item["poup"]
+    uominv = item["uominv"]
+    uompo = item["uompo"]
+
+    # Simple Rule-based Logic
+    if is_close(invup, poup):
+        print("\n Final Decision:")
+        print({
+            "are_convertible": True,
+            "conversion_rate": 1.0,
+            "reason": "Unit prices match, hence same unit assumed."
+        })
+ 
+
+    else:
+        # Use LLM for harder reasoning
+        desc_result = description_chain.run(
+            inv=item["inv"],
+            po=item["po"],
+            uominv=uominv,
+            uompo=uompo,
+            invup=invup,
+            poup=poup
+        )
+        print("\n Final Decision Based on Description:")
+        print(desc_result)
+
