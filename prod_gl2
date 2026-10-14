@@ -1,0 +1,138 @@
+import pandas as pd
+import numpy as np
+import warnings
+import logging
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import accuracy_score
+from itertools import combinations
+from collections import Counter
+import os
+
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+warnings.filterwarnings('ignore')
+
+class Scope2ModelPipeline:
+    def __init__(self, input_file: str):
+        self.input_file = input_file
+        self.df = None
+        self.scope2data = None
+        self.model = None
+        self.label_encoders = {}
+        self.selected_columns = []
+
+    def load_and_clean_data(self):
+        logging.info("Loading data...")
+        try:
+            df = pd.read_excel(self.input_file, engine="pyxlsb")
+            df = df.drop(columns=[
+                'Invoice: Invoice No', 'Invoice: Reporting Country', 'VAT Code',
+                'Invoice: Invoice Date', 'Invoice: Payment Due date',
+                'Invoice: AP Ref No', 'Invoice: Vendor'
+            ])
+            df = df.dropna()
+            df["Company Name_Legal Entity"] = df["Invoice: Company Name"].astype(str) + "_" + df["Invoice: Legal Entity"].astype(str)
+            df["gl__cc"] = df["GL Code"].astype(str) + "_" + df["Cost Code"].astype(str)
+            df = df.drop(columns=["Invoice: Legal Entity", "Invoice: Company Name", "GL Code", "Cost Code"])
+
+            df = df.astype({
+                'Invoice: Document Type': 'str',
+                'Invoice Type': 'str',
+                'Invoice: Country': 'str',
+                'Invoice: Company VAT Reg No': 'str',
+                'Invoice: Currency': 'str',
+                'Invoice: Vendor Number': 'str',
+                'Company Name_Legal Entity': 'str',
+                'gl__cc': 'str',
+                'Invoice: VAT Amount': 'float32',
+                'Invoice: Gross Amount': 'float32'
+            })
+            self.df = df
+            logging.info("Data loaded and cleaned.")
+        except Exception as e:
+            logging.error(f"Error loading data: {e}")
+            raise
+
+    def find_best_column_combination(self):
+        logging.info("Finding best feature combination for Scope1...")
+        df = self.df.copy()
+        columns = ['Invoice: Document Type', 'Invoice Type', 'Company Name_Legal Entity',
+                   'Invoice: Country', 'Invoice: Company VAT Reg No',
+                   'Invoice: Currency', 'Invoice: Vendor Number']
+        pair_checks = [7, 6, 5, 4, 3, 2, 1]
+        best_combinations = {}
+
+        for count in pair_checks:
+            max_scope1 = -1
+            best_pair = ()
+            for pair in combinations(columns, count):
+                df["merged1"] = df[list(pair)].astype(str).agg('__'.join, axis=1)
+                scope = df.groupby("merged1")["gl__cc"].nunique().reset_index()
+                scope1_len = scope[scope["gl__cc"] == 1].shape[0]
+                if scope1_len > max_scope1:
+                    max_scope1 = scope1_len
+                    best_pair = pair
+            best_combinations[str(count)] = best_pair
+            logging.info(f"Best pair for {count}: {best_pair} with Scope1 count {max_scope1}")
+        return best_combinations['5']
+
+    def prepare_scope2_data(self, selected_cols):
+        df = self.df.copy()
+        df['merged1'] = df[list(selected_cols)].astype(str).agg('__'.join, axis=1)
+        scope = df.groupby("merged1")["gl__cc"].nunique().reset_index()
+        scope2 = scope[scope["gl__cc"] == 2]["merged1"].tolist()
+        scope2data = df[df['merged1'].isin(scope2)].drop(columns=list(selected_cols))
+
+        # Remove under-represented classes
+        counts = scope2data["gl__cc"].value_counts()
+        to_remove = counts[counts == 1].index
+        scope2data = scope2data[~scope2data["gl__cc"].isin(to_remove)]
+
+        logging.info(f"Scope2 data shape after filtering: {scope2data.shape}")
+        self.scope2data = scope2data
+        self.selected_columns = selected_cols
+
+    def encode_and_split(self):
+        logging.info("Encoding features and splitting dataset...")
+        df = self.scope2data.copy()
+        features_to_encode = [col for col in df.columns if col not in ["gl__cc"] and col != 'Invoice: VAT Amount']
+        for col in features_to_encode:
+            le = LabelEncoder()
+            df[col] = le.fit_transform(df[col].astype(str)).astype('float16')
+            self.label_encoders[col] = le
+
+        X = df.drop(columns=["gl__cc"])
+        y = df["gl__cc"]
+
+        return train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+    def train_model(self, X_train, y_train):
+        logging.info("Training model...")
+        clf = RandomForestClassifier(n_estimators=80, min_samples_split=5, random_state=42)
+        clf.fit(X_train, y_train)
+        self.model = clf
+        logging.info("Model trained.")
+
+    def evaluate_model(self, X_test, y_test):
+        logging.info("Evaluating model...")
+        y_pred = self.model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        logging.info(f"Model Accuracy: {accuracy:.4f}")
+
+    def run_pipeline(self):
+        try:
+            self.load_and_clean_data()
+            best_combination = self.find_best_column_combination()
+            self.prepare_scope2_data(best_combination)
+            X_train, X_test, y_train, y_test = self.encode_and_split()
+            self.train_model(X_train, y_train)
+            self.evaluate_model(X_test, y_test)
+        except Exception as e:
+            logging.error(f"Pipeline failed: {e}")
+
+if __name__ == "__main__":
+    input_file_path = "Auto GL Coding.xlsb"
+    pipeline = Scope2ModelPipeline(input_file=input_file_path)
+    pipeline.run_pipeline()
