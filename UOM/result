@@ -1,0 +1,30 @@
+uominv: CAD
+  invup: 4589.3
+  invqty: 1.5
+  po: 14-4C TYPE TC-ER  STR BC PVC/NYL TPE JKT FT4 600V 90C BLK#S+GR/YL
+  uompo: KM
+  poup: 4589.3
+  poqty: 1500
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 28:
+ Input:
+  inv: ÖLFLEX TRAY II 3G2.5 14/3C ÖLFLEX TRAY II 14/3C UL/TC-ER/MTW/CSA/CE 90C 600V
+  uominv: CAD
+  invup: 3615.27
+  invqty: 2
+  po: 14-3C TYPE TC-ER  STR BC PVC/NYL TPE JKT FT4 600V 90C BLK#S+GR/YL
+  uompo: KM
+  poup: 3615.27
+  poqty: 2000
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+...
+  poup: 87.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
