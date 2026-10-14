@@ -1,0 +1,134 @@
+dict3={"inv":"""AXIS TF9905 Wall Mount 5P""",
+"uominv":"EA",
+"invup":23.2,
+"invqty":6,
+"invsubt": 139.2,
+"po":"""TF9905 WALL MOUNT 5PK MOUNTING KIT FOR AXIS P1204/E""",
+"uompo":"PK",
+"poup":23.2,
+"poqty":6,
+"posubt": 139.2
+}
+ 
+dict4={"inv":"""60L8 EV3 8k Fob""",
+"uominv":"EA",
+"invup":3.36,
+"invqty":15400,
+"invsubt": 51744,
+"po":"""EV3 8K ISO KEYFOB FOB-EV3-8KB-25PK 60L8 - NS1170""",
+"uompo":"PK",
+"poup": 84,
+"poqty":616,
+"posubt": 51744
+}
+ 
+dict5={"inv":"""Dual Tech EV2 4k + Prox ISO Card""",
+"uominv":"EA",
+"invup":3.5,
+"invqty":2000,
+"invsubt": 7000,
+"po":"""ISO CARD LEAF (4 KBYTE) + PROX CARD-IL-4KB-PROX-25PK 50D4""",
+"uompo":"PK",
+"poup": 87.5,
+"poqty":80,
+"posubt": 7000
+}
+ 
+dict6={"inv":"""Partner Digital Signage Player Subscription""",
+"uominv":"USD",
+"invup":216.49,
+"invqty":5,
+"invsubt": 1082.45,
+"po":"""36 MONTH LICENSE""",
+"uompo":"EA",
+"poup":216.49,
+"poqty":5,
+"posubt": 1082.45
+}
+ 
+dict7={"inv":"""PET 1/2 BLACK 20 coils 25ft splice free 9PT0810-25FT-SF""",
+"uominv":"FEET",
+"invup":0.2696,
+"invqty":500,
+"invsubt": 134.8,
+"po":"""FLEXO PET 1/2" BLACK SF 25'""",
+"uompo":"EA",
+"poup":6.74,
+"poqty":20,
+"posubt": 134.8
+}
+ 
+dict10={"inv":"""PET 1/2 BLACK 20 COILS 25FT SPICE FREE 9PT0810-25FT-SF""",
+"uominv":"FEET",
+"invup":0.2696,
+"invqty":500,
+"invsubt": 134.8,
+"po":"""FLEXO PET 1/2" BLACK SF 25'""",
+"uompo":"EA",
+"poup":6.74,
+"poqty":20,
+"posubt": 134.8
+}
+ 
+ 
+dict11={"inv":"""140-340-GR READER, PROX, MAXIPROX, GREY""",
+"uominv":"A",
+"invup":484.38,
+"invqty":4,
+"invsubt": 1937.52,
+"po":"""MAXIPROX WIEGAND 5375AGN00 . IO-61E25268-08""",
+"uompo":"EA",
+"poup":484.38,
+"poqty":4,
+"posubt": 1937.52
+}
+ 
+dict12={"inv":"""W1-4 1AWG-4 W 2KV Cust P/N: 5B-0104-2KV-C""",
+"uominv":"EA",
+"invup":11712,
+"invqty":3,
+"invsubt": 35136,
+"po":"""1-4C BC STR TYPE W EPR/CPE 2KV 90C CV CURED RND BLK JKT CSA FT-5 MSHA ICEA""",
+"uompo":"MF",
+"poup":11712,
+"poqty":3000,
+"posubt": 35136
+}
+ 
+dict13={"inv":"""W6-1X 6AWG-1 W 2KV XFLEX 264STR Cust P/N: 5B-0601C""",
+"uominv":"EA",
+"invup":1274,
+"invqty":1,
+"invsubt": 1274,
+"po":"""6-1C BC STR TYPE W EPR/CPE 2KV 90C CV CURED RND BLK JKT CSA FT-5 MSHA ICEA""",
+"uompo":"MF",
+"poup":1274,
+"poqty":1000,
+"posubt": 1274
+}
+ 
+dict14={"inv":"""W350-3 350MCM-3 W 2KV Cust P/N: 5B-3503C""",
+"uominv":"EA",
+"invup":31518,
+"invqty":1,
+"invsubt": 31518,
+"po":"""350-3C BC STR TYPE G-GC EPR/ CPE 2KV 90C CV CURED RND BLK JKT CSA FT-5 MSHA""",
+"uompo":"MF",
+"poup":31518,
+"poqty":1000,
+"posubt": 31518
+}
+ 
+##################################################################################
+dict15={"inv":"""T&B TY25MX 7IN-NYL-BLK-CBL-TIE""",
+"uominv":"C",
+"invup":8.286,
+"invqty":4000,
+"invsubt": 331.44,  # 331.44 in sheet
+"po":"""TY25MX 7IN-NYL-BLK-CBL-TIE -- --""",
+"uompo":"CE",
+"poup":8.28,
+"poqty":4000,
+"posubt": 331.2
+}
+ 
