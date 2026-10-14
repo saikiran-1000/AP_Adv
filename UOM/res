@@ -1,0 +1,697 @@
+ntry 26:
+ Input:
+  inv: 5140U1 0101000 1 PR #14 PVC PVC BLK B/L NO. 7C-483994
+  uominv: EA
+  invup: 616.2275
+  invqty: 7
+  po: 14-1P STR TNC PVC PVC JKT BLK DIRECT BURIAL WATERBLOCK
+  uompo: MF
+  poup: 616.228
+  poqty: 7000
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 27:
+ Input:
+  inv: ÖLFLEX TRAY II 4G2.5 14/4CÖLFLEX TRAY II 14/4C UL/TC-ER/MTW/CSA/CE 90C 600V
+  uominv: CAD
+  invup: 4589.3
+  invqty: 1.5
+  po: 14-4C TYPE TC-ER  STR BC PVC/NYL TPE JKT FT4 600V 90C BLK#S+GR/YL
+  uompo: KM
+  poup: 4589.3
+  poqty: 1500
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 28:
+ Input:
+  inv: ÖLFLEX TRAY II 3G2.5 14/3C ÖLFLEX TRAY II 14/3C UL/TC-ER/MTW/CSA/CE 90C 600V
+  uominv: CAD
+  invup: 3615.27
+  invqty: 2
+  po: 14-3C TYPE TC-ER  STR BC PVC/NYL TPE JKT FT4 600V 90C BLK#S+GR/YL
+  uompo: KM
+  poup: 3615.27
+  poqty: 2000
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 29:
+ Input:
+  inv: SKINTOP SL-M 20X1.5 BK W/ NUTSKINTOP SL-M 20X1.5 BLACK WITH NUT UL, CSA, CE, QUICK SHIP ITEM
+  uominv: CAD
+  invup: 1.89
+  invqty: 100
+  po: SKINTOP LIQUID TIGHT,NON-METAL C/W MET THREAD BLK C/W LOCKNUT RNGE .276-.512
+  uompo: EA
+  poup: 1.89
+  poqty: 100
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 30:
+ Input:
+  inv: SR783
+  uominv: EACH
+  invup: 6.86
+  invqty: 100
+  po: MANCHON VALMONT # SR783 -- --
+  uompo: PK
+  poup: 6.86
+  poqty: 100
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 31:
+ Input:
+  inv: J HOOKS 3/4" 
+  uominv: EA
+  invup: 4.8
+  invqty: 600
+  po: 3/4" J-HOOK, SUPPORTS UP TO 16 CAT5E OR 10 CAT6 CABLES 50/BX
+  uompo: BX
+  poup: 4.8
+  poqty: 600
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 32:
+ Input:
+  inv: 558AFS 0001000 3P22+2C22+4C22+4C18 IFS CMR BP NONE
+  uominv: EA
+  invup: 1021.3035
+  invqty: 3
+  po: 18-4C+22-3P+22-2C+22-4C STR BC PO IND SHD UNJKT CMR "BANANA PEEL" 
+  uompo: MF
+  poup: 1021.304
+  poqty: 2000
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 33:
+ Input:
+  inv: 16 PVC PVC
+  uominv: EA
+  invup: 492.0965
+  invqty: 2
+  po: 16-2C STR TNC PVC FOIL SHD PVC JKT BLK DIRECT BURIAL WATERBLOCK
+  uompo: MF
+  poup: 492.097
+  poqty: 1000
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 34:
+ Input:
+  inv: 8003490FELT STRIPS BLUE 1-1/8x9 (6 STRIPS) 388364
+  uominv: EA
+  invup: 5.41
+  invqty: 6
+  po: FELT STRIPS, 9" LONG  6/PK
+  uompo: PK
+  poup: 5.41
+  poqty: 6
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 35:
+ Input:
+  inv: BOOT, RJ45 SNAGLESS 7MM WHITE 50/BG
+  uominv: BG
+  invup: 19.74
+  invqty: 20
+  po: LIBAV P/N BOOT-L-WH STRAIN RELIEF BOOT FOR RJ45 0295OD WHITE 50/PK
+  uompo: PK
+  poup: 19.74
+  poqty: 20
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 36:
+ Input:
+  inv: 8205 060U500PR #20 PVC FRPVC7C-483505
+  uominv: EA
+  invup: 433.9904
+  invqty: 2
+  po: 20-1P STR TNC PVC PVC JKT CMG 300V 80C CHR ROHS
+  uompo: MF
+  poup: 867.981
+  poqty: 1000
+
+ Final Decision Based on Description:
+```json
+{
+  "conversion_possible": true,
+  "conversion_rate": 500,
+  "reason": "The PO UoM 'MF' traditionally stands for 'thousand feet', indicating measurement in length. The Invoice UoM 'EA' typically stands for 'each', indicating a single item. From the invoice description '8205 060U500PR', the '500' implies the product is packaged or measured per 500 feet per roll or unit. Therefore, converting 'EA' to 'MF' involves recognizing that one 'EA' (one roll) contains 500 feet, hence the conversion rate from 'EA' to 'MF' is 500."
+}
+```
+
+============================================================
+Entry 37:
+ Input:
+  inv: P350-10N-10 10PK,10IN CABLE TIES
+  uominv: EA
+  invup: 4.06
+  po: HOOK-AND-LOOP CABLE TIES, 10" L X 5/8" W - 10-PACK
+  uompo: PK
+  poup: 4.06
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 38:
+ Input:
+  inv: 9452 0101000 2 #24 PE SHLD PVC
+  uominv: EA
+  invup: 904.3913
+  po: 24-2C STR TNC HDPE NOISE REDUCING TAPE FOIL SHD PVC JKT 75C ROHS
+  uompo: MF
+  poup: 904.3913
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 39:
+ Input:
+  inv: WC51130-2"PIF1307/16 CTL: 2.0" 
+  uominv: PC
+  invup: 308.46
+  po: PIF1307/16 O/A CTL: 2 LABEL BAG WC51130-2 WC51130-2
+  uompo: ME
+  poup: 308.46
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 40:
+ Input:
+  inv: Eye Lag Metal Screw, Self Drill with 1/4" hole.
+  uominv: PACK
+  invup: 21.09
+  po: EYE LAG METAL SCREW,SELF DRILL WITH 1/4" HOLE & 3/4" THREAD 100/BOX
+  uompo: BX
+  poup: 21.09
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 41:
+ Input:
+  inv: 042003DB 24-2P EPS STR DB Blk Jkt
+  uominv: EA
+  invup: 900
+  po: #042003DB 24AWG 2PR STR TC EACH PAIR SHIELDED LOW-CAP BLK PE JKT
+  uompo: MF
+  poup: 900
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 42:
+ Input:
+  inv: RJ45 CAT6A 10GIG SHIELDED, W/LINER. (BULK, 1EA.) 100PC/TRAY PACKAGED INSIDE OF 
+  uominv: PACK
+  invup: 78
+  po: CAT6A, 10GIG, RJ45, SHIELDED CONNECTOR WITH LINER, SOLID 100PCS = 1EA
+  uompo: EA
+  poup: 78
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 43:
+ Input:
+  inv: ezEX44 Cat6 pass through Connector. 50pc/Clamshell.
+  uominv: PACK
+  invup: 23.41
+  po: EZEX44 CONNECTORS CLAMSHELL 50/PK
+  uompo: EA
+  poup: 23.41
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 44:
+ Input:
+  inv: CBZ-0048419-001 Zone 4 V4 cabinet 42RU (25 x
+  uominv: UN
+  invup: 3617.25
+  po: ZONE 4 V4 CABINET 42RU (25 X 73.5) X 42'' BLACK --
+  uompo: EA
+  poup: 3617.25
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 45:
+ Input:
+  inv: ezEX38 Cat5E Connector.pass through. 50/Clamshell.
+  uominv: PACK
+  invup: 23.41
+  po: EZEX38 CONNECTOR. 50/CLAMSHELL.
+  uompo: EA
+  poup: 23.41
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 46:
+ Input:
+  inv: SPZSLK-004242-BK Set of Z4 V4 split side panels
+  uominv: UN
+  invup: 221.9
+  po: SET OF Z4 V4 SPLIT SIDE PANELS 42RU (73.5) X 42 BLACK --
+  uompo: EA
+  poup: 221.9
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 47:
+ Input:
+  inv: PMACAG-0242Z4-BKPair mounting rails 42RU 2.25 x
+  uominv: PR
+  invup: 121.76
+  po: PAIR MOUNTING RAILS 42RU 2.25 X (73,5) CAGE-NUTS BLACK --
+  uompo: EA
+  poup: 121.76
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 48:
+ Input:
+  inv: ELE-0048129-001 PAIR Isolation pad (Glastic) for
+  uominv: UN
+  invup: 62.85
+  po: PAIR ISOLATION PAD (GLASTIC) FOR V4 SEISMIC CABINET 30''W --
+  uompo: EA
+  poup: 62.85
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 49:
+ Input:
+  inv: ezEX38 Cat5E Pass through RJ45
+  uominv: PACK
+  invup: 46.19
+  po: EZEX38 CONNECTOR. 50/CLAMSHELL JAR OF 100
+  uompo: EA
+  poup: 46.19
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 50:
+ Input:
+  inv: EZ-RJ45 CAT6 CONNECTOR. BULK, 500PC/BAG.
+  uominv: PACK
+  invup: 225
+  po: EZ-RJ45 CAT 6+ CONNECTOR
+  uompo: EA
+  poup: 0.45
+
+ Final Decision Based on Description:
+{
+  "conversion_possible": true,
+  "conversion_rate": 500,
+  "reason": "The invoice description specifies '500PC/BAG', indicating each pack contains 500 pieces. The PO UoM is 'EA' (each), which refers to individual units. Therefore, 1 PACK is convertible to 500 EA."
+}
+
+============================================================
+Entry 51:
+ Input:
+  inv: WMCRE1-191224-BK
+  uominv: UN
+  invup: 651.08
+  po: 12U -SWING OUT WALL MOUNT CABINET  22''W X 24''DEEP WITH/ SMOKED ACRYLIC
+  uompo: EA
+  poup: 651.08
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 52:
+ Input:
+  inv: 558011 800388003354 CE25EZ - SQUARE SPLICE WASHER - 50/cs
+  uominv: BGS
+  invup: 11.33
+  po: BOTTOM/OUTSIDE SQUARE WASHER 50 PACK CE25EZ
+  uompo: PK
+  poup: 11.33
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 53:
+ Input:
+  inv: 558221ED275EZ-UNIVERSAL SPLICE BAR-50 per 
+  uominv: EA
+  invup: 148.52
+  po: SPLICE BAR 10" UNIVERSAL ELECTRO ZINC 50/PK CM558221
+  uompo: PK
+  poup: 148.52
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 54:
+ Input:
+  inv: SYMX WES-CPC-12FT MSF-021443
+  uominv: WE
+  invup: 5.48
+  po: 12FT PATCH CORD CAT6 WHT B 8C RJ45/RJ45 GIGASPEED XL 28AWG
+  uompo: EA
+  poup: 5.48
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 55:
+ Input:
+  inv: AXIS TP3820 CASING WHITE 4P
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING WHITE 4PCS FOR AXIS P3265-LV, P3265-V INDOOR CAMERAS
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 56:
+ Input:
+  inv: ACI COND ADAP 1/2 " U-SHAPE 20MM 5P
+  uominv: EA
+  invup: 23.2
+  po: MECHANICAL ADAPTER, U-SHAPE 20MM W CABLE ENTRY FOR 1/2" CONDUIT INTERFACE
+  uompo: PK
+  poup: 23.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 57:
+ Input:
+  inv: AXIS TP3823-E WEATHERSHIELD WT 2P
+  uominv: EA
+  invup: 63.2
+  po: TP3823-E WEATHERSHIELD 2PCS FOR AXIS P3265-LVE, P3267-LVE, P3268-LVE.
+  uompo: PK
+  poup: 63.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 58:
+ Input:
+  inv: AXIS TW1103 Chest Harness Mo unt 5P
+  uominv: EA
+  invup: 151.2
+  po: TW1103 CHEST HARNESS MOUNT 5P
+  uompo: PK
+  poup: 151.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 59:
+ Input:
+  inv: RJ45/45 CAT 6A 28AWG 4P ST PVC UTP WT W/BTS 568B 1FT
+  uominv: EA
+  invup: 1.24
+  po: CABLE, ETHERNET, PATCH CABLE, CAT6A SLIM
+  uompo: FT
+  poup: 1.24
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 60:
+ Input:
+  inv: AXIS TP3820 CASING BLACK 4P
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING BLACK 4PCS ACCESSORY BLACK CASING FOR AXIS P3265-LV, V.
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 61:
+ Input:
+  inv: AXIS TP3820 CASING BLACK 4P
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING BLACK 4PCS ACCESSORY BLACK CASING FOR AXIS P3265-LV, V.
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 62:
+ Input:
+  inv: AXIS TP3808 DOME COVER BLACK 4P
+  uominv: EA
+  invup: 175.2
+  po: AXIS T94N01G POLE MOUNT
+  uompo: EA
+  poup: 175.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 63:
+ Input:
+  inv: 
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING BLACK 4PCS ACCESSORY BLACK CASING FOR AXIS P3265-LV, V.
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 64:
+ Input:
+  inv: AXIS TW1105 HARNESS CENTER M OUNT 5P
+  uominv: EA
+  invup: 279.2
+  po: 5 PACK MOUNT FOR THE KLICK FAST ADAPTOR ON THE AXIS BODY WORN
+  uompo: EA
+  poup: 279.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 65:
+ Input:
+  inv: 2/0-1C BARE ACSR 6/1 STR OVERHEAD CONDUCTOR CODE QUAIL
+  uominv: EA
+  invup: 530
+  po: EZEX38 CONNECTOR. 50/CLAMSHELL JAR OF 100
+  uompo: MF
+  poup: 530
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 66:
+ Input:
+  inv: 350MCM 1C CU 133% EPR JCN 15KV -- --
+  uominv: EA
+  invup: 19.77
+  po: EZ-RJ45 CAT 6+ CONNECTOR
+  uompo: MF
+  poup: 19770
+
+ Final Decision Based on Description:
+{
+  "conversion_possible": false,
+  "conversion_rate": null,
+  "reason": "The descriptions of the items in the invoice and PO are vastly different, indicating they are likely different items. The invoice describes a 350MCM 1C CU 133% EPR JCN 15KV, which is a type of electrical cable, while the PO describes an EZ-RJ45 CAT 6+ connector, which is a type of network cable connector. Additionally, the units of measure are different and do not have a straightforward conversion path: 'EA' (each) for the invoice and 'MF' (thousand feet) for the PO, further suggesting these are different types of items and not convertible."
+}
+
+============================================================
+Entry 67:
+ Input:
+  inv: ACC CABLE GLAND A M25 5PCS
+  uominv: EA
+  invup: 23.2
+  po: CABLE GLAND A M25 5PCS M25 CABLE GLAND, 5 PCS.
+  uompo: PK
+  poup: 23.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 68:
+ Input:
+  inv: AXIS TW1103 Chest Harness Mo unt 5P
+  uominv: EA
+  invup: 151.2
+  po: TW1103 CHEST HARNESS MOUNT 5P
+  uompo: PK
+  poup: 151.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 69:
+ Input:
+  inv: AXIS TP3820 CASING BLACK 4P
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING BLACK 4PCS ACCESSORY BLACK CASING FOR AXIS P3265-LV, V.
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 70:
+ Input:
+  inv: AXIS TP3820 CASING BLACK 4P
+  uominv: EA
+  invup: 71.2
+  po: AXIS TM3820 VANDAL RESISTANT CASING CLEAR DOME, WHITE CASING
+  uompo: EA
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 71:
+ Input:
+  inv: 725220EWAMZM2E
+  uominv: M2
+  invup: 80
+  po: 22/2 STR BC GR/WH CMP AMAZON GRN1000' SO
+  uompo: MF
+  poup: 80
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 72:
+ Input:
+  inv: 725961AMZM1O
+  uominv: M1
+  invup: 795
+  po: (22-1P+22-2C+20-2C) + (22-2C+ 20-2C) + 22-2C + 18-2C + 20-2C PVC JKT BLU CMP
+  uompo: MF
+  poup: 795
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 73:
+ Input:
+  inv: 6BNSM2O
+  uominv: M3
+  invup: 229.28
+  po: 1K BLUE CAT6 PLENUM NO SPLINE
+  uompo: EA
+  poup: 229.28
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 74:
+ Input:
+  inv: 4 POST RACK KIT, ADJUSTABLE - BLK
+  uominv: EA
+  invup: 114.93
+  po: RACK KIT C/W 4 SETS OF DEPTH ADJUSTABLE BRACKETS 27" TO 42" FOR 4 POST RACK
+  uompo: SE
+  poup: 114.93
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 75:
+ Input:
+  inv: AXIS TP3820 CASING BLACK 4P
+  uominv: EA
+  invup: 71.2
+  po: TP3820 CASING BLACK 4PCS ACCESSORY BLACK CASING FOR AXIS P3265-LV, V.
+  uompo: PK
+  poup: 71.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
+
+============================================================
+Entry 76:
+ Input:
+  inv: AXIS TP3821-E CASING BLACK 4 P
+  uominv: EA
+  invup: 87.2
+  po: TP3821-E CASING BLACK 4PCS PRE-ASSEMBLED WITH ANTI-LOSS SCREWS
+  uompo: PK
+  poup: 87.2
+
+ Final Decision:
+{'are_convertible': True, 'conversion_rate': 1.0, 'reason': 'Unit prices match, hence same unit assumed.'}
