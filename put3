@@ -1,0 +1,65 @@
+Invoice Type	Invoice: Legal Entity	Invoice: Country	Invoice: Gross Amount	Invoice: Vendor	Invoice: Vendor Number
+Contract-Normal	C002	Norway	7297.5	Telia Norge AS	20101592
+Normal	C002	Norway	50050.06	Fremtind Service	20100314
+Ariba	Z001	Switzerland (CSC)	1715	Harald Halvorsen Spedisjon AS	20009609
+SCF	Z001	Switzerland (CSC)	17156.49	Ball Beverage Packaging Fosie AB	20008988
+Normal	D001	Sweden	515625	ST1 Sverige AB	24035217
+Contract-SCF	C001	Norway	7420	FRIGOGLASS Romania SRL	20009759
+Normal	D002	Sweden	119976	Edenred Swden AB	24038735
+Ariba	D001	Sweden	1680	TELIUM HALLAND AB	20009957
+Normal	E002	Finland	113502.92	Suomen Palautuspakkaus Oy	24015775
+Ariba	C002	Norway	199098.75	Bring Intermodal AS	20100044
+Contract-Normal	Z001	Switzerland (CSC)	762.5	Harald Halvorsen Spedisjon AS	20009609
+Ariba	C002	Norway	38260	Bring Intermodal AS	20100044
+Ariba	D002	Sweden	435.14	LEMVIGH-MÃœLLER	20125523
+Ariba	C002	Norway	151796.25	Bring Intermodal AS	20100044
+Ariba	D001	Sweden	506	AHLSELL AB	20007397
+Ariba	Z001	Switzerland (CSC)	5277.5	Harald Halvorsen Spedisjon AS	20009609
+Ariba	C002	Norway	243218.75	Bring Intermodal AS	20100044
+Ariba	C002	Norway	2933.05	Markit Norway AS	20029852
+Normal	Z001	Switzerland (CSC)	12157.15	Ball Beverage Packaging Fredericia	20009665
+Ariba	C002	Norway	5110.96	Dustin Norway AS	20021390
+Intercompany	C001	Norway	32395	Ringnes Brygghus AS	22000285
+Contract-Normal	C002	Norway	378	TESS Handel	20100112
+SCF	Z001	Switzerland (CSC)	10128.2	Ball Beverage Packaging Fosie AB	20008984
+SCF	Z001	Switzerland (CSC)	8658.84	Ball Beverage Packaging Fosie AB	20008984
+Ariba	D001	Sweden	1318.6	PostNord Sverige AB (5249-4309)	20006801
+SCF	Z001	Switzerland (CSC)	17156.49	Ball Beverage Packaging Fosie AB	20008988
+Ariba	D002	Sweden	690	LYRECO SVERIGE AB	20007389
+Ariba	D002	Sweden	44358	GN TRANSPORT I HALMSTAD AB	20007291
+Contract-Normal	D002	Sweden	16725.63	SGS Analytics Sweden AB	20007844
+SCF	Z001	Switzerland (CSC)	11833.95	Ball Beverage Packaging Fredericia	20009665
+Normal	Z001	Switzerland (CSC)	22397.5	Fritz + Caspar Jenny AG immosupport	20009992
+Ariba	D002	Sweden	3012.6	LEMVIGH-MÃœLLER	20125523
+Ariba	C002	Norway	156412.5	Bring Intermodal AS	20100044
+Normal	E001	Finland	31745.16	AS Tallink Grupp	24110199
+Contract-Normal	E001	Finland	341.25	Adare International Limited S	20112398
+SCF	Z001	Switzerland (CSC)	7538.32	Ball Beverage Packaging Fosie AB	20008984
+Contract-Normal	E002	Finland	348.66	FD Best Way Logistics Oy	20113548
+Normal	D002	Sweden	5734	GN Halmstad Logistics AB	20011601
+Ariba	D002	Sweden	54984	TRANSPORTSERVICE LOG AB	20006869
+Critical Invoices	Z001	Switzerland (CSC)	93169	GS1 SWEDEN AB	24029917
+Ariba	Z001	Switzerland (CSC)	787.5	Harald Halvorsen Spedisjon AS	20009609
+Normal	Z001	Switzerland (CSC)	9991.57	Chep Schweiz BV	20011197
+Ariba	C002	Norway	68211.25	Bring Intermodal AS	20100044
+SCF	Z001	Switzerland (CSC)	8658.84	Ball Beverage Packaging Fosie AB	20008984
+Ariba	Z001	Switzerland (CSC)	690	Harald Halvorsen Spedisjon AS	20009609
+Ariba	C002	Norway	84761.25	Bring Intermodal AS	20100044
+Ariba	D001	Sweden	8238	TELENOR SVERIGE AB	20007663
+SCF	Z001	Switzerland (CSC)	19760.95	Ball Beverage Packaging Fosie AB	20008988
+SCF	Z001	Switzerland (CSC)	101611.96	Ball Beverage Packaging Fosie AB	20008984
+Contract-Normal	C002	Norway	2380	TESS Handel	20100112
+SCF	Z001	Switzerland (CSC)	10606.08	Ball Beverage Packaging Fosie AB	20008984
+SCF	Z001	Switzerland (CSC)	11549.29	Ball Beverage Packaging Fredericia	20009665
+Ariba	C002	Norway	510866.25	Bring Intermodal AS	20100044
+SCF	Z001	Switzerland (CSC)	8951.5	Ball Beverage Packaging Fredericia	20009665
+Ariba	C001	Norway	2396.36	Dustin Norway AS	20021390
+SCF	D001	Sweden	2433.75	MICRO MATIC SERVICE CENTER AB	20006716
+Normal	D001	Sweden	6326.25	ClearOn AB	24038729
+Ariba	D002	Sweden	75592	Sandahls Logistik AB	20017687
+Ariba	C002	Norway	63013.75	Bring Intermodal AS	20100044
+Critical Invoices	D001	Sweden	169000	Dagab InkÃ¶p & Logistik AB	24010462
+Contract-Normal	C001	Norway	6165	COOR SERVICE MANAGEMENT AS	20038209
+TCT	Z001	Switzerland (CSC)	42048.03	Letsch Transport oHG	20022357
+SCF	Z001	Switzerland (CSC)	1791.37	Ball Beverage Packaging Fredericia	20009665
+Normal	E002	Finland	988.09	Ruokavirasto	24032949
