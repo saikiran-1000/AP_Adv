@@ -1,0 +1,598 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+import re
+
+import os
+import json
+from langchain.vectorstores import FAISS
+from langchain.chains import RetrievalQA, ConversationalRetrievalChain
+from langchain.prompts import PromptTemplate
+from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import SystemMessage, HumanMessage
+from dotenv import load_dotenv
+# from transformers import pipeline
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.docstore.document import Document
+
+COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown"]
+
+def extract_color(text):
+    text = text.lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None
+
+    from langchain.embeddings import AzureOpenAIEmbeddings
+from langchain.vectorstores import FAISS
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+import faiss
+import numpy as np
+import os
+import re
+
+# Use your existing embedding setup
+# embeddings = AzureOpenAIEmbeddings(model="text-embedding-3-large")
+
+COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown"]
+
+def extract_color(text):
+    text = text.lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None
+
+def preprocess(df):
+    df["invoice_desc"] = df["CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["po_desc"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["inv_color"] = df["invoice_desc"].apply(extract_color)
+    df["po_color"] = df["po_desc"].apply(extract_color)
+    return df
+
+def compute_embeddings(texts):
+    return np.array(embeddings.embed_documents(texts))  # Convert list of embeddings to numpy array
+
+def build_faiss_index(embeddings_array):
+    dim = embeddings_array.shape[1]
+    index = faiss.IndexFlatL2(dim)
+    index.add(embeddings_array)
+    return index
+
+def match_lines(df):
+    invoice_lines = df[["Id", "CoraAP__Product_Service_No__c", "WO_Vendor_Part_Number__c", "invoice_desc", "inv_color"]].drop_duplicates()
+    po_lines = df[["CoraAP__PO_Line_Item__c", "CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c", "CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c", "po_desc", "po_color"]].drop_duplicates()
+
+    invoice_embeddings = compute_embeddings(invoice_lines["invoice_desc"].tolist())
+    po_embeddings = compute_embeddings(po_lines["po_desc"].tolist())
+
+    po_index = build_faiss_index(po_embeddings)
+    distances, indices = po_index.search(invoice_embeddings, k=3)
+
+    used_po_ids = set()
+    results = []
+
+    for i, inv_row in invoice_lines.iterrows():
+        best_match = None
+        best_score = 0
+        inv_id = inv_row["Id"]
+        inv_code = str(inv_row["CoraAP__Product_Service_No__c"])
+        inv_part = str(inv_row["WO_Vendor_Part_Number__c"])
+        inv_color = inv_row["inv_color"]
+
+        for rank, j in enumerate(indices[i]):
+            po_row = po_lines.iloc[j]
+            po_id = po_row["CoraAP__PO_Line_Item__c"]
+            po_code = str(po_row["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c"])
+            po_part = str(po_row["CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c"])
+            po_color = po_row["po_color"]
+
+            if po_id in used_po_ids:
+                continue
+
+            # Rule 1: Exact match
+            if inv_code and po_code and inv_code == po_code:
+                best_match = (inv_id, po_id, 100, "Exact_Product_Code")
+                break
+            if inv_part and po_part and inv_part == po_part:
+                best_match = (inv_id, po_id, 100, "Exact_Vendor_Part")
+                break
+
+            # Rule 3: Color check (strict)
+            if inv_color or po_color:
+                if inv_color != po_color:
+                    continue  # Color mismatch – invalid match
+
+            # Rule 2: Semantic match
+            score = cosine_similarity([invoice_embeddings[i]], [po_embeddings[j]])[0][0]
+            match_pct = round(score * 100, 2)
+
+            if match_pct >= 90:
+                match_type = "Strong_Semantic"
+            elif 40 <= match_pct < 90:
+                match_type = "Moderate_Semantic"
+            else:
+                continue
+
+            if match_pct > best_score:
+                best_match = (inv_id, po_id, match_pct, match_type)
+                best_score = match_pct
+
+        if best_match:
+            inv_id, po_id, match_pct, rule = best_match
+            used_po_ids.add(po_id)
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": po_id,
+                "MatchPercentage": match_pct,
+                "Rule": rule
+            })
+        else:
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": None,
+                "MatchPercentage": 0,
+                "Rule": "No Match"
+            })
+
+    return pd.DataFrame(results)
+from langchain.embeddings import AzureOpenAIEmbeddings
+from langchain.vectorstores import FAISS
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+import faiss
+import numpy as np
+import os
+import re
+
+# Use your existing embedding setup
+# embeddings = AzureOpenAIEmbeddings(model="text-embedding-3-large")
+
+COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown"]
+
+def extract_color(text):
+    text = text.lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None
+
+def preprocess(df):
+    df["invoice_desc"] = df["CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["po_desc"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["inv_color"] = df["invoice_desc"].apply(extract_color)
+    df["po_color"] = df["po_desc"].apply(extract_color)
+    return df
+
+def compute_embeddings(texts):
+    return np.array(embeddings.embed_documents(texts))  # Convert list of embeddings to numpy array
+
+def build_faiss_index(embeddings_array):
+    dim = embeddings_array.shape[1]
+    index = faiss.IndexFlatL2(dim)
+    index.add(embeddings_array)
+    return index
+
+def match_lines(df):
+    invoice_lines = df[["Id", "CoraAP__Product_Service_No__c", "WO_Vendor_Part_Number__c", "invoice_desc", "inv_color"]].drop_duplicates()
+    po_lines = df[["CoraAP__PO_Line_Item__c", "CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c", "CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c", "po_desc", "po_color"]].drop_duplicates()
+
+    invoice_embeddings = compute_embeddings(invoice_lines["invoice_desc"].tolist())
+    po_embeddings = compute_embeddings(po_lines["po_desc"].tolist())
+
+    po_index = build_faiss_index(po_embeddings)
+    distances, indices = po_index.search(invoice_embeddings, k=3)
+
+    used_po_ids = set()
+    results = []
+
+    for i, inv_row in invoice_lines.iterrows():
+        best_match = None
+        best_score = 0
+        inv_id = inv_row["Id"]
+        inv_code = str(inv_row["CoraAP__Product_Service_No__c"])
+        inv_part = str(inv_row["WO_Vendor_Part_Number__c"])
+        inv_color = inv_row["inv_color"]
+
+        for rank, j in enumerate(indices[i]):
+            po_row = po_lines.iloc[j]
+            po_id = po_row["CoraAP__PO_Line_Item__c"]
+            po_code = str(po_row["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c"])
+            po_part = str(po_row["CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c"])
+            po_color = po_row["po_color"]
+
+            if po_id in used_po_ids:
+                continue
+
+            # Rule 1: Exact match
+            if inv_code and po_code and inv_code == po_code:
+                best_match = (inv_id, po_id, 100, "Exact_Product_Code")
+                break
+            if inv_part and po_part and inv_part == po_part:
+                best_match = (inv_id, po_id, 100, "Exact_Vendor_Part")
+                break
+
+            # Rule 3: Color check (strict)
+            if inv_color or po_color:
+                if inv_color != po_color:
+                    continue  # Color mismatch – invalid match
+
+            # Rule 2: Semantic match
+            score = cosine_similarity([invoice_embeddings[i]], [po_embeddings[j]])[0][0]
+            match_pct = round(score * 100, 2)
+
+            if match_pct >= 90:
+                match_type = "Strong_Semantic"
+            elif 40 <= match_pct < 90:
+                match_type = "Moderate_Semantic"
+            else:
+                continue
+
+            if match_pct > best_score:
+                best_match = (inv_id, po_id, match_pct, match_type)
+                best_score = match_pct
+
+        if best_match:
+            inv_id, po_id, match_pct, rule = best_match
+            used_po_ids.add(po_id)
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": po_id,
+                "MatchPercentage": match_pct,
+                "Rule": rule
+            })
+        else:
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": None,
+                "MatchPercentage": 0,
+                "Rule": "No Match"
+            })
+
+    return pd.DataFrame(results)
+from langchain.embeddings import AzureOpenAIEmbeddings
+from langchain.vectorstores import FAISS
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+import faiss
+import numpy as np
+import os
+import re
+
+# Use your existing embedding setup
+# embeddings = AzureOpenAIEmbeddings(model="text-embedding-3-large")
+
+COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown"]
+
+def extract_color(text):
+    text = text.lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None
+
+def preprocess(df):
+    df["invoice_desc"] = df["CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["po_desc"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["inv_color"] = df["invoice_desc"].apply(extract_color)
+    df["po_color"] = df["po_desc"].apply(extract_color)
+    return df
+
+def compute_embeddings(texts):
+    return np.array(embeddings.embed_documents(texts))  # Convert list of embeddings to numpy array
+
+def build_faiss_index(embeddings_array):
+    dim = embeddings_array.shape[1]
+    index = faiss.IndexFlatL2(dim)
+    index.add(embeddings_array)
+    return index
+
+def match_lines(df):
+    invoice_lines = df[["Id", "CoraAP__Product_Service_No__c", "WO_Vendor_Part_Number__c", "invoice_desc", "inv_color"]].drop_duplicates()
+    po_lines = df[["CoraAP__PO_Line_Item__c", "CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c", "CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c", "po_desc", "po_color"]].drop_duplicates()
+
+    invoice_embeddings = compute_embeddings(invoice_lines["invoice_desc"].tolist())
+    po_embeddings = compute_embeddings(po_lines["po_desc"].tolist())
+
+    po_index = build_faiss_index(po_embeddings)
+    distances, indices = po_index.search(invoice_embeddings, k=3)
+
+    used_po_ids = set()
+    results = []
+
+    for i, inv_row in invoice_lines.iterrows():
+        best_match = None
+        best_score = 0
+        inv_id = inv_row["Id"]
+        inv_code = str(inv_row["CoraAP__Product_Service_No__c"])
+        inv_part = str(inv_row["WO_Vendor_Part_Number__c"])
+        inv_color = inv_row["inv_color"]
+
+        for rank, j in enumerate(indices[i]):
+            po_row = po_lines.iloc[j]
+            po_id = po_row["CoraAP__PO_Line_Item__c"]
+            po_code = str(po_row["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c"])
+            po_part = str(po_row["CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c"])
+            po_color = po_row["po_color"]
+
+            if po_id in used_po_ids:
+                continue
+
+            # Rule 1: Exact match
+            if inv_code and po_code and inv_code == po_code:
+                best_match = (inv_id, po_id, 100, "Exact_Product_Code")
+                break
+            if inv_part and po_part and inv_part == po_part:
+                best_match = (inv_id, po_id, 100, "Exact_Vendor_Part")
+                break
+
+            # Rule 3: Color check (strict)
+            if inv_color or po_color:
+                if inv_color != po_color:
+                    continue  # Color mismatch – invalid match
+
+            # Rule 2: Semantic match
+            score = cosine_similarity([invoice_embeddings[i]], [po_embeddings[j]])[0][0]
+            match_pct = round(score * 100, 2)
+
+            if match_pct >= 90:
+                match_type = "Strong_Semantic"
+            elif 40 <= match_pct < 90:
+                match_type = "Moderate_Semantic"
+            else:
+                continue
+
+            if match_pct > best_score:
+                best_match = (inv_id, po_id, match_pct, match_type)
+                best_score = match_pct
+
+        if best_match:
+            inv_id, po_id, match_pct, rule = best_match
+            used_po_ids.add(po_id)
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": po_id,
+                "MatchPercentage": match_pct,
+                "Rule": rule
+            })
+        else:
+            results.append({
+                "Invoice_Line_Id": inv_id,
+                "PO_Line_Id": None,
+                "MatchPercentage": 0,
+                "Rule": "No Match"
+            })
+
+    return pd.DataFrame(results)
+load_dotenv()
+
+llm = AzureChatOpenAI(
+    openai_api_key=os.getenv("AZURE_LLM_OPENAI_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_LLM_OPENAI_ENDPOINT"),
+    api_version=os.getenv("AZURE_LLM_OPENAI_API_VERSION"),
+    deployment_name=os.getenv("LLM_DEPLOYMENT_NAME")
+)
+
+#Text Embedding 3 Large
+deployment_name = "text-embedding-3-large"  
+
+# Step 2: Initialize Azure OpenAI Embeddings
+embeddings = AzureOpenAIEmbeddings(model=deployment_name)
+
+# Convert structured rows into text format
+def row_to_text(row):
+    return (
+        f"Legal Entity: {row['Legal Entity']}\n"
+        f"Company Name: {row['Company Name']}\n"
+        f"Gross Amount: {row['Invoice: Gross Amount']}\n"
+        f"VAT Amount: {row['Invoice: VAT Amount']}\n"
+        f"Invoice Type: {row['Invoice Type']}\n"
+        f"Country: {row['Invoice: Country']}\n"
+        f"Cost Code: {row['Cost Code']}\n"
+        f"GL Code: {row['GL Code']}"
+    )
+ldf = df.iloc[:1000]
+df_test = df.iloc[1000:1200]
+ldf.loc[:, "text"] = ldf.apply(row_to_text, axis=1)
+
+documents = [Document(page_content=text) for text in ldf["text"].tolist()]
+
+# Function to chunk large documents 
+def chunk_documents(documents):
+    chunks = []
+    for doc in documents:
+        text = doc.page_content
+       
+        for i in range(0, len(text), 2000):
+            chunks.append(Document(page_content=text[i:i + 2000]))
+    return chunks
+
+# Chunk the documents if needed
+documents = chunk_documents(documents) 
+
+vectorstore = FAISS.from_documents(documents, embeddings) 
+
+save_directory = "GL_faiss_vdb"
+vectorstore.save_local(save_directory)
+
+#retriever = vectorstore.as_retriever(search_type="similarity", k=10) 
+retriever = vectorstore.as_retriever(
+    search_type="mmr",
+    search_kwargs={
+        "k": 15,              # Number of final results returned
+        "fetch_k": 30,        # Number of candidate results fetched initially
+        "lambda_mult": 0.6    # Controls the tradeoff between relevance and diversity
+    }
+)
+# Convert structured rows into text format
+def row_to_text(row):
+    return (
+        f"Legal Entity: {row['Legal Entity']}\n"
+        f"Company Name: {row['Company Name']}\n"
+        f"Gross Amount: {row['Invoice: Gross Amount']}\n"
+        f"VAT Amount: {row['Invoice: VAT Amount']}\n"
+        f"Invoice Type: {row['Invoice Type']}\n"
+        f"Country: {row['Invoice: Country']}\n"
+        f"Cost Code: {row['Cost Code']}\n"
+        f"GL Code: {row['GL Code']}"
+    )
+ldf = df.iloc[:1000]
+df_test = df.iloc[1000:1200]
+ldf.loc[:, "text"] = ldf.apply(row_to_text, axis=1)
+
+documents = [Document(page_content=text) for text in ldf["text"].tolist()]
+
+# Function to chunk large documents 
+def chunk_documents(documents):
+    chunks = []
+    for doc in documents:
+        text = doc.page_content
+       
+        for i in range(0, len(text), 2000):
+            chunks.append(Document(page_content=text[i:i + 2000]))
+    return chunks
+
+# Chunk the documents if needed
+documents = chunk_documents(documents) 
+
+vectorstore = FAISS.from_documents(documents, embeddings) 
+
+save_directory = "GL_faiss_vdb"
+vectorstore.save_local(save_directory)
+
+#retriever = vectorstore.as_retriever(search_type="similarity", k=10) 
+retriever = vectorstore.as_retriever(
+    search_type="mmr",
+    search_kwargs={
+        "k": 15,              # Number of final results returned
+        "fetch_k": 30,        # Number of candidate results fetched initially
+        "lambda_mult": 0.6    # Controls the tradeoff between relevance and diversity
+    }
+)
+# Convert structured rows into text format
+def row_to_text(row):
+    return (
+        f"Legal Entity: {row['Legal Entity']}\n"
+        f"Company Name: {row['Company Name']}\n"
+        f"Gross Amount: {row['Invoice: Gross Amount']}\n"
+        f"VAT Amount: {row['Invoice: VAT Amount']}\n"
+        f"Invoice Type: {row['Invoice Type']}\n"
+        f"Country: {row['Invoice: Country']}\n"
+        f"Cost Code: {row['Cost Code']}\n"
+        f"GL Code: {row['GL Code']}"
+    )
+ldf = df.iloc[:1000]
+df_test = df.iloc[1000:1200]
+ldf.loc[:, "text"] = ldf.apply(row_to_text, axis=1)
+
+documents = [Document(page_content=text) for text in ldf["text"].tolist()]
+
+# Function to chunk large documents 
+def chunk_documents(documents):
+    chunks = []
+    for doc in documents:
+        text = doc.page_content
+       
+        for i in range(0, len(text), 2000):
+            chunks.append(Document(page_content=text[i:i + 2000]))
+    return chunks
+
+# Chunk the documents if needed
+documents = chunk_documents(documents) 
+
+vectorstore = FAISS.from_documents(documents, embeddings) 
+
+save_directory = "GL_faiss_vdb"
+vectorstore.save_local(save_directory)
+
+#retriever = vectorstore.as_retriever(search_type="similarity", k=10) 
+retriever = vectorstore.as_retriever(
+    search_type="mmr",
+    search_kwargs={
+        "k": 15,              # Number of final results returned
+        "fetch_k": 30,        # Number of candidate results fetched initially
+        "lambda_mult": 0.6    # Controls the tradeoff between relevance and diversity
+    }
+)
+
+def invoice_to_query_string(invoice_row):
+    return (
+        f"Legal Entity: {invoice_row['Legal Entity']}\n"
+        f"Company Name: {invoice_row['Company Name']}\n"
+        f"Gross Amount: {invoice_row['Invoice: Gross Amount']}\n"
+        f"VAT Amount: {invoice_row['Invoice: VAT Amount']}\n"
+        f"Invoice Type: {invoice_row['Invoice Type']}\n"
+        f"Country: {invoice_row['Invoice: Country']}"
+    )
+import re
+
+# Function to extract prediction from LLM response
+def extract_codes(response):
+    match = re.search(r"Cost Code:\s*(\S+),\s*GL Code:\s*(\S+)", response)
+    if match:
+        return match.group(1), match.group(2)
+    else:
+        return None, None
+
+correct_cost = 0
+correct_gl = 0
+correct_both = 0
+total = len(df_test)
+predictions = []
+
+for index, row in df_test.iterrows():
+    query = invoice_to_query_string(row)
+    response = qa_chain.run(query)
+    
+    predicted_cost, predicted_gl = extract_codes(response)
+    expected_cost = str(row['Cost Code']).strip()
+    expected_gl = str(row['GL Code']).strip()
+
+    is_cost_correct = predicted_cost == expected_cost
+    is_gl_correct = predicted_gl == expected_gl
+    is_both_correct = is_cost_correct and is_gl_correct
+
+    if is_cost_correct:
+        correct_cost += 1
+    if is_gl_correct:
+        correct_gl += 1
+    if is_both_correct:
+        correct_both += 1
+
+    predictions.append({
+        "Legal Entity": row["Legal Entity"],
+        "Company Name": row['Company Name'],
+        "Gross Amount": row['Invoice: Gross Amount'],
+        "VAT Amount": row['Invoice: VAT Amount'],
+        "Invoice Type": row['Invoice Type'],
+        "Country": row['Invoice: Country'],
+        "Expected Cost Code": expected_cost,
+        "Expected GL Code": expected_gl,
+        "Predicted Cost Code": predicted_cost,
+        "Predicted GL Code": predicted_gl
+    })
+
+# Accuracy metrics
+cost_accuracy = correct_cost / total
+gl_accuracy = correct_gl / total
+total_accuracy = correct_both / total
+
+# Print accuracies
+print(f"Cost Code Accuracy: {cost_accuracy:.2%}")
+print(f"GL Code Accuracy: {gl_accuracy:.2%}")
+print(f"Total Match Accuracy (both correct): {total_accuracy:.2%}")
+
+# Save predictions to CSV
+pd.DataFrame(predictions).to_csv("rag_invoice_predictions_4.csv", index=False)
