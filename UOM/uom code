@@ -118,3 +118,28 @@ for i, item in enumerate(all_entries):
         print("\n Final Decision Based on Description:")
         print(desc_result)
 
+def validate_conversion(item, conversion_rate):
+    invup = item["invup"]
+    invqty = item["invqty"]
+    invsubt = item["invsubt"]
+    
+    poup = item["poup"]
+    poqty = item["poqty"]
+    posubt = item["posubt"]
+
+    # Step 1: Check if PO unit price is close to CR * Invoice unit price
+    step1_valid = is_close(poup, conversion_rate * invup)
+
+    # Step 2: Check if invoice subtotal ≈ invqty × invup (original logic)
+    step2_valid = is_close(invsubt, (invqty * invup * conversion_rate)/conversion_rate)
+
+    # Optional: Also check PO subtotal
+    #step3_valid = is_close(posubt, poqty * poup)
+
+    return {
+        "step1_unit_price_match": step1_valid,
+        "step2_invoice_subtotal_match": step2_valid,
+        "all_passed": step1_valid and step2_valid
+    }
+
+
