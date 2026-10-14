@@ -1,0 +1,138 @@
+import os
+import pandas as pd
+import pickle
+test_data_path= "inference/test.csv"
+model_path= "model1.pkl"
+label_encoder_path= "label_encoder.pkl"
+scope1_path= "scope1.csv"
+scope2_path= "scope2.csv"
+x_field= ['Vendor Name', 'Vendor Nubmer', 'Legal Entiry', 'Country', 'Tax Code Description']
+best_combo= ['Vendor Name', 'Legal Entiry', 'Tax Code Description']
+to_drop=["Country"]
+def validate_and_prepare_dataframe(df, x_field, to_drop):
+    if not x_field:
+        raise ValueError("x_field must be a non-empty list.")
+    
+    required_columns = x_field
+    missing_columns = set(required_columns) - set(df.columns)
+    if missing_columns:
+        raise ValueError(f"The following required columns are missing in the DataFrame: {missing_columns}")
+    
+    df = df[list(required_columns)].copy()
+
+    missing_value_cols = df[required_columns].columns[df[required_columns].isnull().any()]
+    if not missing_value_cols.empty:
+        raise ValueError(f"The following columns contain missing values: {list(missing_value_cols)}")
+
+    df.drop(columns=[col for col in to_drop if col in df.columns], inplace=True, errors='ignore')
+
+    df = df.reset_index(drop=True)
+    df['index'] = df.index
+
+    return df
+
+def process_inference(
+    test_data_path: str,
+    model_path: str,
+    label_encoder_path: str,
+    scope1_path: str,
+    scope2_path: str,
+    x_field: list,
+    y_field: list,
+    best_combo: list,
+    to_drop: list
+):
+    if not os.path.exists(test_data_path):
+        raise FileNotFoundError(f"{test_data_path} not found.")
+    # df = pd.read_csv(test_data_path)
+    files=os.listdir(test_data_path)
+    if len(files)==0:
+        raise FileNotFoundError(f"No file found for inferencing.")
+    elif len(files)>1:
+        raise FileNotFoundError(f"More than 1 file found for inferencing.")
+    for file in files:
+        file_path = os.path.join(test_data_path, file)
+        ext = os.path.splitext(file)[-1].lower()
+
+        try:
+            if ext == '.csv':
+                df = pd.read_csv(file_path)
+            elif ext in ['.xlsx', '.xls']:
+                df = pd.read_excel(file_path)
+            elif ext == '.xlsb':
+                import pyxlsb  
+                df = pd.read_excel(file_path, engine='pyxlsb')
+        except Exception as e:
+            raise ValueError(f"Error loading {file}: {e}. Please provide a supported file type for inferencing: .csv, .xlsx, .xls, or .xlsb")
+
+    for col in y_field:
+        if col in df.columns:
+            df.drop(columns=[col], inplace=True)
+
+    # Validate and prepare DataFrame
+    updated_df = validate_and_prepare_dataframe(df, x_field, to_drop)
+
+    # Load label encoders
+    with open(label_encoder_path, "rb") as f:
+        label_encoders = pickle.load(f)
+
+    # Load scope1
+    if not os.path.exists(scope1_path):
+        raise FileNotFoundError("scope1.csv file not found.")
+    scope1 = pd.read_csv(scope1_path)
+
+    match_cols = [col for col in scope1.columns if col != 'gl__cc']
+    scope1['merged'] = scope1[match_cols].astype(str).agg('__'.join, axis=1)
+    updated_df['merged'] = updated_df[match_cols].astype(str).agg('__'.join, axis=1)
+
+    # Map gl__cc from scope1
+    merged_to_glcc = dict(zip(scope1['merged'], scope1['gl__cc']))
+    updated_scope1 = updated_df[updated_df['merged'].isin(merged_to_glcc)].copy()
+    updated_scope1['gl__cc'] = updated_scope1['merged'].map(merged_to_glcc)
+    updated_scope1.drop(columns=["merged"], inplace=True)
+
+    # Remaining rows
+    updated_scope2 = updated_df[~updated_df['index'].isin(updated_scope1['index'])].copy()
+    updated_scope2.drop(columns=["merged"], inplace=True)
+
+    # Load scope2 and match
+    if not os.path.exists(scope2_path):
+        raise FileNotFoundError("scope2.csv file not found.")
+    scope2 = pd.read_csv(scope2_path)
+    scope2_match_cols = [col for col in scope2.columns if col != 'gl__cc']
+    scope2['merged'] = scope2[scope2_match_cols].astype(str).agg('__'.join, axis=1)
+
+    updated_scope2['merged'] = updated_scope2[scope2_match_cols].astype(str).agg('__'.join, axis=1)
+    up_scope2 = updated_scope2[updated_scope2['merged'].isin(scope2['merged'])].copy()
+    up_scope2.drop(columns=["merged"], inplace=True)
+    up_exception = updated_scope2[~updated_scope2['merged'].isin(scope2['merged'])].copy()
+    up_exception.drop(columns=["merged"], inplace=True)
+    up_exception['gl__cc'] = None
+
+    # Prepare X_test
+    X_test = up_scope2.drop(columns=["index"], errors="ignore").copy()
+    for col in X_test.columns:
+        if col in label_encoders:
+            X_test[col] = label_encoders[col].transform(X_test[col]).astype(float)
+
+    # Encode and transform 'merged'
+    X_test["merged"] = X_test[best_combo].astype(float).astype(str).agg("__".join, axis=1)
+    X_test["merged"] = label_encoders["merged"].transform(X_test["merged"])
+    X_test.drop(columns=best_combo, inplace=True)
+
+    # Load model and predict
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+
+    predictions = model.predict(X_test)
+    up_scope2 = up_scope2.copy()
+    up_scope2["gl__cc"] = predictions
+
+    # Final DataFrame
+    final_df = pd.concat([updated_scope1, up_scope2, up_exception], ignore_index=True)
+    final_df = final_df.sort_values(by='index').reset_index(drop=True)
+    final_df.drop(columns=['index'], inplace=True, errors='ignore')
+
+    return final_df
+# final_df=process_inference(test_data_path, model_path, label_encoder_path, scope1_path,
+#     scope2_path, x_field, best_combo, to_drop)
