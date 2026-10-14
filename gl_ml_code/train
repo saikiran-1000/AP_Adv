@@ -1,0 +1,474 @@
+import os
+import time
+import pickle
+import logging
+import warnings
+warnings.filterwarnings("ignore")
+import numpy as np
+import pandas as pd
+from collections import Counter
+from itertools import combinations
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import LabelEncoder
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+#from xgboost import XGBClassifier
+#from lightgbm import LGBMClassifier
+
+# x_field_input = input("Enter x_field columns separated by commas: ")
+# x_field = [col.strip() for col in x_field_input.split(',')]
+
+# y_field_input = input("Enter y_field columns separated by commas: ")
+# y_field = [col.strip() for col in y_field_input.split(',')]
+# # print(f"x fields are: {type(x_field)} , {x_field}")
+# # print(f"y fields are: {type(y_field)} , {y_field}")
+# obj_field=[]
+
+# low_scope=2
+# high_scope=3
+# def forward_selection(data,y_field):
+    # dropna, error: if no of dropped rows are more than threshold
+    #  
+def data_loader(folder_path, x_field, y_field):
+    print("DATA LOADING...\n")
+    files = os.listdir(folder_path)
+    if not files:
+        raise ValueError(f"No folder name {folder_path} found.")
+    if len(files)!=1:
+        raise ValueError(f"More than 1 or no files found in training folder directory")
+    field_to_continue = []
+    if len(x_field) > 0 or len(y_field) > 0:
+        if len(x_field) > 0:
+            field_to_continue.extend(x_field)
+        else:
+            raise ValueError("Please provide input fields (x_field).")
+        if len(y_field) > 0:
+            field_to_continue.extend(y_field)
+        else:
+            raise ValueError("Please provide label fields (y_field).")
+    if len(field_to_continue) == 0:
+        raise ValueError("Field list is empty. Please provide fields to train.")
+
+    for file in files:
+        file_path = os.path.join(folder_path, file)
+        ext = os.path.splitext(file)[-1].lower()
+
+        try:
+            if ext == '.csv':
+                df = pd.read_csv(file_path, encoding='latin1')
+                df = df[field_to_continue]
+                return df, True
+            elif ext in ['.xlsx', '.xls']:
+                df = pd.read_excel(file_path)
+                df = df[field_to_continue]
+                return df, True
+            elif ext == '.xlsb':
+                import pyxlsb  
+                df = pd.read_excel(file_path, engine='pyxlsb')
+                df = df[field_to_continue]
+                return df, True
+        except Exception as e:
+            raise ValueError(f"Error loading {file}: {e}. Please provide a supported file type: .csv, .xlsx, .xls, or .xlsb")
+
+    # No readable files found
+    raise ValueError("No supported files found in the folder.")
+
+# data,train=data_loader("dataset",x_field,y_field)
+# print("Data shape is ", data.shape)
+
+def load_and_clean_data(data, x_field, y_field,train,config_param,obj_field):
+    print("CLEANING THE DATA...\n")
+    if data is None or not train:
+        raise ValueError("No data to process. Please ensure data is loaded and 'train' is set to True.")
+
+    data = data.copy()
+
+    ##################################################################################
+    print("Before - ", data.shape)
+    old_num = data.shape[0]
+
+    data = data.dropna()
+
+    print("After - ", data.shape)
+    new_num = data.shape[0]
+    # data.sample(n=1000, random_state=42).to_csv("inference/test.csv", index=False)
+
+
+    # if more than 10% data is dropped raise an error
+    if new_num < 0.9 * old_num:
+        raise ValueError("More than 10% of the data was dropped due to missing values. Halting process.")
+    ##################################################################################
+    ##################################################
+    # ----------- Should be only one label encoder --------------
+    ##################################################
+    label_encoders = {}
+    for col in data.columns:
+        if data[col].dtype == 'object':
+            obj_field.append(col)
+            data[col] = data[col].astype(str)
+            le = LabelEncoder()
+            data[col] = le.fit_transform(data[col]).astype('float32')
+            label_encoders[col] = le
+        elif np.issubdtype(data[col].dtype, np.number):
+            # obj_field.append(col)
+            data[col] = data[col].astype('float32')
+    data['gl__cc'] = data[y_field[0]].astype(str)
+    for i in range(1, len(y_field)):
+        data['gl__cc'] = data['gl__cc'].astype(str) + "__" + data[y_field[i]].astype(str)
+    data.drop(columns=y_field, inplace=True)
+
+    # Remove highly correlated columns (corr > 0.85)
+    print("This is x_field",x_field)
+    corr_matrix = data[x_field].corr().abs()
+    upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
+    print("This is upper.colums",upper.columns)
+    to_drop = []
+    for col in upper.columns:
+        for row in upper.index:
+            if upper.loc[row, col] > 0.85:
+                # Drop the one with fewer unique values
+                if data[col].nunique() < data[row].nunique():
+                    to_drop.append(col)
+                else:
+                    to_drop.append(row)
+    to_drop = list(set(to_drop))
+    print("DROPPING THESE COLUMNS: ",to_drop)
+    for col in to_drop:
+        if col in obj_field:
+            obj_field.remove(col)
+    # for col in y_field:
+    #     if col in obj_field:
+    #         obj_field.remove(col)
+    for col in y_field:
+        if col in obj_field:
+            obj_field.remove(col)
+
+    print("obj_field ", obj_field)
+    data.drop(columns=to_drop, inplace=True)
+
+    # Update x_field list after dropping
+    x_field = [col for col in x_field if col not in to_drop]
+    config_param["to_drop"]=to_drop
+    
+    return data, label_encoders,x_field,obj_field
+
+def select_features(df: pd.DataFrame, y_label: str, scoring='accuracy', cv=3):
+    X = df.drop(columns=[y_label])
+    y = df[y_label].astype(str) 
+
+    # Identify feature types
+    cat_cols = X.select_dtypes(include='object').columns
+    num_cols = X.select_dtypes(include='number').columns
+
+    # Fill missing values
+    X[cat_cols] = X[cat_cols].fillna('missing')
+    X[num_cols] = X[num_cols].fillna(X[num_cols].median())
+
+    # Encode categorical features
+    for col in cat_cols:
+        le = LabelEncoder()
+        X[col] = le.fit_transform(X[col])
+
+    # Encode target
+    y = LabelEncoder().fit_transform(y)
+
+    # Model and SFS
+    rf = RandomForestClassifier(n_estimators=100, random_state=42)
+    sfs = SequentialFeatureSelector(rf, direction='forward', scoring=scoring, n_jobs=-1, cv=cv)
+    sfs.fit(X, y)
+
+    selected_features = X.columns[sfs.get_support()].tolist()
+
+    return selected_features
+
+def generate_pair_checks(columns):
+    n = len(columns)
+    if n <= 4:
+        return list(range(n, 1, -1))
+    else:
+        return list(range(n-1, n//2, -1))
+
+def find_best_column_combinations(df, columns,config_param, target_col="gl__cc", verbose=True, threshold=0.95):
+    print("FINDING BEST COMBINATION...\n")
+    print("Printing columns",columns)
+    if len(columns)==0:
+        return ()
+    
+    # if len(obj_field)==len(x_field):
+    #     return columns
+    
+    if target_col not in df.columns:
+        raise ValueError(f"Target column '{target_col}' not found in the dataframe.")
+
+    columns = [col for col in columns if col != target_col]
+    if len(columns) < 2:
+        return list(columns)
+        # raise ValueError("At least two candidate columns are required for combination analysis.")
+
+    pair_checks = generate_pair_checks(columns)
+    if verbose:
+        print("Pair checks:", pair_checks)
+
+    best_combinations = {}
+    cc = 0
+    max_rows_covered = -1
+
+    for k in pair_checks:
+        pairs = list(combinations(columns, k))
+        max_unique_1 = -1
+        best_pair = ()
+        row_covered = 0
+
+        for pair in pairs:
+            merged = df[list(pair)].astype(str).agg("__".join, axis=1)
+            df["merged"] = merged
+
+            grouped = df.groupby("merged")[target_col].nunique().reset_index()
+            count_unique_1 = (grouped[target_col] == 1).sum()
+
+            valid_merged_values = grouped.loc[grouped[target_col] == 1, "merged"]
+            covered_rows = df[df["merged"].isin(valid_merged_values)].shape[0]
+
+            if count_unique_1 > max_unique_1:
+                max_unique_1 = count_unique_1
+                best_pair = pair
+                row_covered = covered_rows
+
+            cc += 1
+            # if verbose and cc % 30 == 0:
+            #     print(f"Checked {cc} combinations...")
+
+        best_combinations[k] = {
+            "columns": best_pair,
+            "count_unique_1": max_unique_1,
+            "rows_covered": row_covered
+        }
+
+        if row_covered > max_rows_covered:
+            max_rows_covered = row_covered
+
+        if verbose:
+            print(f"For {k} columns: Max 1-unique groups = {max_unique_1}, Rows covered = {row_covered}, Best Pair = {best_pair}")
+
+    df.drop(columns=["merged"], inplace=True, errors='ignore')
+
+    for k in sorted(best_combinations.keys()):
+        combo = best_combinations[k]
+        if combo["rows_covered"] >= threshold * max_rows_covered:
+            config_param["best_combo"]=list(combo["columns"])
+            if verbose:
+                print(f"Selected {k}-column combination: {combo['columns']} with rows covered = {combo['rows_covered']}")
+            return combo["columns"], config_param
+
+    # Fallback: return the best overall
+    best_k = max(best_combinations, key=lambda x: best_combinations[x]["rows_covered"])
+    if verbose:
+        print(f"Fallback to best overall: {best_combinations[best_k]['columns']}")
+    best_combo=best_combinations[best_k]["columns"]
+    config_param["best_combo"]=list(best_combo)
+
+    return best_combo,config_param
+
+# best_combo=find_best_column_combinations(data1,obj_field)
+
+def prepare_scope2_data(df, best_combo, low, high,label_encoders, target_col="gl__cc"):
+    print("PREPARING DATA FOR TRAINING...\n")
+    if df is None or df.empty:
+        raise ValueError("Input DataFrame is empty or None.")
+    
+    if not isinstance(best_combo, (list, tuple)) or len(best_combo) == 0:
+        raise ValueError("best_combo must be a non-empty list or tuple of column names.")
+    
+    if target_col not in df.columns:
+        raise ValueError(f"Target column '{target_col}' not found in the dataframe.")
+    
+    for col in best_combo:
+        if col not in df.columns:
+            raise ValueError(f"Column '{col}' in best_combo not found in the dataframe.")
+    
+    if not isinstance(low, int) or not isinstance(high, int) or low < 1 or high < 1 or low > high:
+        raise ValueError("Invalid range provided: 'low' and 'high' must be positive integers and low <= high.")
+
+    df["merged"] = df[list(best_combo)].astype(str).agg("__".join, axis=1)
+
+    grouped = df.groupby("merged")[target_col].nunique().reset_index(name="unique_count")
+    merged_eq1 = grouped[grouped["unique_count"] == 1]["merged"]
+    merged_inrange = grouped[
+        (grouped["unique_count"] >= low) & (grouped["unique_count"] <= high)
+    ]["merged"]
+
+    df_eq1 = df[df["merged"].isin(merged_eq1)].copy()
+    tempdf_eq1=df_eq1[list(best_combo)+[target_col]] ######################################
+
+    # Decode encoded columns before saving
+    for col in tempdf_eq1.columns:
+        if col in label_encoders:
+            tempdf_eq1[col] = label_encoders[col].inverse_transform(tempdf_eq1[col].astype(int))
+
+    # Now save the decoded dataframe
+    tempdf_eq1.to_csv("scope1.csv", index=False)
+
+    df_inrange = df[df["merged"].isin(merged_inrange)].copy()
+
+    df_eq1.drop(columns=list(best_combo), inplace=True, errors='ignore')
+    df_inrange.drop(columns=list(best_combo), inplace=True, errors='ignore')
+
+    return df_eq1, df_inrange
+
+# df1,df2=prepare_scope2_data(data1,best_combo, low_scope,high_scope)
+
+def train_model(scope2data,best_combo,label_encoders, obj_field,adaboost=False, Randomforest=False, xgboost=True, lightgbm=False, target_col="gl__cc"):
+    # Validation
+
+    if scope2data is None or scope2data.empty:
+        raise ValueError("Input data is empty or None.")
+    
+    if target_col not in scope2data.columns:
+        raise ValueError(f"Target column '{target_col}' not found in the dataframe.")
+    
+    if not adaboost and not Randomforest and not xgboost and not lightgbm:
+        raise ValueError("At least one of 'adaboost' or 'Randomforest' or 'xgboost' or 'lightgbm' must be set to True.")
+    print(scope2data.shape, "############# DATA SHAPE")
+    ############################################
+    ############################################
+    # if scope2data.shape[0]>5000:
+    #     scope2data=scope2data.iloc[:5000,:]
+    ############################################
+    ############################################
+    print("Training started...")
+    start_time = time.time()
+    ##################################################
+    # ----------- percent given,  --------------
+    ##################################################
+    ######################################################################################
+    value_counts = scope2data[target_col].value_counts()
+    valid_close = value_counts[value_counts > 4].index
+    scope2data = scope2data[scope2data[target_col].isin(valid_close)].copy()
+    ######################################################################################
+
+    scope2data[list(best_combo)] = scope2data['merged'].str.split('__', expand=True)
+    print("OBJ_FIELD ", obj_field)
+    tempscope2data = scope2data[obj_field + [target_col]]
+    # Decode encoded columns before saving
+    for col in tempscope2data.columns:
+        if col in label_encoders:
+            tempscope2data[col] = label_encoders[col].inverse_transform(tempscope2data[col].astype(float).astype(int))
+
+    # Now save the decoded dataframe
+    tempscope2data.to_csv("scope2.csv", index=False)
+
+    scope2data.drop(columns=list(best_combo), inplace=True, errors='ignore')
+
+    print(f"Data shape: {scope2data.shape}, Classes retained: {valid_close.shape}")
+    print("Columns used: ", list(scope2data.columns))
+    # Prepare X and y
+    y = scope2data[target_col]
+    X = scope2data.drop(columns=[target_col])
+
+    # Encode categorical columns
+    for col in X.columns:
+        if X[col].dtype == "object":
+            if col not in label_encoders:
+                le = LabelEncoder()
+                X[col] = le.fit_transform(X[col])
+                label_encoders[col] = le
+    filename="label_encoder.pkl"
+    with open(filename, 'wb') as f:
+        pickle.dump(label_encoders, f)
+    print(f"Label Encoder saved to {filename}")
+    X.to_csv("X.csv",index=False)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Model selection
+    if adaboost:
+        base_estimator = DecisionTreeClassifier(max_depth=10)
+        model = AdaBoostClassifier(estimator=base_estimator, n_estimators=50, learning_rate=0.05, random_state=42)
+    elif Randomforest:
+        model = RandomForestClassifier(n_estimators=100, random_state=42)
+    elif lightgbm:
+        #base_estimator = DecisionTreeClassifier(max_depth=10)
+        model = LGBMClassifier(n_estimators=100, learning_rate=0.1, random_state=42)
+    elif xgboost:
+        #base_estimator = DecisionTreeClassifier(max_depth=10)
+        model = XGBClassifier( objective='multi:softprob',num_class=643,n_estimators=300,max_depth=12,learning_rate=0.03,subsample=0.8,colsample_bytree=0.8,reg_lambda=2,reg_alpha=1,use_label_encoder=False,eval_metric="mlogloss",tree_method="hist", random_state=42)
+
+    # Train the model
+    model.fit(X_train, y_train)
+    print("Training ended.")
+
+    # Evaluation
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Model Accuracy (test): {accuracy:.4f}")
+
+    y_predtrain = model.predict(X_train)
+    accuracytrain = accuracy_score(y_train, y_predtrain)
+    print(f"Model Accuracy (train): {accuracytrain:.4f}")
+
+    print(f"Time taken for training: {time.time() - start_time:.2f} seconds")
+
+    model_filename="model1.pkl"
+    with open(model_filename, 'wb') as f:
+        pickle.dump(model, f)
+    print(f"Model saved to {model_filename}")
+
+    return model
+# ada_model=train_model(df2)
+
+# filename: training_module.py
+
+def training(x_field_input, y_field_input, low_scope, high_scope,config_param,train_folder,config_path):
+    # Remove global vars and pass everything explicitly
+    x_field = [col.strip() for col in x_field_input.split(',')]
+    y_field = [col.strip() for col in y_field_input.split(',')]
+    obj_field = []
+
+    data, train = data_loader(train_folder, x_field, y_field)
+    print("Data shape is ", data.shape)
+
+    data1, label_encoder,x_field,obj_field = load_and_clean_data(data, x_field, y_field,train,config_param,obj_field)
+    best_combo,config_param = find_best_column_combinations(data1, obj_field,config_param)
+
+    with open(config_path, 'wb') as f:
+        pickle.dump(config_param, f)
+    print(f"Config parameters saved to {config_path}")
+    df1, df2 = prepare_scope2_data(data1, best_combo, low_scope, high_scope,label_encoder)
+    print("------------------- OBJ FIELD IS HERE ---------", obj_field)
+    ada_model = train_model(df2,best_combo,label_encoder,obj_field)
+    print("CONFIG_PARAM ------ ",config_param)
+    return ada_model,config_param
+
+
+# def main():
+#     global low_scope, high_scope, x_field, y_field, obj_field
+
+#     low_scope = 2
+#     high_scope = 10
+
+#     # x_field_input = input("Enter x_field columns separated by commas: ")
+#     # x_field = [col.strip() for col in x_field_input.split(',')]
+
+#     # y_field_input = input("Enter y_field columns separated by commas: ")
+#     # y_field = [col.strip() for col in y_field_input.split(',')]
+#     x_field_input="Vendor Name, Vendor Nubmer, Legal Entiry, Country, Tax Code Description"
+#     x_field = [col.strip() for col in x_field_input.split(',')]
+#     y_field_input="GL Code, Cost Code"
+#     y_field = [col.strip() for col in y_field_input.split(',')]
+#     percent_to_take=90
+#     obj_field = []
+
+#     data, train = data_loader("dataset", x_field, y_field)
+#     print("Data shape is ", data.shape)
+
+#     data1,label_encoders = load_and_clean_data(data, train)
+#     best_combo = find_best_column_combinations(data1, obj_field)
+
+#     df1, df2 = prepare_scope2_data(data1, best_combo, low_scope, high_scope,label_encoders)
+
+#     ada_model = train_model(df2,best_combo,label_encoders)
+
+# if __name__ == "__main__":
+#     main()
