@@ -1,0 +1,492 @@
+Invoice Type,Invoice: Legal Entity,Invoice: Country,Invoice: Vendor,gl__cc
+Normal,E001,Finland,R-kioski Oy,20.0__115590610.0
+Normal,E001,Finland,R-kioski Oy,20.0__115590610.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E001,Finland,Keravan Kaupunki Vesihuolto,74.0__115552610.0
+Contract-Normal,E001,Finland,Keravan Kaupunki Vesihuolto,73.0__115552610.0
+Contract-Normal,E002,Finland,Keravan Kaupunki Vesihuolto,74.0__116042010.0
+Contract-Normal,E002,Finland,Keravan Kaupunki Vesihuolto,73.0__116042010.0
+Contract-Normal,Z001,Switzerland (CSC),Reborn Normandie,65.0__100090810.0
+Contract-Normal,C001,Norway,Würth Modyf AS,124.0__105550800.0
+Normal,C001,Norway,Kredinor SA,189.0__105912610.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Ariba,E002,Finland,F PJ Control Oy,78.0__116210020.0
+Ariba,D002,Sweden,SIEMENS AB,118.0__102071016.0
+Ariba,E001,Finland,Novela Oy,198.0__115998610.0
+Normal,Z001,Switzerland (CSC),Jacques Gabriel AG,123.0__100990610.0
+Normal,Z001,Switzerland (CSC),Jacques Gabriel AG,123.0__100990610.0
+Normal,C001,Norway,REMA 1000 NORGE AS,20.0__105531620.0
+Normal,C001,Norway,REMA 1000 NORGE AS,20.0__105531620.0
+Ariba,Z001,Switzerland (CSC),Altum Partners Consulting Limited,189.0__100210770.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Ariba,D002,Sweden,SOLAR SVERIGE  AB,78.0__102044010.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Normal,C002,Norway,Bertel O. Steen Lørenskog AS,97.0__106231700.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,81.0__116071010.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,81.0__116071010.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,81.0__116071010.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,80.0__116041010.0
+Ariba,C001,Norway,VARIA MEK VERKSTED AS,77.0__105550800.0
+Normal,C001,Norway,NORGESGRUPPEN ASA,20.0__105531620.0
+Normal,C001,Norway,NORGESGRUPPEN ASA,20.0__105531620.0
+Normal,C001,Norway,REMA 1000 NORGE AS,20.0__105531620.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,124.0__101560610.0
+SCF,E002,Finland,F Assemblin Oy,80.0__116041010.0
+SCF,E002,Finland,F Assemblin Oy,80.0__116041010.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Normal,Z001,Switzerland (CSC),SWELOG,64.0__100210610.0
+Normal,Z001,Switzerland (CSC),SWELOG,64.0__100210610.0
+Ariba,D002,Sweden,WALLIN LIFT AB,98.0__102071020.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Ariba,C002,Norway,Eurofins Environment Testing Norway,189.0__106070010.0
+Ariba,E002,Finland,Teknologian tutkimuskeskus VTT Oy,195.0__116070020.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,80.0__116041010.0
+Ariba,D002,Sweden,NILS LARSSONS MASKINSERVICE AB,147.0__102071020.0
+Contract-Normal,C001,Norway,Würth Modyf AS,124.0__105550750.0
+Normal,C001,Norway,CRECON AS,77.0__105550800.0
+Normal,C002,Norway,VARNAVEIEN MINERALVANN AS,99.0__106230160.0
+Contract-Normal,E001,Finland,CGI SUOMI OY,160.0__115910610.0
+Contract-Normal,C002,Norway,Bring Intermodal AS,99.0__106220610.0
+Ariba,D002,Sweden,LBC FRAKT I VÄRMLAND AB,92.0__102230610.0
+Ariba,D002,Sweden,LBC FRAKT I VÄRMLAND AB,92.0__102230610.0
+Ariba,D002,Sweden,LBC FRAKT I VÄRMLAND AB,92.0__102220616.0
+Ariba,D002,Sweden,LBC FRAKT I VÄRMLAND AB,92.0__102230610.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Normal,E002,Finland,Nordea Rahoitus Suomi Oy,149.0__116071010.0
+Contract-Normal,Z001,Switzerland (CSC),Reborn Normandie,65.0__100090820.0
+Contract-Normal,Z001,Switzerland (CSC),Reborn Normandie,65.0__100090820.0
+Contract-Normal,C002,Norway,Nalco AB,79.0__106024010.0
+Critical Invoices,D002,Sweden,COOP INKÖP&LOGISTIK AB,92.0__102220616.0
+Critical Invoices,D002,Sweden,COOP INKÖP&LOGISTIK AB,92.0__102220616.0
+Normal,D001,Sweden,MENIGO FOODSERVICE AB,39.0__101532630.0
+Contract-Normal,C002,Norway,Malthus Uniteam AS,151.0__106210020.0
+Normal,Z001,Switzerland (CSC),Auris Relocation AG,123.0__100950610.0
+Normal,Z001,Switzerland (CSC),Auris Relocation AG,123.0__100950610.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Contract-Normal,C002,Norway,Circle K Norge AS,96.0__106210020.0
+Contract-Normal,C002,Norway,Circle K Norge AS,96.0__106230220.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Ariba,D002,Sweden,Rexel Sverige AB,78.0__102044020.0
+Contract-Normal,C002,Norway,Nalco AB,79.0__106021010.0
+Contract-Normal,C002,Norway,Nalco AB,79.0__106025010.0
+Ariba,D001,Sweden,LEMVIGH-MÜLLER,124.0__101560610.0
+Contract-Normal,D002,Sweden,ÖRESUNDSKRAFT AB,72.0__102041020.0
+Contract-Normal,E002,Finland,Keravan Kaupunki Vesihuolto,73.0__116042010.0
+Ariba,E001,Finland,Chartterit Reingoldt,198.0__115998610.0
+Normal,D001,Sweden,SERVERA R & S AB NORRKÖPING,39.0__101532630.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Ariba,C001,Norway,TESS Handel,77.0__105550650.0
+Contract-SCF,D001,Sweden,LOS Energy AB,72.0__101970610.0
+Contract-SCF,D002,Sweden,LOS Energy AB,72.0__102041020.0
+Contract-SCF,D001,Sweden,LOS Energy AB,72.0__101560610.0
+Contract-SCF,D002,Sweden,LOS Energy AB,72.0__102041016.0
+Contract-SCF,D002,Sweden,LOS Energy AB,72.0__102041016.0
+Contract-SCF,D002,Sweden,LOS Energy AB,72.0__102041016.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Critical Invoices,D001,Sweden,FORA AB,11.0__101952610.0
+Normal,D002,Sweden,AHLSELL AB,210.0__102990610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Normal,D001,Sweden,Bolagsverket Företagsinteckningar,188.0__101912610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Normal,Z001,Switzerland (CSC),SWELOG,64.0__100210610.0
+Contract-Normal,E001,Finland,Koodiviidakko Oy,198.0__115998610.0
+Contract-Normal,E001,Finland,Koodiviidakko Oy,198.0__115998610.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Contract-Normal,C001,Norway,KLIMACONSULT AS,80.0__105550800.0
+Contract-Normal,C001,Norway,KLIMACONSULT AS,80.0__105550800.0
+Contract-Normal,C001,Norway,KLIMACONSULT AS,80.0__105550800.0
+Ariba,D002,Sweden,DHL EXPRESS (SWEDEN) AB,160.0__102220610.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Ariba,C001,Norway,NORSTAT NORGE AS,140.0__105691610.0
+Ariba,C001,Norway,NORSTAT NORGE AS,140.0__105691610.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Ariba,D001,Sweden,BCW,197.0__101998610.0
+Ariba,D001,Sweden,BCW,197.0__101998610.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Ariba,Z001,Switzerland (CSC),Fritz + Caspar Jenny AG immosupport,82.0__100910740.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Normal,Z001,Switzerland (CSC),SWELOG,64.0__100210610.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Contract-Normal,C002,Norway,ACTI-CHEM NORGE,192.0__106044030.0
+Ariba,C001,Norway,Randstad AS,113.0__105550800.0
+Normal,Z001,Switzerland (CSC),FREJA TRANSPORT & LOGISTIC AB,64.0__100210610.0
+Normal,Z001,Switzerland (CSC),MALTEUROP France,63.0__100090660.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Normal,E001,Finland,Restel Ravintolat Oy,20.0__115590610.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+SCF,Z001,Switzerland (CSC),RPC BRAMLAGE Velky Meder s.r.o.,19.0__100961624.0
+Ariba,C001,Norway,VARIA MEK VERKSTED AS,77.0__105550750.0
+Contract-Normal,E001,Finland,Analyse Solutions Finland Oy,140.0__115680610.0
+Normal,C001,Norway,COOP NORGE,20.0__105531620.0
+Ariba,D002,Sweden,Aspire Mobility,115.0__102290610.0
+Normal,E001,Finland,Pori Jazz 66 ry,143.0__115600620.0
+Contract - SCF,E002,Finland,FD TM Seppo Sonninen,99.0__116230020.0
+Contract - SCF,E002,Finland,FD TM Seppo Sonninen,99.0__116230010.0
+Contract - SCF,E002,Finland,FD TM Seppo Sonninen,99.0__116230020.0
+Contract-Normal,C001,Norway,ONNINEN AS,77.0__105550750.0
+Normal,E001,Finland,ME Group Oy Ab Ltd,20.0__115590610.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Normal,C001,Norway,Lyreco Norge AS,157.0__105970610.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Contract-Normal,E002,Finland,Kuljetusliike A. Lindberg Oy,99.0__116230020.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,199.0__116960610.0
+Contract-Normal,E002,Finland,Kuljetusliike A. Lindberg Oy,99.0__116230020.0
+Contract-Normal,E002,Finland,Kuljetusliike A. Lindberg Oy,99.0__116230020.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101510610.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101521620.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Ariba,D002,Sweden,Stena Recycling,151.0__102290610.0
+Subsequent Credit,D002,Sweden,GDL Transport,92.0__102230610.0
+Contract-Normal,C002,Norway,LABOLYTIC AS,48.0__106070030.0
+Ariba,D001,Sweden,Bar & Tank i Sverige AB,83.0__101550610.0
+Contract-Normal,E001,Finland,LEASE PLAN FINLAND OY,152.0__115990620.0
+Contract-Normal,E002,Finland,LEASE PLAN FINLAND OY,152.0__116072010.0
+Contract-Normal,E002,Finland,LEASE PLAN FINLAND OY,110.0__116290610.0
+Contract-Normal,E001,Finland,LEASE PLAN FINLAND OY,152.0__115552610.0
+Contract-SCF,Z001,Switzerland (CSC),SMURFIT KAPPA DANMARK,65.0__100090820.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Normal,E001,Finland,ME Group Oy Ab Ltd,20.0__115590610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102020020.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102020020.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101521620.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101510616.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101510616.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101510610.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Critical Invoices,D001,Sweden,RETURPACK-PET SVENSKA AB,22.0__101916610.0
+Critical Invoices,D001,Sweden,RETURPACK-PET SVENSKA AB,26.0__101916610.0
+Ariba,E001,Finland,Coolfest Oy,83.0__115552610.0
+Ariba,E001,Finland,Coolfest Oy,83.0__115552610.0
+Ariba,E001,Finland,Coolfest Oy,77.0__115552610.0
+Ariba,E001,Finland,Coolfest Oy,83.0__115552610.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Normal,Z001,Switzerland (CSC),DSV ROAD A/S,99.0__100811620.0
+Contract-Normal,E001,Finland,LEASE PLAN FINLAND OY,152.0__115552610.0
+Contract-Normal,E001,Finland,LEASE PLAN FINLAND OY,152.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+SCF,E001,Finland,F Eteläpää Ari Laitepalvelu Tm,83.0__115552610.0
+Critical Invoices,Z001,Switzerland (CSC),Inter-community school,123.0__100950610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+SCF,E001,Finland,F K.RENWALL HUOLTOLIIKE OY AB,83.0__115552610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+SCF,E001,Finland,F Pääkaupunkiseudun Barservice,83.0__115552610.0
+SCF,E001,Finland,F Pääkaupunkiseudun Barservice,83.0__115552610.0
+SCF,E001,Finland,F Pääkaupunkiseudun Barservice,83.0__115552610.0
+SCF,E001,Finland,F Pääkaupunkiseudun Barservice,83.0__115552610.0
+SCF,E001,Finland,F Pääkaupunkiseudun Barservice,83.0__115552610.0
+Ariba,D001,Sweden,DRYCKESKONSULT AB,113.0__101510610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+SCF,E001,Finland,F Taneli Muhonen TMI,83.0__115552610.0
+Normal,E001,Finland,KOY Tampereen Kolismaankatu 1,153.0__115591610.0
+Normal,D001,Sweden,Göteborg Energi AB,72.0__101511620.0
+Ariba,D002,Sweden,SWEA ENERGI SH AB,96.0__102071010.0
+Ariba,D002,Sweden,SWEA ENERGI SH AB,96.0__102210020.0
+Ariba,D002,Sweden,SECURITAS SVERIGE AB,148.0__102071016.0
+Contract-Normal,E001,Finland,DHL Express (Finland) Oy,160.0__115970610.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Ariba,D002,Sweden,PETERSON & HANSSON BYGGNADS AB,81.0__102071010.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Ariba,E002,Finland,Pentanova Conveyor Systems Finland,78.0__116210010.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Normal,E001,Finland,Pori Jazz 66 ry,143.0__115600620.0
+Normal,E001,Finland,Pori Jazz 66 ry,143.0__115600620.0
+Normal,E001,Finland,Pori Jazz 66 ry,143.0__115600620.0
+Contract-Normal,E002,Finland,Kuljetusliike A. Lindberg Oy,99.0__116230020.0
+Ariba,D001,Sweden,DELFI MARKNADSPARTNER AB,140.0__101993610.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230200.0
+Contract-Normal,C002,Norway,WURTH NORGE A/S,83.0__106230180.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+Ariba,E001,Finland,JTJ Company Oy,83.0__115552610.0
+Ariba,E001,Finland,JTJ Company Oy,83.0__115552610.0
+Ariba,E001,Finland,JTJ Company Oy,83.0__115552610.0
+Ariba,E001,Finland,JTJ Company Oy,83.0__115552610.0
+Ariba,E001,Finland,JTJ Company Oy,83.0__115552610.0
+Ariba,D002,Sweden,Lastbilscentralen i Tvåstad AB,92.0__102230610.0
+Ariba,D002,Sweden,Lastbilscentralen i Tvåstad AB,92.0__102220616.0
+Contract-Normal,C002,Norway,IDEXX Laboratories Norge AS,48.0__106070030.0
+Ariba,D001,Sweden,PreZero Recycling AB,149.0__101560610.0
+Contract-Normal,C001,Norway,KOLLITAXI AS,80.0__105510700.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102220616.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102220616.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Ariba,D002,Sweden,TRANSPORTSERVICE LOG AB,92.0__102230610.0
+Contract-Normal,C002,Norway,ASTRUP AS,78.0__106044010.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Ariba,E002,Finland,Cervi Talotekniikka Oy,81.0__116071010.0
+Contract-Normal,E002,Finland,Diversey Suomi Oy,83.0__116020010.0
+Ariba,D001,Sweden,BCW,197.0__101998610.0
+Ariba,D002,Sweden,Randstad AB,189.0__102220610.0
+Ariba,D002,Sweden,Randstad AB,189.0__102220610.0
+Ariba,D002,Sweden,Caverion Sverige AB,81.0__102071010.0
+Ariba,D001,Sweden,TEKNIKCENTER I DALARNA AB,83.0__101550616.0
+Ariba,D002,Sweden,OFFICE DEPOT SVENSKA AB,49.0__102070024.0
+Contract-Normal,C002,Norway,Bring Intermodal AS,99.0__106220610.0
+Subsequent Credit,C002,Norway,Bring Intermodal AS,99.0__106220610.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Normal,C001,Norway,MICRO MATIC SERVICE CENTER AB,92.0__105550610.0
+Contract-Normal,C001,Norway,Würth Modyf AS,124.0__105550800.0
+Ariba,D002,Sweden,ELECTRONIC TECHNIC LS AB,173.0__102070020.0
+Ariba,D002,Sweden,Kents Åkeri i Kungsbacka AB,92.0__102230610.0
+Ariba,D002,Sweden,Kents Åkeri i Kungsbacka AB,92.0__102230610.0
+Ariba,D002,Sweden,Kents Åkeri i Kungsbacka AB,92.0__102230610.0
+Ariba,D002,Sweden,Kents Åkeri i Kungsbacka AB,92.0__102230610.0
+Normal,E001,Finland,Intrum Justitia Oy,210.0__115990610.0
+Ariba,C001,Norway,IPSOS AS,140.0__105691610.0
+Contract-Normal,Z001,Switzerland (CSC),Nordic Label Oy,65.0__100090820.0
+Ariba,C001,Norway,NORSTAT NORGE AS,140.0__105691610.0
+Ariba,C001,Norway,Randstad AS,113.0__105550750.0
+Ariba,C002,Norway,Adecco Norge AS,99.0__106230150.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Contract-Normal,Z001,Switzerland (CSC),Can-Pack S.A.,63.0__100090660.0
+Normal,Z001,Switzerland (CSC),Auris Relocation AG,123.0__100950610.0
+Ariba,Z001,Switzerland (CSC),Jorge H. Gibbons,118.0__100010700.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Ariba,E002,Finland,Siemens Osakeyhtiö,77.0__116044020.0
+Ariba,D001,Sweden,AHLSELL AB,78.0__101560610.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Ariba,D002,Sweden,Börje Svensson Åkeri AB,92.0__102230610.0
+Contract-Normal,E001,Finland,Yrityspalvelu Repo Oy,37.0__115531620.0
+Ariba,D002,Sweden,MORUPS LAGERSERVICE AB,195.0__102250610.0
+Contract - SCF,E002,Finland,FD Best Way Logistics Oy,99.0__116230020.0
+Normal,E001,Finland,ST1 Oy,20.0__115590610.0
+Normal,E001,Finland,ST1 Oy,20.0__115590610.0
+Normal,E001,Finland,ST1 Oy,20.0__115590610.0
+Normal,E001,Finland,Helsingin Rock and Roll Oy,140.0__115680610.0
+Ariba,D002,Sweden,GETINGE SVERIGE AB,95.0__102070010.0
+Ariba,D002,Sweden,DHL EXPRESS (SWEDEN) AB,160.0__102220610.0
+Normal,D001,Sweden,ISS FACILITY SERVICES AB,158.0__101936610.0
+Normal,D001,Sweden,ISS FACILITY SERVICES AB,158.0__101936610.0
+Ariba,C002,Norway,Eurofins Environment Testing Norway,189.0__106070010.0
+Ariba,E001,Finland,IPG Mediabrands Finland Oy,198.0__115998610.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Contract-Normal,E002,Finland,POSTI OY,99.0__116230020.0
+Normal,E002,Finland,LähiTapiola Keskinäinen Vakuut,11.0__116990610.0
+Contract-Normal,Z001,Switzerland (CSC),RKW Finland Ltd,65.0__100090810.0
+Ariba,D002,Sweden,OFFICE DEPOT SVENSKA AB,49.0__102070024.0
+Ariba,D001,Sweden,Bar & Tank i Sverige AB,83.0__101550610.0
+Contract-Normal,C002,Norway,LABOLYTIC AS,48.0__106070030.0
+Ariba,D002,Sweden,Randstad AB,189.0__102220610.0
+Ariba,D002,Sweden,CHEMOMETEC A/S,49.0__102070010.0
+Ariba,D002,Sweden,SECURITAS SVERIGE AB,148.0__102071016.0
+Contract-Normal,C002,Norway,Bring Intermodal AS,99.0__106220610.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Contract-SCF,E002,Finland,FD Best Way Logistics Oy,199.0__116960610.0
+Contract-Normal,Z001,Switzerland (CSC),RKW Finland Ltd,65.0__100090820.0
+Normal,D001,Sweden,Bolagsverket Företagsinteckningar,184.0__101997610.0
+Normal,E001,Finland,R-kioski Oy,20.0__115590610.0
+Ariba,D002,Sweden,Roys fönsterputs och städ AB,150.0__102071016.0
+Ariba,E002,Finland,Anton Paar Nordic Ab Suomen s,80.0__116070020.0
+Ariba,E002,Finland,Anton Paar Nordic Ab Suomen s,80.0__116070020.0
+Normal,D001,Sweden,Förpacknings- och Tidningsinsamling,28.0__101916610.0
+Ariba,E002,Finland,Mediq Suomi Oy,195.0__116070020.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Normal,E001,Finland,City Lights Oy,20.0__115590610.0
+Ariba,Z001,Switzerland (CSC),Bechtle Schweiz AG,191.0__100910740.0
+Contract-Normal,D002,Sweden,AHLSELL AB,78.0__102044020.0
+Ariba,D001,Sweden,AHLSELL AB,124.0__101560610.0
+Ariba,D001,Sweden,AHLSELL AB,77.0__101560610.0
+SCF,Z001,Switzerland (CSC),Ball Trading Germany GmbH & Co. KG,213.0__100915610.0
+Contract-Normal,Z001,Switzerland (CSC),Smart Retur Sverige AB,92.0__100060610.0
+Ariba,D002,Sweden,A-Kembaren i Falkenberg AB,120.0__102210020.0
+Ariba,D002,Sweden,Börje Svensson Åkeri AB,92.0__102220616.0
+Contract-Normal,E001,Finland,Gredi Oy,127.0__115536616.0
+Contract-Normal,E001,Finland,Gredi Oy,135.0__115600630.0
+Contract-Normal,E001,Finland,Gredi Oy,127.0__115536620.0
+Ariba,C001,Norway,Mediabrands AS,197.0__105998610.0
+Contract-Normal,C002,Norway,Enviropac Utleie AS,97.0__106071010.0
+Contract-Normal,C002,Norway,Enviropac Utleie AS,97.0__106071010.0
+Contract-Normal,C002,Norway,Enviropac Utleie AS,97.0__106071010.0
+Contract-Normal,C002,Norway,Enviropac Utleie AS,97.0__106071010.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Normal,C001,Norway,Modhi Norge AS,189.0__105912610.0
+Contract-Normal,C002,Norway,Enviropac Utleie AS,97.0__106071010.0
+Contract-Normal,E001,Finland,MECSEL OY,172.0__115510620.0
+Contract-Normal,E001,Finland,K. KIHLSTRÖM KY,99.0__115230620.0
+Contract-Normal,E001,Finland,K. KIHLSTRÖM KY,195.0__115552610.0
+Ariba,D002,Sweden,Lastbilscentralen i Tvåstad AB,92.0__102220616.0
+Ariba,D002,Sweden,Lastbilscentralen i Tvåstad AB,92.0__102230610.0
+Normal,E001,Finland,R-kioski Oy,20.0__115590610.0
+Normal,E001,Finland,Mahile Oy,21.0__115590610.0
+Normal,E001,Finland,R-kioski Oy,20.0__115590610.0
+Normal,C001,Norway,Circle K Norge AS,20.0__105531620.0
+Contract-Normal,E001,Finland,Kuljetus Jukka Heiskanen Ky,99.0__115230620.0
+Contract-SCF,Z001,Switzerland (CSC),SMURFIT KAPPA DANMARK,65.0__100090820.0
+Contract-SCF,E001,Finland,F TMI OHRANEN MIKA,99.0__115230620.0
+Ariba,Z001,Switzerland (CSC),Altum Partners Consulting Limited,189.0__100210770.0
+Contract-Normal,E002,Finland,L&T Ympäristöpalvelut Oy,199.0__116960610.0
