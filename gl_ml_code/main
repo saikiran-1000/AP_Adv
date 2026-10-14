@@ -1,0 +1,91 @@
+import os
+import pickle
+from training import training
+from inference import process_inference
+
+def check_train_or_test(train_folder, inference_folder,
+                        x_field_input, y_field_input,
+                        low_scope, high_scope, model_path,
+                        label_encoder_path, scope1_path,
+                        scope2_path,config,config_path):
+    
+    # if os.listdir(train_folder):
+    #     print("Training data found. Proceeding with training...")
+    #     training(x_field_input, y_field_input, low_scope=low_scope, high_scope=high_scope,config)
+    allowed_ext = ('.csv', '.xlsx', '.xls', '.xlsb')
+
+    # Filter valid training files
+    train_files = [f for f in os.listdir(train_folder) if f.lower().endswith(allowed_ext)]
+
+    if len(train_files) == 1:
+        print("One valid training file found. Proceeding with training...")
+        training(x_field_input, y_field_input, low_scope, high_scope, config, train_folder,config_path)
+    elif len(train_files) > 1: 
+        raise ValueError("Multiple file found in training folder.")
+    
+    with open(config_path, "rb") as f:
+        config_parameters = pickle.load(f)
+    to_drop=config_parameters["to_drop"]
+    best_combo=config_parameters["best_combo"]
+
+    test_files = [f for f in os.listdir(inference_folder) if f.lower().endswith(allowed_ext)]
+    if len(test_files) == 0:
+        raise ValueError("No file found in inference folder.")
+    if len(test_files) == 1:
+        print("One valid testing file found. Proceeding with testing...")
+        x_field = [col.strip() for col in x_field_input.split(',')]
+        y_field = [col.strip() for col in y_field_input.split(',')]        
+        final_data=process_inference(inference_folder,model_path,label_encoder_path,scope1_path,scope2_path,x_field,y_field,best_combo,to_drop)
+        # Ensure 'gl__cc' is a string before splitting
+        final_data[['GL Code', 'Cost Code']] = final_data['gl__cc'].astype(str).str.split('__', expand=True)
+        final_data.to_csv(os.path.join(inference_folder, "results.csv"), index=False)
+
+    elif len(test_files) > 1: 
+        raise ValueError("Multiple file found in inference folder.")    
+    # elif os.path.exists(inference_file):
+    #     print("Inference data found. Proceeding with inference...")
+    #     final_df = process_inference(
+    #         test_data_path,
+    #         model_path,
+    #         label_encoder_path,
+    #         scope1_path,
+    #         scope2_path,
+    #         x_field,
+    #         best_combo,
+    #         to_drop
+    #     )
+    #     print("Inference completed. Final output:")
+    #     print(final_df.head())
+
+    # else:
+    #     raise FileNotFoundError("No data found in either training or inference path. Please provide data.")
+
+if __name__ == "__main__":
+    # Define your inputs
+    config={}
+    train_folder = "dataset"
+    inference_folder = "inference"
+    
+    # Training parameters
+    
+    #x_field_input = "Vendor Name, Vendor Nubmer, Legal Entiry, Country, Tax Code Description"   # 
+    #y_field_input = "GL Code, Cost Code"
+    x_field_input = "Invoice Type, Invoice: Legal Entity, Invoice: Country, Invoice: Gross Amount,Invoice: Vendor, Invoice: Vendor Number"   # 
+    y_field_input = "GL Code, Cost Code"
+    low_scope = 2
+    high_scope = 3
+
+    # Inference parameters
+    model_path = "model1.pkl"
+    label_encoder_path = "label_encoder.pkl"
+    scope1_path = "scope1.csv"
+    scope2_path = "scope2.csv"
+    config_path="config.pkl"
+
+    check_train_or_test(
+        train_folder, inference_folder,
+        x_field_input, y_field_input,
+        low_scope, high_scope, model_path,
+        label_encoder_path, scope1_path,
+        scope2_path, config, config_path
+    )
