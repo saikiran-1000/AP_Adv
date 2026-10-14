@@ -1,0 +1,195 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+import re
+
+load_dotenv()#4o mini
+api_key = os.environ["AZURE_OPENAI_API_KEY"]
+azure_endpoint = os.environ['AZURE_OPENAI_ENDPOINT']
+api_version = os.environ['AZURE_OPENAI_API_VERSION']
+deployment_name=os.environ["AZURE_DEPLOYMENT_NAME"]
+llm = AzureChatOpenAI(
+    api_key=api_key,
+    azure_endpoint=azure_endpoint,
+    model_name = "gpt35turbo",
+    deployment_name = deployment_name,
+    api_version=api_version
+)
+from langchain_openai import OpenAIEmbeddings
+deployment_name = "text-embedding-3-large"
+# deployment_name = "text-babbage-001"
+embeddings = AzureOpenAIEmbeddings(model=deployment_name)
+
+'''COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown",]
+
+def extract_color(text):
+    text = str(text).lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None'''
+
+def preprocess(df):
+    df["CoraAP__Product_Service_Description__c"] = df["CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+
+    df["invoice_desc"] = df["CoraAP__Product_Service_Description__c"]
+    df["po_desc"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"]
+
+    #df["inv_color"] = df["invoice_desc"].apply(extract_color)
+    #df["po_color"] = df["po_desc"].apply(extract_color)
+    return df
+
+def prepare_po_documents(df):
+    po_df = df[["CoraAP__PO_Line_Item__c", "po_desc"]].dropna().drop_duplicates()
+
+    documents = []
+    for _, row in po_df.iterrows():
+        text = f"PO Line ID: {row['CoraAP__PO_Line_Item__c']}\nDescription: {row['po_desc']}"
+        documents.append(Document(page_content=text))
+    return documents
+def build_retriever(documents):
+    vectorstore = FAISS.from_documents(documents, embeddings)
+    retriever = vectorstore.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": 10, "fetch_k": 20, "lambda_mult": 0.6}
+    )
+    return retriever
+prompt_template = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
+You are a matching expert in an enterprise Accounts Payable automation system. Your task is to perform a strict one-to-one match between invoice lines and purchase order (PO) lines using the rules below. If no valid match exists, return null for that invoice line.
+
+### Matching Rules (Strict Priority Order)
+
+1. **Exact Match – Product/Service Number or Vendor Part Number**
+ - If either Product/Service Number or Vendor Part Number exactly matches between the invoice line and PO line, assign a 100% match.
+
+2. **Semantic Match (Only if Rule 1 fails)**
+ - Apply NLP-based semantic similarity using:
+   - Product/Vendor Codes
+   - Size, Length, or Quantity Indicators
+   - **Color or Color Code** (MANDATORY if present)
+ - Match Strength:
+   - 90–100% → Strong semantic match
+   - 40–89% → Moderate match
+   - <40% → Do not match
+
+3. **Color Matching – Strict Rule**
+ - If a color or color code appears in either invoice or PO line descriptions, they MUST match exactly.
+ - If the color is present in one line but missing or different in the other, consider it a **no match** and return matchPercentage as 0.
+
+### Match Selection Logic
+- Match each invoice line to exactly one PO line (1:1 matching).
+- Once matched, a PO line cannot be reused.
+- If multiple PO lines qualify:
+  - Select the one with the highest overall match score.
+  - If tied, choose the one that appears first.
+
+### Mandatory Post-Match Validations
+- Enforce 1:1 mapping: A PO line can be used only once.
+- Enforce color match strictly: If color or color code exists in either description, it **must match** for any match to be valid. Otherwise, discard the candidate.
+
+{context}
+
+Question: Which PO line matches the following invoice line?\n\n{question}
+"""
+)
+def match_invoice_lines_rag(df, retriever):
+    invoice_df = df[["Id", "invoice_desc", "CoraAP__Product_Service_No__c", "WO_Vendor_Part_Number__c"]].drop_duplicates()
+    matched_po_ids = set()
+    results = []
+    
+    load_dotenv()
+    api_key = os.environ["AZURE_LLM_OPENAI_API_KEY"]
+    azure_endpoint = os.environ['AZURE_LLM_OPENAI_ENDPOINT']
+    api_version = os.environ['AZURE_LLM_OPENAI_API_VERSION']
+    deployment_name=os.environ["LLM_DEPLOYMENT_NAME"]
+
+    llm = AzureChatOpenAI(
+        api_key=api_key,
+        azure_endpoint=azure_endpoint,
+        model_name = "gpt35turbo",
+        deployment_name = deployment_name,
+        api_version=api_version
+    )
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        chain_type="stuff",
+        chain_type_kwargs={"prompt": prompt_template}
+    )
+
+    for _, row in invoice_df.iterrows():
+        question = f"Invoice Line ID: {row['Id']}\nDescription: {row['invoice_desc']}\nProduct/Service No: {row['CoraAP__Product_Service_No__c']}\nVendor Part No: {row['WO_Vendor_Part_Number__c']}"
+        answer = qa_chain.run(question)
+
+        po_id = None
+        match_pct = 0
+        rule = "No Match"
+
+        # Parse LLM response
+        for line in answer.splitlines():
+            if "PO Line ID" in line:
+                po_id = line.split(":")[-1].strip()
+            if "matchPercentage" in line.lower():
+                match_pct = float(line.split(":")[-1].strip().replace("%", ""))
+            if "Rule" in line:
+                rule = line.split(":")[-1].strip()
+
+        if po_id and po_id not in matched_po_ids:
+            matched_po_ids.add(po_id)
+            results.append({
+                "Invoice_Line_Id": row["Id"],
+                "PO_Line_Id": po_id,
+                "MatchPercentage": match_pct,
+                "Rule": rule
+            })
+        else:
+            results.append({
+                "Invoice_Line_Id": row["Id"],
+                "PO_Line_Id": None,
+                "MatchPercentage": 0,
+                "Rule": "No Match"
+            })
+
+    return pd.DataFrame(results)
+# Load and preprocess your data
+ldf = df[:5]
+ldf = preprocess(ldf)
+
+# Prepare PO documents for retrieval
+po_docs = prepare_po_documents(ldf)
+retriever = build_retriever(po_docs)
+
+# Run matching
+match_df = match_invoice_lines_rag(ldf, retriever)
+embeddings = AzureOpenAIEmbeddings(
+    model="text-embedding-ada-002",
+    azure_endpoint=azure_endpoint,
+    api_key=api_key,
+    openai_api_version=api_version,
+    azure_deployment ='aiml-interns-embedding-ada-002-model'
+)
+   Invoice_Line_Id          PO_Line_Id  MatchPercentage      Rule
+0  a0WPP00000BLUCx2AP                None                0  No Match
+1  a0WPP00000BLUCy2AP  a0hPP000006Wz1lYAC                0  No Match
+2  a0WPP00000BUt7R2AT  a0hPP000005wGuPYAU                0  No Match
+3  a0WPP00000CgZiQ2AV                None                0  No Match
+4  a0WPP00000CUjYf2AL  a0hPP000007UMVJYA4                0  No Match
+
+_	CoraAP__Invoice__r	CoraAP__Invoice__r.Name	Id	Name	CoraAP__Invoice_Line_No__c	CoraAP__Product_Service_No__c	CoraAP__Product_Service_Description__c	WO_Vendor_Part_Number__c	Wesco_Unit_Price__c	CoraAP__PO_Line_Item__c	CoraAP__PO_Line_Item__r	CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c	CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c	CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c	CoraAP__PO_Line_Item__r.CoraAP__Rate__c
+0	[CoraAP__Invoice_Line_Item__c]	[CoraAP__Invoice__c]	INV-09598876	a0WPP00000BLUCx2AP	INVL-15738532	NaN	IO-767B15MS-01	SALISBURY 4356 HIGH VOLTAGE DETECTOR KIT --	4356	789.00	a0hPP000006Wz1kYAC	[CoraAP__PO_Line_Item__c]	IO-767B15MS-01	SALISBURY 4356 HIGH VOLTAGE DETECTOR KIT --	SAL-4356-K	789.00
+1	[CoraAP__Invoice_Line_Item__c]	[CoraAP__Invoice__c]	INV-09598876	a0WPP00000BLUCy2AP	INVL-15738533	NaN	IO-767B15MS-02	SALISBURY G100 PORTABLE GLOVE INFLATOR KIT WIT...	G100	402.00	a0hPP000006Wz1lYAC	[CoraAP__PO_Line_Item__c]	IO-767B15MS-02	SALISBURY G100 PORTABLE GLOVE INFLATOR KIT WIT...	SAL-G100	402.00
+2	[CoraAP__Invoice_Line_Item__c]	[CoraAP__Invoice__c]	INV-09668490	a0WPP00000BUt7R2AT	INVL-15861547	1	678644	HORIZONTAL CABLE MANAGER REPLACES NCMHF2 AND N...	NaN	62.45	a0hPP000005wGuPYAU	[CoraAP__PO_Line_Item__c]	678644	HORIZONTAL CABLE MANAGER REPLACES NCMHF2 AND N...	NMF2WH	62.45
+3	[CoraAP__Invoice_Line_Item__c]	[CoraAP__Invoice__c]	INV-09668490	a0WPP00000CgZiQ2AV	INVL-16776425	2	678644	HORIZONTAL CABLE MANAGER REPLACES NCMHF2 AND N...	NaN	62.45	a0hPP000007UMVJYA4	[CoraAP__PO_Line_Item__c]	678644	HORIZONTAL CABLE MANAGER REPLACES NCMHF2 AND N...	NMF2WH	62.45
+4	[CoraAP__Invoice_Line_Item__c]	[CoraAP__Invoice__c]	INV-09734799	a0WPP00000CUjYf2AL	INVL-16623803	NaN	WD122KRYZ	WD122KRYZWestern Digital Gold 12 TB Hard Drive	WD122KRYZ	286.92	NaN	NaN	NaN	NaN	NaN	NaN
