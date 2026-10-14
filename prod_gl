@@ -1,0 +1,206 @@
+import pandas as pd
+import os
+import sys
+import warnings
+from itertools import combinations
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from collections import Counter
+
+warnings.filterwarnings('ignore')
+
+class AutoGLCodingModel:
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.df = None
+        self.my_dict = {}
+        self.num_to_try = "5"
+        self.features_column = ['Invoice: Document Type', 'Invoice Type', 'Invoice: Country',
+                                'Invoice: Company VAT Reg No', 'Invoice: Currency',
+                                'Invoice: Vendor Number', 'Company Name_Legal Entity', 'gl__cc']
+        self.columns = None
+        self.diff_list = None
+        self.clf = None
+
+    def load_data(self):
+        try:
+            file_ext = os.path.splitext(self.filepath)[1].lower()
+            if file_ext == '.csv':
+                self.df = pd.read_csv(self.filepath)
+            elif file_ext == '.xlsx':
+                self.df = pd.read_excel(self.filepath)
+            elif file_ext == '.xlsb':
+                # Requires pyxlsb engine
+                self.df = pd.read_excel(self.filepath, engine='pyxlsb')
+            else:
+                raise ValueError(f"Unsupported file extension: {file_ext}")
+            print(f"File loaded successfully: {self.filepath}")
+        except Exception as e:
+            print(f"Error loading file: {e}")
+            sys.exit(1)
+
+    def preprocess(self):
+        try:
+            # Drop unnecessary columns if present
+            drop_cols = ['Invoice: Invoice No', 'Invoice: Reporting Country', 'VAT Code',
+                         'Invoice: Invoice Date', 'Invoice: Payment Due date',
+                         'Invoice: AP Ref No', 'Invoice: Vendor']
+            for col in drop_cols:
+                if col in self.df.columns:
+                    self.df.drop(columns=[col], inplace=True)
+            
+            self.df.dropna(inplace=True)
+
+            # Create combined columns
+            self.df["Company Name_Legal Entity"] = self.df["Invoice: Company Name"].astype(str) + "_" + self.df["Invoice: Legal Entity"].astype(str)
+            self.df["gl__cc"] = self.df["GL Code"].astype(str) + "_" + self.df["Cost Code"].astype(str)
+
+            # Drop original columns used for combining
+            drop_for_combined = ["Invoice: Legal Entity", "Invoice: Company Name", "GL Code", "Cost Code"]
+            for col in drop_for_combined:
+                if col in self.df.columns:
+                    self.df.drop(columns=[col], inplace=True)
+
+            # Set column types for consistency
+            dtype_map = {
+                'Invoice: Document Type': 'str',
+                'Invoice Type': 'str',
+                'Invoice: Country': 'str',
+                'Invoice: Company VAT Reg No': 'str',
+                'Invoice: Currency': 'str',
+                'Invoice: Vendor Number': 'str',
+                'Company Name_Legal Entity': 'str',
+                'gl__cc': 'str'
+            }
+
+            # Optional float columns
+            float_cols = ['Invoice: VAT Amount', 'Invoice: Gross Amount']
+
+            for col in dtype_map:
+                if col in self.df.columns:
+                    self.df[col] = self.df[col].astype(dtype_map[col])
+            for col in float_cols:
+                if col in self.df.columns:
+                    self.df[col] = self.df[col].astype('float32')
+
+            print("Preprocessing completed")
+        except Exception as e:
+            print(f"Error in preprocessing: {e}")
+            sys.exit(1)
+
+    def find_best_feature_combinations(self):
+        try:
+            columns = ['Invoice: Document Type', 'Invoice Type', "Company Name_Legal Entity",
+                       'Invoice: Country', 'Invoice: Company VAT Reg No',
+                       'Invoice: Currency', 'Invoice: Vendor Number']
+            pair_checks = [7, 6, 5, 4, 3, 2, 1]
+
+            for k in pair_checks:
+                pairs = list(combinations(columns, k))
+                maxi = -100
+                best_pair = ()
+                for idx, pair in enumerate(pairs):
+                    # Create merged1 column for this combination
+                    self.df["merged1"] = self.df[list(pair)].astype(str).agg('_'.join, axis=1)
+
+                    scope = self.df.groupby("merged1")["gl__cc"].nunique().reset_index()
+                    scope1_len = scope.loc[scope["gl__cc"] == 1].shape[0]
+
+                    if scope1_len > maxi:
+                        maxi = scope1_len
+                        best_pair = pair
+
+                    if idx % 30 == 0:
+                        print(f"Checked {idx} pairs for combination length {k}")
+
+                self.my_dict[str(k)] = best_pair
+                print(f"Best combination for {k} features: {best_pair} with unique gl__cc count: {maxi}")
+
+            self.df.drop(columns=["merged1"], inplace=True)
+        except Exception as e:
+            print(f"Error in finding feature combinations: {e}")
+            sys.exit(1)
+
+    def prepare_training_data(self):
+        try:
+            self.columns = list(self.my_dict[self.num_to_try])
+            self.diff_list = [item for item in self.features_column if item not in self.columns]
+
+            # Merge selected columns to form 'merged1'
+            self.df["merged1"] = self.df[self.columns[0]].astype(str)
+            for col in self.columns[1:]:
+                self.df["merged1"] += "__" + self.df[col].astype(str)
+
+            scope = self.df.groupby("merged1")["gl__cc"].nunique().reset_index()
+
+            scope1 = scope[scope["gl__cc"] == 1]
+            print(f"Num of Scope1: {scope1.shape[0]}")
+
+            scope2 = scope[scope["gl__cc"] == 2]
+            ll = list(scope2["merged1"])
+            scope2data = self.df[self.df["merged1"].isin(ll)]
+            print(f"Num of Scope2: {scope2data.shape[0]}")
+
+            # Drop the feature columns used to create merged1
+            scope2data = scope2data.drop(columns=self.columns)
+
+            # Remove rows where 'gl__cc' count is 1 within scope2data
+            value_counts = scope2data["gl__cc"].value_counts()
+            to_remove = value_counts[value_counts == 1].index
+            scope2data = scope2data[~scope2data["gl__cc"].isin(to_remove)]
+
+            print(f"After removal, Scope2 data length: {scope2data.shape[0]}")
+
+            # Encode categorical variables
+            self.diff_list.extend(["merged1"])
+            for col in self.diff_list:
+                if col in scope2data.columns:
+                    scope2data[col] = LabelEncoder().fit_transform(scope2data[col].astype(str)).astype('float16')
+
+            self.X = scope2data.drop(columns=['gl__cc'])
+            self.y = scope2data['gl__cc']
+
+        except Exception as e:
+            print(f"Error in preparing training data: {e}")
+            sys.exit(1)
+
+    def train_model(self):
+        try:
+            X_train, X_test, y_train, y_test = train_test_split(
+                self.X, self.y, test_size=0.2, random_state=42, stratify=self.y)
+
+            print(f"Training with {y_train.nunique()} unique target classes")
+
+            self.clf = RandomForestClassifier(n_estimators=80, min_samples_split=5, random_state=42)
+            self.clf.fit(X_train, y_train)
+
+            y_pred = self.clf.predict(X_test)
+            accuracy = accuracy_score(y_test, y_pred)
+            print(f"Validation Accuracy: {accuracy:.4f}")
+
+            y_pred_train = self.clf.predict(X_train)
+            accuracy_train = accuracy_score(y_train, y_pred_train)
+            print(f"Training Accuracy: {accuracy_train:.4f}")
+
+        except Exception as e:
+            print(f"Error during model training: {e}")
+            sys.exit(1)
+
+    def run(self):
+        self.load_data()
+        self.preprocess()
+        self.find_best_feature_combinations()
+        self.prepare_training_data()
+        self.train_model()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python auto_gl_model.py <path_to_input_file>")
+        sys.exit(1)
+
+    filepath = sys.argv[1]
+    model = AutoGLCodingModel(filepath)
+    model.run()
