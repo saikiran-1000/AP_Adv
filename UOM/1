@@ -1,0 +1,62 @@
+import json
+
+results = []
+
+for i, item in enumerate(all_entries):
+    print(f"\n{'='*60}")
+    print(f"Entry {i+1}:")
+    print(" Input:")
+    for key, val in item.items():
+        print(f"  {key}: {val}")
+
+    invup = item["invup"]
+    poup = item["poup"]
+    uominv = item["uominv"]
+    uompo = item["uompo"]
+
+    entry_result = {
+        "index": i + 1,
+        "input": item,
+        "output": None
+    }
+
+    # Simple rule-based logic
+    if is_close(invup, poup):
+        output = {
+            "are_convertible": True,
+            "conversion_rate": 1.0,
+            "reason": "Unit prices match, hence same unit assumed."
+        }
+        print("\n Final Decision:")
+        print(output)
+        entry_result["output"] = output
+
+    elif uompo.upper() == "MF" and is_close(invup * 1000, poup):
+        output = {
+            "are_convertible": True,
+            "conversion_rate": 1000,
+            "reason": "PO UoM is 'MF' and PO price is approx 1000x invoice unit price."
+        }
+        print("\n Final Decision:")
+        print(output)
+        entry_result["output"] = output
+
+    else:
+        # Use LLM for harder reasoning
+        desc_result = description_chain.run(
+            inv=item["inv"],
+            po=item["po"],
+            uominv=uominv,
+            uompo=uompo,
+            invup=invup,
+            poup=poup
+        )
+        print("\n Final Decision Based on Description:")
+        print(desc_result)
+        entry_result["output"] = desc_result
+
+    results.append(entry_result)
+
+# Save all results to a JSON file
+with open("uom_conversion_results.json", "w") as f:
+    json.dump(results, f, indent=2)
