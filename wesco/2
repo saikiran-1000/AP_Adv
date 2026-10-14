@@ -1,0 +1,207 @@
+import os
+import pandas as pd
+from langchain.embeddings import AzureOpenAIEmbeddings
+from langchain.vectorstores import FAISS
+from langchain.chat_models import AzureChatOpenAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import RetrievalQA
+from langchain.schema import Document
+
+# Step 1: Load environment
+from dotenv import load_dotenv
+load_dotenv()
+
+# Step 2: Load LLM
+llm = AzureChatOpenAI( #3.5 turbo
+    openai_api_key=os.getenv("AZURE_LLM_OPENAI_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_LLM_OPENAI_ENDPOINT"),
+    api_version=os.getenv("AZURE_LLM_OPENAI_API_VERSION"),
+    deployment_name=os.getenv("LLM_DEPLOYMENT_NAME")
+)
+
+# Step 3: Load Embeddings
+embeddings = AzureOpenAIEmbeddings(
+    model="text-embedding-3-large"
+)
+
+# Step 4: Color extraction helper
+COLOR_WORDS = ["red", "blue", "green", "black", "white", "yellow", "grey", "gray", "orange", "pink", "purple", "brown"]
+def extract_color(text):
+    text = str(text).lower()
+    for color in COLOR_WORDS:
+        if color in text:
+            return color
+    return None
+
+# Step 5: Prepare PO documents for vector store
+def prepare_po_documents(df):
+    df["po_desc"] = df["CoraAP__PO_Line_Item__r.CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["po_color"] = df["po_desc"].apply(extract_color)
+    documents = []
+    for _, row in df.iterrows():
+        content = (
+            f"PO Line ID: {row['CoraAP__PO_Line_Item__c']}\n"
+            f"Product No: {row['CoraAP__PO_Line_Item__r.CoraAP__Product_Service_No__c']}\n"
+            f"Vendor Part No: {row['CoraAP__PO_Line_Item__r.WO_VendorPartNumber__c']}\n"
+            f"Description: {row['po_desc']}\n"
+            f"Color: {row['po_color']}"
+        )
+        documents.append(Document(page_content=content))
+    return documents
+
+# Step 6: Create FAISS retriever from PO lines
+def build_retriever(po_documents):
+    po_documents = chunk_documents(po_documents)  # Optional if descriptions are too long
+    vectorstore = FAISS.from_documents(po_documents, embeddings)
+    return vectorstore.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": 10, "fetch_k": 25, "lambda_mult": 0.6}
+    )
+
+def chunk_documents(documents):
+    chunks = []
+    for doc in documents:
+        text = doc.page_content
+        for i in range(0, len(text), 2000):
+            chunks.append(Document(page_content=text[i:i + 2000]))
+    return chunks
+
+# Step 7: Prompt template with strict matching logic
+prompt_template = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
+You are a matching expert in an enterprise Accounts Payable automation system. Your task is to perform a strict one-to-one match between invoice lines and purchase order (PO) lines using the rules below. If no valid match exists, return null for that invoice line.
+
+### Matching Rules (Strict Priority Order)
+
+1. **Exact Match – Product/Service Number or Vendor Part Number**
+ - If either Product/Service Number or Vendor Part Number exactly matches between the invoice line and PO line, assign a 100% match.
+
+2. **Semantic Match (Only if Rule 1 fails)**
+ - Apply NLP-based semantic similarity using:
+   - Product/Vendor Codes
+   - Size, Length, or Quantity Indicators
+   - **Color or Color Code** (MANDATORY if present)
+ - Match Strength:
+   - 90–100% → Strong semantic match
+   - 40–89% → Moderate match
+   - <40% → Do not match
+
+3. **Color Matching – Strict Rule**
+ - If a color or color code appears in either invoice or PO line descriptions, they MUST match exactly.
+ - If the color is present in one line but missing or different in the other, consider it a **no match** and return matchPercentage as 0.
+
+### Match Selection Logic
+- Match each invoice line to exactly one PO line (1:1 matching).
+- Once matched, a PO line cannot be reused.
+- If multiple PO lines qualify:
+  - Select the one with the highest overall match score.
+  - If tied, choose the one that appears first.
+
+### Mandatory Post-Match Validations
+- Enforce 1:1 mapping: A PO line can be used only once.
+- Enforce color match strictly: If color or color code exists in either description, it **must match** for any match to be valid. Otherwise, discard the candidate.
+
+Context:
+{context}
+
+Question:
+{question}
+"""
+)
+
+# Step 8: Match invoice lines using RetrievalQA
+def match_invoice_lines_rag(df, retriever):
+    df["invoice_desc"] = df["CoraAP__Product_Service_Description__c"].fillna("").astype(str)
+    df["inv_color"] = df["invoice_desc"].apply(extract_color)
+
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        chain_type="stuff",
+        chain_type_kwargs={"prompt": prompt_template}
+    )
+
+    used_po_ids = set()
+    matches = []
+
+    for _, row in df.iterrows():
+        invoice_line = row["invoice_desc"]
+        invoice_id = row["Id"]
+        inv_color = row["inv_color"]
+        inv_code = row["CoraAP__Product_Service_No__c"]
+        inv_part = row["WO_Vendor_Part_Number__c"]
+
+        question = f"""
+Match this invoice line:
+Invoice ID: {invoice_id}
+Product No: {inv_code}
+Vendor Part No: {inv_part}
+Description: {invoice_line}
+Color: {inv_color}
+Return the best matching PO Line ID and the reason for match.
+"""
+
+        response = qa_chain.run(question)
+
+        # Post-process response (you can improve this based on exact output style)
+        match_id = None
+        reason = "No Match"
+        if "PO Line ID" in response:
+            match = re.search(r"PO Line ID:\s*([^\n]+)", response)
+            if match:
+                match_id = match.group(1).strip()
+                if match_id not in used_po_ids:
+                    used_po_ids.add(match_id)
+                    reason = "Matched via LLM"
+
+        matches.append({
+            "Invoice_Line_Id": invoice_id,
+            "PO_Line_Id": match_id,
+            "Rule": reason,
+            "LLM_Response": response
+        })
+
+    return pd.DataFrame(matches)
+
+
+prompt_template = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
+You are a matching expert in an enterprise Accounts Payable automation system. Your task is to perform a strict one-to-one match between invoice lines and purchase order (PO) lines using the rules below. If no valid match exists, return null for that invoice line.
+
+### Matching Rules (Strict Priority Order)
+
+1. **Exact Match – Product/Service Number or Vendor Part Number**
+ - If either Product/Service Number or Vendor Part Number exactly matches between the invoice line and PO line, assign a 100% match.
+
+2. **Semantic Match (Only if Rule 1 fails)**
+ - Apply NLP-based semantic similarity using:
+   - Product/Vendor Codes
+   - Size, Length, or Quantity Indicators
+   - **Color or Color Code** (MANDATORY if present)
+ - Match Strength:
+   - 90–100% → Strong semantic match
+   - 40–89% → Moderate match
+   - <40% → Do not match
+
+3. **Color Matching – Strict Rule**
+ - If a color or color code appears in either invoice or PO line descriptions, they MUST match exactly.
+ - If the color is present in one line but missing or different in the other, consider it a **no match** and return matchPercentage as 0.
+
+### Match Selection Logic
+- Match each invoice line to exactly one PO line (1:1 matching).
+- Once matched, a PO line cannot be reused.
+- If multiple PO lines qualify:
+  - Select the one with the highest overall match score.
+  - If tied, choose the one that appears first.
+
+### Mandatory Post-Match Validations
+- Enforce 1:1 mapping: A PO line can be used only once.
+- Enforce color match strictly: If color or color code exists in either description, it **must match** for any match to be valid. Otherwise, discard the candidate.
+
+{context}
+
+Question: Which PO line matches the following invoice line?\n\n{question}
+"""
+)
