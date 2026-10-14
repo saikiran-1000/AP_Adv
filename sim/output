@@ -1,0 +1,70 @@
+
+🔍 **LLM Final Analysis for Invoice I_18720609:** 🔍
+
+**Final decision:** The new invoice is distinct.
+
+**Risk level:** Low
+
+**Supporting factors:**
+1. **Invoice Number Variation:** The new invoice (I_18720609) and the potential match (I_18720609) share the same invoice number but differ slightly in formatting (underscore vs. no underscore). However, this alone does not confirm duplicity due to the additional variations in other critical fields.
+2. **Vendor Match:** Both invoices are from the same vendor (F6), which is consistent.
+3. **Different Amounts:** The new invoice has an amount of $1067.11, while the potential match is significantly higher at $2075.25. This substantial difference in amounts suggests that they are for different transactions or services.
+4. **Different Dates:** The dates are also notably different, with the new invoice dated 2023-11-13 and the potential match dated almost a year later on 2024-10-26. This gap further supports the notion that these are distinct transactions.
+
+**Recommended action:** No need to flag this invoice for further review based on the current analysis. The variations in amount and date suggest it is not a duplicate or fraudulent invoice.
+
+🔍 **LLM Final Analysis for Invoice I_35791432:** 🔍
+
+**Final decision:** The new invoice is likely a duplicate.
+
+**Risk level:** High
+
+**Supporting factors:** 
+- The new invoice shares identical amount and date details with a potential match:
+  - New Invoice: I_35791432, Vendor: E5, Amount: 5049.69, Date: 2025-01-02
+  - Potential Match: I_31219829, Vendor: E5, Amount: 5049.69, Date: 2025-01-02
+- Both invoices are from the same vendor (E5) and are for the exact same amount on the exact same date, clearly aligning with rule 2 of the duplicate invoice detection rules, which check for same amount and date from the same vendor.
+
+**Recommended action:** This invoice should be flagged for further review. Additional verification should include confirming whether invoice number I_31219829 had already been processed and paid, investigating the reason for identical invoices with different numbers, and verifying document authenticity with the vendor.
+#################
+Matches not found for Invoice I_11097914
+
+
+
+
+=== Matching Invoices Exceeding 50% Similarity Threshold ===
+Total matches found: 4
+
+Match 1:
+New Invoice: #I_18720609 | Vendor: F6 | Amount: $1067.11 | Date: 2023-11-13
+Stored Invoice: #I_18720609 | Vendor: F6 | Amount: $2075.25 | Date: 2024-10-26
+Match Type: semantic_similarity_match
+Overall Similarity: 0.51
+Amount Difference: $1008.14 (48.6%)
+Date Difference: 348 days
+
+Match 2:
+New Invoice: #I_35791432 | Vendor: E5 | Amount: $5049.69 | Date: 2025-01-02
+Stored Invoice: #I_31219829 | Vendor: E5 | Amount: $5049.69 | Date: 2025-01-02
+Match Type: semantic_similarity_match
+Overall Similarity: 0.83
+Invoice Number: Different
+
+Match 3:
+New Invoice: #I_35791432 | Vendor: E5 | Amount: $5049.69 | Date: 2025-01-02
+Stored Invoice: #I_52053802 | Vendor: E5 | Amount: $4165.14 | Date: 2025-02-12
+Match Type: semantic_similarity_match
+Overall Similarity: 0.70
+Invoice Number: Different
+Amount Difference: $884.55 (17.5%)
+Date Difference: 41 days
+
+Match 4:
+New Invoice: #I_35791432 | Vendor: E5 | Amount: $5049.69 | Date: 2025-01-02
+Stored Invoice: #I_68084086 | Vendor: A1 | Amount: $4532.39 | Date: 2025-02-25
+Match Type: semantic_similarity_match
+Overall Similarity: 0.59
+Invoice Number: Different
+Vendor: Different (E5 vs A1)
+Amount Difference: $517.30 (10.2%)
+Date Difference: 54 days
